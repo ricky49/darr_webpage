@@ -1,6 +1,6 @@
 <?php namespace App\Controllers;
 
-use App\Models\Ciudad;
+use App\Models\Users;
 
 class IndexController extends ControllerBase
 {
@@ -8,8 +8,9 @@ class IndexController extends ControllerBase
     public function indexAction()
     {	
     	//Example
-		$ciudades = Ciudad::all();
-		$this->view->ciudades = $ciudades->toArray();
+		$ciudades = Users::all();
+		print_r($ciudades->toArray());
+		die();
     }
 
 }

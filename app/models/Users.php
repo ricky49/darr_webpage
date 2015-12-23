@@ -2,9 +2,9 @@
 
 use Illuminate\Database\Eloquent\Model as Capsule;
 
-class Ciudad extends Capsule
+class Users extends Capsule
 {
 
-   protected $table = 'ciudad';
+   protected $table = 'users';
 
 }
