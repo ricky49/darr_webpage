@@ -2,5 +2,6 @@
 .idea/*
 *.sublime-project
 *.sublime-workspace
+*.env
 .env
 /vendor/
