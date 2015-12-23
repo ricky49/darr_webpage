@@ -14,7 +14,8 @@ return new \Phalcon\Config(array(
 		'controllersDir' => __DIR__ . '/../../app/controllers/',
 		'modelsDir'      => __DIR__ . '/../../app/models/',
 		'viewsDir'       => __DIR__ . '/../../app/views/',
-		'libraryDir'     => __DIR__ . '/../../app/library/',
+		'libDir'         => __DIR__ . '/../../app/library/',
+		'cacheDir'       => __DIR__ . '/../../app/cache/',
 		'baseUri'        => '/',
 	)
 ));

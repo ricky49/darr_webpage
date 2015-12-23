@@ -8,9 +8,9 @@ class IndexController extends ControllerBase
     public function indexAction()
     {	
     	//Example
-		$ciudades = Users::all();
-		print_r($ciudades->toArray());
-		die();
+		// $ciudades = Users::all();
+		// print_r($ciudades->toArray());
+		// die();
     }
 
 }
