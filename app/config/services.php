@@ -1,6 +1,8 @@
 <?php
 use Phalcon\Mvc\Dispatcher;
 use Phalcon\Mvc\View;
+use App\Libraries\GeneralHelper;
+use App\Libraries\Validator;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 
 /**
@@ -16,6 +18,13 @@ $di->set('url', function() use ($config) {
 	$url->setBaseUri($config->application->baseUri);
 	return $url;
 });
+
+
+$di->set('router', function () use ($config) {
+    $request = new \Phalcon\Http\Request();
+    return include __DIR__ . "/routes.php";
+
+}, true);
 
 /**
  * Setting up the view component
@@ -114,4 +123,33 @@ $di->set('session', function() {
 	$session = new \Phalcon\Session\Adapter\Files();
 	$session->start();
 	return $session;
+});
+
+/**
+ * Set up the flash service
+ */
+$di->set('flash', function () {
+    return new \Phalcon\Flash\Session(
+        array(
+            'error' => 'alert alert-error',
+            'success' => 'alert alert-success',
+            'notice' => 'alert alert-info',
+            'warning' => 'alert alert-warning',
+        )
+    );
+});
+
+
+/**
+ * Set up the general helper service
+ */
+$di->set('generalHelper', function () {
+    return new GeneralHelper();
+});
+
+/**
+ * Set up the validator service
+ */
+$di->set('validator', function () {
+    return new Validator();
 });
