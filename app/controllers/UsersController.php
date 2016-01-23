@@ -1,8 +1,5 @@
 <?php namespace App\Controllers;
 
-use App\Models\Users;
-
-
 class UsersController extends ControllerBase
 {
 	/**
@@ -12,8 +9,8 @@ class UsersController extends ControllerBase
      */
     public function indexAction()
     {	
-    	$users = Users::get();
-    	$this->view->users = $users;
+    	// $users = Users::get();
+    	// $this->view->users = $users;
     	return $this->view->pick('users/index');
     }
 

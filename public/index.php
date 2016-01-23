@@ -12,15 +12,7 @@ try {
 
 	$config = require __DIR__ . "/../app/config/config.php";
 
-    //ELOQUENT CONF
-	$capsule = new Capsule; 
-    
-	$capsule->addConnection(
-		include_once __DIR__.'/../app/config/eloquent.php'
-	);
 
-	$capsule->bootEloquent();
-	//END ELOQUENT CONF
 
 	/**
 	 * Include loader
