@@ -1,67 +1,87 @@
 {% extends "layouts/base.volt" %}
 {% block content %}
-<div class="row mt">
+{{this.flash.output()}}
+<div class="col-md-9">
+<div id="generalTabContent" class="tab-content">
+    <form action="/users/create" method="POST" class="form-horizontal">
+      <div>
+        <div style="display: inline-block;"></div>
+        <div style="display: inline-block; float: right; margin-right: 1%;">
+            <a href="/users">
+                <button type="button" class="btn btn-warning">Users List</button>
+            </a>
+        </div>                             
+      </div>
+        <div class="form-group"><label class="col-sm-3 control-label">First Name</label>
 
-    <div class="col-lg-12">
-        <p>{{this.flash.output()}}</p>
-        <div class="form-panel">
-            <div>
-                <div style="display: inline-block;">
-                    <h4 class="mb"><i class="fa fa-angle-right"></i> Create User</h4>
-                </div>
-                <div style="display: inline-block; float: right; margin-right: 1%;">
-                    <a href="/users">
-                        <button type="button" class="btn btn-warning">Users List</button>
-                    </a>
+            <div class="col-sm-9 controls">
+                <div class="row">
+                    <div class="col-xs-9"><input type="text" name="name" placeholder="Name" class="form-control" required/></div>
                 </div>
             </div>
-
-            <form class="form-horizontal style-form" method="post" action="/users/create">
-                
-                <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">First Name</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" name="firstname">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">Last Name</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" name="lastname" >
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">Display Name</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" name="display_name" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">Email</label>
-                    <div class="col-sm-6">
-                        <input type="email" class="form-control" name="email" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 col-sm-2 control-label">Status</label>
-                    <div class="col-sm-6">
-                        <select class="form-control" name="status_id">
-                                  <option value="1">Active</option>
-                                  <option value="4">Inactive</option>
-                                 
-                        </select>
-                    </div>
-                </div>
-                <div>
-                    <div style="display: inline-block; height:30px;"></div>
-                    <div style="display: inline-block; float: right; margin-right: 1%; ">
-                        <button type="submit" class="btn btn-success">Create</button>
-                    </div>
-                </div>
-               
-            </form>
         </div>
-    </div><!-- col-lg-12-->      	
-</div><!-- /row -->
+        <div class="form-group"><label class="col-sm-3 control-label">Last Name</label>
+
+            <div class="col-sm-9 controls">
+                <div class="row">
+                    <div class="col-xs-9"><input type="text" name="lastname"  placeholder="Last Name" class="form-control" required/></div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group"><label class="col-sm-3 control-label">Email</label>
+
+            <div class="col-sm-9 controls">
+                <div class="row">
+                    <div class="col-xs-9"><input type="email" name="email"  placeholder="email@yourcompany.com" class="form-control" required/></div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group"><label class="col-sm-3 control-label">Username</label>
+
+            <div class="col-sm-9 controls">
+                <div class="row">
+                    <div class="col-xs-9"><input type="text" placeholder="User" name="user"  class="form-control" required/></div>
+                </div>
+            </div>
+        </div>
+         <div class="form-group"><label class="col-sm-3 control-label">Document</label>
+
+            <div class="col-sm-9 controls">
+                <div class="row">
+                    <div class="col-xs-9"><input type="text" placeholder="Document" name="document"  class="form-control" required/></div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group"><label class="col-sm-3 control-label">Role</label>
+
+            <div class="col-sm-9 controls">
+                <div class="row">
+                    <div class="col-xs-9">
+                        <select type="text" name="rol"  class="form-control" required>
+                            <option></option>
+                           {% for role in roles %}
+                            <option value="{{role.rol_name}}">{{role.rol_name}}</option>
+                            {% endfor %}
+                        </select>  
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="form-group"><label class="col-sm-3 control-label">Password</label>
+
+            <div class="col-sm-9 controls">
+                <div class="row">
+                    <div class="col-xs-9"><input type="text" placeholder="Password" name="pass"   class="form-control" required/></div>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        
+        <button type="submit" class="btn btn-green btn-block">Create</button>
+    </form>
+</div>
+</div>
+</div>
+
 {% endblock %}
-			
+      

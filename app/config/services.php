@@ -1,4 +1,5 @@
 <?php
+use App\Libraries\SDK;
 use Phalcon\Mvc\Dispatcher;
 use Phalcon\Mvc\View;
 use App\Libraries\GeneralHelper;
@@ -17,6 +18,13 @@ $di->set('url', function() use ($config) {
 	$url = new \Phalcon\Mvc\Url();
 	$url->setBaseUri($config->application->baseUri);
 	return $url;
+});
+
+
+//registering sdk
+$di->set('sdk', function () {
+    $sdk = new SDK();
+    return $sdk;
 });
 
 
@@ -131,7 +139,7 @@ $di->set('session', function() {
 $di->set('flash', function () {
     return new \Phalcon\Flash\Session(
         array(
-            'error' => 'alert alert-error',
+            'error' => 'alert alert-danger',
             'success' => 'alert alert-success',
             'notice' => 'alert alert-info',
             'warning' => 'alert alert-warning',

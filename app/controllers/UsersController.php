@@ -1,7 +1,20 @@
 <?php namespace App\Controllers;
 
+use App\Libraries\Validator;
+
 class UsersController extends ControllerBase
 {
+
+    /**
+     * BEfore execute
+     *
+     * @param  dispatcher $dispatcher
+     * @return void
+     */
+    public function beforeExecuteRoute($dispatcher)
+    {   
+        
+    }
 	/**
      * Default  user view.
      * 
@@ -9,9 +22,10 @@ class UsersController extends ControllerBase
      */
     public function indexAction()
     {	
-    	// $users = Users::get();
-    	// $this->view->users = $users;
-    	return $this->view->pick('users/index');
+        //Section title
+        $this->view->section_title = 'Users';
+        $this->view->users = $this->sdk->getUsers();
+        return $this->view->pick('users/index');
     }
 
 	/**
@@ -21,33 +35,42 @@ class UsersController extends ControllerBase
      */
     public function createAction()
     {	
+        $this->view->section_title = 'Create User';
+        if ($this->request->isPost()){
+            $response = $this->store($this->request->getPost());
+            if(isset($response->success) && !$response->success && isset($response->body)) {
+                $errors = [];
+                $str_error = '';
+                if (isset($response->body->errmsg)) {
+                    $str_error = "Error: ".$response->body->errmsg;
+                } else {
+                    foreach ($response->body->errors as $key => $value) {
+                        $errors[] = $key; 
+                    }
+                    $str_error = ucfirst($response->body->message). ". You are missing: ".Validator::stringFromArray($errors);
+                }
+                $this->flash->error((string)$str_error);
+                return $this->view->pick('users/create');
+            } else {
+                $this->flash->success("User added successfully");
+                return $this->response->redirect('users');
+            }
+        }
+        $this->view->roles = $this->sdk->getRoles();
+        return $this->view->pick('users/create');
+    }
 
-    	if ($this->request->isPost()) {
-    		$data_post = $this->request->getPost();
-	    	$data = $this->validator->requiredKeys($data_post, [
-		    			'firstname'=>'',
-		    			'lastname'=>'', 
-		    			'display_name'=>'', 
-		    			'email'=>'',
-		    			'status_id'=>''
-	    		 	]);
-
-	    	if (!$data->pass) {
-	    		$this->flash->error($this->validator->parseError($data->errors, "Error, you are missing: "));
-	    		return $this->response->redirect('/users/create');
-	    	}
-
-	    	if (!$this->validator->emailValidator($data_post['email'])) {
-    			$this->flash->error("Invalid email format");
-	    		return $this->response->redirect('/users/create');
-    		}
-
-	    	$insert_user = Users::insert((array)$data->data);
-	    	$this->flash->success("User Created");
-	    	return $this->response->redirect('/users');
-    	}
-
-    	return $this->view->pick('users/create');
+    private function store($data)
+    {
+        return $this->sdk->createUser([
+            'user' => $data['user'],
+            'pass' => $data['pass'],
+            'mail' => $data['email'],
+            'lastname' => $data['lastname'],
+            'name' => $data['name'],
+            'document' => $data['document'],
+            'rol' => $data['rol']
+        ]);
     }
 
 	/**
@@ -57,40 +80,49 @@ class UsersController extends ControllerBase
      */
     public function editAction($id)
     {	
-    	$user = Users::where('id',$id);
-    	if (!$user->exists()) {
-    		$this->flash->warning("User not found");
-    		return $this->response->redirect('/users');
-    	} 
-    	
-		if ($this->request->isPost()) {
-			$data_post = $this->request->getPost();
-	    	$data = $this->validator->requiredKeys($data_post, [
-		    			'firstname'=>'',
-		    			'lastname'=>'', 
-		    			'display_name'=>'', 
-		    			'email'=>'',
-		    			'status_id'=>''
-	    		 	]);
+        $this->view->section_title = 'Edit User';
+        $response = $this->sdk->getUser($id);
+        if (isset($response->success) && !$response->success) {
+            $this->flash->error('User not found');
+            return $this->response->redirect('/users');
+        }
+        $this->view->user = $response;
+        if (!isset($response->lastname))
+            $response->lastname = "";
 
-	    	if (!$data->pass) {
-	    		$this->flash->error($this->validator->parseError($data->errors, "Error, you are missing: "));
-	    		return $this->response->redirect("/users/edit/{$id}");
-	    	}
-
-	    	if (!$this->validator->emailValidator($data_post['email'])) {
-				$this->flash->error("Invalid email format");
-	    		return $this->response->redirect("/users/edit/{$id}");
-			}
-
-	    	$user->update((array)$data->data);
-	    	$this->flash->success("User Updated");
-	    	return $this->response->redirect("/users/edit/{$id}");
-		}
-		$this->view->user = $user->first();
-		return $this->view->pick('users/edit');
+         $this->view->roles = $this->sdk->getRoles();
+        return $this->view->pick('users/edit');
     }
+    
+    /**
+     * Save user.
+     * 
+     * @return view
+     */
+    public function saveAction($id)
+    {   
+       
+        $response = ($this->sdk->updateUser($id, $this->request->getPost()));
 
+        if(isset($response->success) && !$response->success && isset($response->body)) {
+            $errors = [];
+            $str_error = '';
+            if (isset($response->body->errmsg)) {
+                $str_error = "Error: ".$response->body->errmsg;
+            } else {
+                foreach ($response->body->errors as $key => $value) {
+                    $errors[] = $key; 
+                }
+                $str_error = ucfirst($response->body->message). ". You are missing: ".Validator::stringFromArray($errors);
+            }
+            $this->flash->error((string)$str_error);
+            return $this->response->redirect($_SERVER['HTTP_REFERER']);
+        } else {
+            $this->flash->success("User updated successfully");
+            return $this->response->redirect($_SERVER['HTTP_REFERER']);
+        }
+       
+    }
     /**
      * Delete user.
      * 
@@ -98,14 +130,16 @@ class UsersController extends ControllerBase
      */
     public function deleteAction($id)
     {	
-    	if (!Users::where('id',$id)->exists()) {
-    		$this->flash->warning("User not found");
-    	} else {
-    		$delete_user = Users::where('id',$id)->delete();
-			$this->flash->success("User deleted");
-    	}
-    	
-    	return $this->response->redirect('/users');
+        $response = $this->sdk->deleteUser($id);
+        if(isset($response->success) && !$response->success && isset($response->body)) {
+            if (isset($response->body->status) && $response->body->status == "404" ) {
+                $this->flash->error("User not found");
+                return $this->response->redirect('users');
+            } 
+        }
+            
+        $this->flash->success("User successfully deleted");
+        return $this->response->redirect('users');   
     }
 
 }

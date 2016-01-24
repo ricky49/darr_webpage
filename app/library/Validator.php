@@ -11,20 +11,14 @@ namespace App\Libraries;
  */
 class Validator
 {
-    /**
-     * This method is called on any attempt to compile a function call
-     */
-    public function start()
-    {	
-    	
-    }
+ 
 
     /** 
      * Validate required keys and return set of error fields if find
      * 
      * @param array $arr_input group of items to compare
      * @param array $keys predefined keys as filter
-     * @return object, pass(bool): identify errors,
+     * @return object, ok(bool): identify errors,
      *                 errors(array): list of error fields
      *                 data(object): input data filtered by key group
      */
@@ -37,9 +31,9 @@ class Validator
                 $error_fields[] = $key;
             }
         }
-        //Check if pass validation
-        $pass = (count($error_fields) != 0)? false : true;
-        return (object)['pass'=> $pass, 'errors'=> $error_fields, 'data'=> (object)$arr];
+        //Check if ok validation
+        $ok = (count($error_fields) != 0)? false : true;
+        return (object)['ok'=> $ok, 'errors'=> $error_fields, 'data'=> (object)$arr];
     }
 
 
@@ -83,7 +77,13 @@ class Validator
 
         return $error;
     }
-
+    
+    /** 
+     * Validate email
+     * 
+     * @param string $email
+     * @return bool
+     */
     public function emailValidator($email) 
     {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -91,4 +91,23 @@ class Validator
         }
         return true;
     }
+
+    /** 
+     * Wrap string message from array
+     * 
+     * @param arr $arr one dimension array with errors
+     * @param string $prefix optional
+     * @param string $sufix optional
+     * @return String
+     */
+    public static function stringFromArray($arr, $prefix = '', $sufix = '')
+    {
+        if (is_array($arr)) {
+           $string = ($prefix.ucfirst(implode(", ", $arr)).$sufix);
+        } else {
+           $string = ($prefix.$arr.$sufix);
+        }
+        return $string;
+    }
+  
 }

@@ -4,5 +4,6 @@
 *.sublime-workspace
 *.env
 .env
-cache/*
+/app/cache/*
 /vendor/
+*.volt.php
