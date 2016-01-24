@@ -3,6 +3,13 @@ namespace App\Libraries;
 
 class Email extends \App\Controllers\ControllerBase
 {
+    // Example:
+     // $sender = new Email();
+     //    $sender->sendMessage([
+     //        'subject' => 'ASunto',
+     //        'to_email' => 'rickysotosanchezz@gmail.com',
+     //        'message' => $this->di->getViewSimple()->render('emails/view_report')
+     //    ]);
 
     /**
      * Envia mensaje a partir de data suministrada

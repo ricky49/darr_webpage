@@ -13,6 +13,8 @@ $router->addGet('/sign-up', 'Secure::signUp');
 $router->addGet('/remind-password', 'Secure::remindPassword');
 $router->addGet('/logout', 'Secure::logout');
 $router->addPost('/register', 'Secure::register');
+$router->addGet('/test', 'Index::test');
+
 
 
 $router->addGet('/', 'Index::home');

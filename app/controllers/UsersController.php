@@ -14,12 +14,6 @@ class UsersController extends ControllerBase
      */
     public function beforeExecuteRoute($dispatcher)
     {   
-        $sender = new Email();
-        $sender->sendMessage([
-            'subject' => 'ASunto',
-            'to_email' => 'josuegrullon@gmail.com',
-            'message' => 'Asunto de brega'
-        ]);
     }
 	/**
      * Default  user view.
