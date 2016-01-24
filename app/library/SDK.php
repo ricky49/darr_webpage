@@ -229,8 +229,22 @@ class SDK extends \GuzzleHttp\Client
      * @return std object
      */
     private function putRequest($url, $data)
-    {   
-        return json_decode((string) $this->put($url, ['form_params' => $data])->getBody());
+    {          
+
+        try {
+
+            $response = $this->put($url, ['form_params' => $data])->getBody();
+
+        } catch (\Guzzle\Http\Exception\BadResponseException $e) {
+            return (object)((['success'=>0, 'type'=> 'BADRESPONSE', 'message'=> "Guzzle: ".$e->getMessage()]));
+        } catch (\GuzzleHttp\Exception\ClientException $e) {
+            return (object)((['success'=>0, 'type'=> 'CLIENT', 'message'=> "Guzzle: ".$e->getMessage(), 'body'=>  json_decode($e->getResponse()->getBody(true))]));
+        } catch (\GuzzleHttp\Exception\ConnectException $e) {
+            return (object)((['success'=>0, 'type'=> 'CONNECT', 'message'=> "Guzzle: ".$e->getMessage()]));
+        } catch (\GuzzleHttp\Exception\ServerException $e) {
+            return (object)((['success'=>0, 'type'=> 'SERVER', 'message'=> "Guzzle: ".$e->getMessage(), 'body'=>  json_decode($e->getResponse()->getBody(true))]));
+        }
+        return json_decode((string) $response);
     }
     
 
@@ -272,6 +286,19 @@ class SDK extends \GuzzleHttp\Client
      */
     private function getRequest($url)
     {
-        return json_decode((string) $this->get($url)->getBody());
+        try {
+
+            $response = $this->get($url)->getBody();
+
+        } catch (\Guzzle\Http\Exception\BadResponseException $e) {
+            return (object)((['success'=>0, 'type'=> 'BADRESPONSE', 'message'=> "Guzzle: ".$e->getMessage()]));
+        } catch (\GuzzleHttp\Exception\ClientException $e) {
+            return (object)((['success'=>0, 'type'=> 'CLIENT', 'message'=> "Guzzle: ".$e->getMessage(), 'body'=>  json_decode($e->getResponse()->getBody(true))]));
+        } catch (\GuzzleHttp\Exception\ConnectException $e) {
+            return (object)((['success'=>0, 'type'=> 'CONNECT', 'message'=> "Guzzle: ".$e->getMessage()]));
+        } catch (\GuzzleHttp\Exception\ServerException $e) {
+            return (object)((['success'=>0, 'type'=> 'SERVER', 'message'=> "Guzzle: ".$e->getMessage(), 'body'=>  json_decode($e->getResponse()->getBody(true))]));
+        }
+        return json_decode((string) $response);
     }
 }

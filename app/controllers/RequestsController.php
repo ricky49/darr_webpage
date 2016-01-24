@@ -87,8 +87,10 @@ class RequestsController extends ControllerBase
     {   
         $this->view->section_title = 'View request';
         $response = $this->sdk->getSolicitud($id);
-        // print_r($response);
-        // die();
+        if (isset($response->success) && !$response->success) {
+            $this->flashSession->error("Request not found");
+            return $this->response->redirect('/requests');
+        }
         $this->view->req =  $response;
         return $this->view->pick('requests/view');
     }
