@@ -21,6 +21,14 @@
                 <span class="menu-title">Users</span>
             </a>
           </li>
+           <li class="">
+            <a href="/requests">
+                <i class="icon fa fa-book">
+                    <div class="icon-bg bg-orange"></div>
+                </i>
+                <span class="menu-title">Requests</span>
+            </a>
+          </li>
           
       </ul>
   </div>

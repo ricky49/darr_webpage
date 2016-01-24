@@ -19,8 +19,10 @@ $di->set('url', function() use ($config) {
 	$url->setBaseUri($config->application->baseUri);
 	return $url;
 });
-
-
+/**
+ * Global configuration
+ */
+$di->set('config', $config);
 //registering sdk
 $di->set('sdk', function () {
     $sdk = new SDK();

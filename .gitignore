@@ -7,3 +7,6 @@
 /app/cache/*
 /vendor/
 *.volt.php
+/cache/*
+cache/*
+cache

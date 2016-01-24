@@ -20,8 +20,9 @@
     <link type="text/css" rel="stylesheet" href="/styles/main.css">
     <link type="text/css" rel="stylesheet" href="/styles/style-responsive.css">
     <link type="text/css" rel="stylesheet" href="/styles/zabuto_calendar.min.css">
-    <link type="text/css" rel="stylesheet" href="styles/pace.css">
-    <link type="text/css" rel="stylesheet" href="styles/jquery.news-ticker.css">
+    <link type="text/css" rel="stylesheet" href="/styles/pace.css">
+    <link type="text/css" rel="stylesheet" href="/styles/jquery.news-ticker.css">
+    <link type="text/css" rel="stylesheet" href="/styles/jplist-custom.css">
 </head>
 <body>
     <div>
@@ -64,11 +65,11 @@
                 <!--END TITLE & BREADCRUMB PAGE-->
                 <!--BEGIN CONTENT-->
                 <div class="page-content">
-                    <div id="tab-general">
-                        <div id="sum_box" class="row mbl">
+                    <!-- <div id="tab-general"> -->
+                        <!-- <div id="sum_box" class="row mbl"> -->
                         <?=$this->getContent()?>
-                        </div>
-                    </div>
+                        <!-- </div> -->
+                    <!-- </div> -->
                 </div>
                 <!--END CONTENT-->
                 <!--BEGIN FOOTER-->
@@ -100,6 +101,8 @@
     <script src="/script/pace.min.js"></script>
     <script src="/script/holder.js"></script>
     <script src="/script/responsive-tabs.js"></script>
+      <script src="/script/jplist.min.js"></script>
+    <script src="/script/jplist.js"></script>
      <!-- <script src="/script/jquery.flot.js"></script>
     // <script src="/script/jquery.flot.categories.js"></script>
     // <script src="/script/jquery.flot.pie.js"></script>
