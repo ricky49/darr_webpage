@@ -133,7 +133,7 @@ $di->set('session', function() {
 	$session = new \Phalcon\Session\Adapter\Files();
 	$session->start();
 	return $session;
-});
+},true);
 
 /**
  * Set up the flash service
@@ -147,7 +147,7 @@ $di->set('flash', function () {
             'warning' => 'alert alert-warning',
         )
     );
-});
+},true);
 
 
 /**

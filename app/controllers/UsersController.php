@@ -13,7 +13,11 @@ class UsersController extends ControllerBase
      * @return void
      */
     public function beforeExecuteRoute($dispatcher)
-    {   
+    {  
+        if (!$this->isLogged()) {
+            $this->flash->warning('Please login before continue');
+            return $this->response->redirect('/login');
+        } 
     }
 	/**
      * Default  user view.

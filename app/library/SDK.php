@@ -6,6 +6,7 @@ class SDK extends \GuzzleHttp\Client
 {
     private $base_url;
     private $token;
+    private $ph_session;
     
     /**
      * Constructor
@@ -14,6 +15,7 @@ class SDK extends \GuzzleHttp\Client
     {
         parent::__construct();
         $this->token = true;
+        $this->ph_session = (new \Phalcon\DI())->getDefault()->getSession();
         $this->base_url = getenv('API_URL');
     }
 
@@ -58,6 +60,17 @@ class SDK extends \GuzzleHttp\Client
             ]
         );
     }
+
+    /**
+     * Create request
+     *
+     * @param int $data
+     * @return std object
+     */
+    public function createRequest($data)
+    {
+        return $this->makeRequest("api/request", $data);
+    }
      /**
      * Update user
      *
@@ -92,6 +105,16 @@ class SDK extends \GuzzleHttp\Client
     }
 
     /**
+     * Get All Users
+     *
+     * @return std object
+     */
+    public function getCenters()
+    {
+        return $this->makeRequest("api/center");
+    }
+
+    /**
      * Get All Roles
      *
      * @return std object
@@ -113,6 +136,32 @@ class SDK extends \GuzzleHttp\Client
     {
         return $this->makeRequest("api/users/{$id}");
     }
+
+    /**
+     * Get user requests
+     *
+     * @param string $user
+     * @return std object
+     */
+    public function getUserRequests($user)
+    {   
+         $url = $this->base_url."api/request?token=".$this->ph_session->get('user_session_token')."&user={$user}"; 
+      
+        return $this->getRequest($url);
+    }
+
+    /**
+     * Get  requests
+     *
+     * @param string $id
+     * @return std object
+     */
+    public function getSolicitud($id)
+    {   
+         $url = $this->base_url."api/request/{$id}?token=".$this->ph_session->get('user_session_token'); 
+      
+        return $this->getRequest($url);
+    }
     
     /**
      *  Make post/get requests
@@ -123,25 +172,21 @@ class SDK extends \GuzzleHttp\Client
      */
     private function makeRequest($url, $data = null)
     {   
-       
         if ($this->token != false) {
-            @session_start();
-            if (!isset($_SESSION['user_session_token']) || empty($_SESSION['user_session_token'])) {
+            if (!$this->ph_session->has('user_session_token')) {
                 return (object)['success'=>0, 'message'=> "Missing user session"];
             }
-            $this->token = $_SESSION['user_session_token'];
+            $this->token = $this->ph_session->get('user_session_token');
         }
 
-        session_write_close();
         $url = $this->base_url .$url;
         try {
             if ($data != null && is_array($data)) {
                 if ($this->token != false)
                     $data['x-token-access'] = $this->token;
 
-
+                $url .= "?token=".$this->token; 
                 if (array_key_exists('put', $data)) {
-                    $url .= "?token=".$this->token; 
                     $response =  $this->putRequest($url, $data);
                 } else {
                     $response =  $this->postRequest($url, $data);
@@ -198,13 +243,11 @@ class SDK extends \GuzzleHttp\Client
     private function deleteRequest($url)
     {   
         if ($this->token != false) {
-            session_start();
-            if (!isset($_SESSION['user_session_token']) || empty($_SESSION['user_session_token'])) {
+           if (!$this->ph_session->has('user_session_token')) {
                 return (object)['success'=>0, 'message'=> "Missing user session"];
             }
-            $this->token = $_SESSION['user_session_token'];
+            $this->token = $this->ph_session->get('user_session_token');
         }
-        session_write_close();
         $url = $this->base_url .$url."?token=".$this->token;
 
         try {
