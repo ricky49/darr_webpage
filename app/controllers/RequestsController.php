@@ -1,6 +1,7 @@
 <?php namespace App\Controllers;
 
 use App\Libraries\Validator;
+use App\Libraries\Email;
 
 class RequestsController extends ControllerBase
 {
@@ -58,7 +59,13 @@ class RequestsController extends ControllerBase
             $this->flashSession->error((string)$str_error);
             return $this->response->redirect($_SERVER['HTTP_REFERER']);
         } else {
-            $this->flashSession->success("Request succesfully made");
+            $sender = new Email();
+            $sender->sendMessage([
+                'subject' => 'New Request',
+                'to_email' => 'rickysotosanchezz@gmail.com',
+                'message' => $this->di->getViewSimple()->render('emails/view_report',['url'=> getenv('DOMAIN_URL').'/requests/view/'.$response->_id])
+            ]);
+            $this->flashSession->success("Request sent");
             return $this->response->redirect($_SERVER['HTTP_REFERER']);
         }
     }

@@ -261,7 +261,7 @@ is visible.
 <td align="left" class="textContent">
 <!-- CONTENT // -->
 <div style="font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#828282;text-align:center;line-height:120%;">
-Head message
+<!-- Head message -->
 </div>
 </td>
 </tr>
@@ -384,7 +384,7 @@ http://kb.mailchimp.com/article/template-language-creating-editable-content-area
 
 <!-- MODULE ROW // -->
 <tr>
-<td align="center" valign="top">
+<td align="center" valign="top">A new request has been sent!
 <!-- CENTERING TABLE // -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr style="padding-top:0;">
@@ -398,7 +398,7 @@ http://kb.mailchimp.com/article/template-language-creating-editable-content-area
 <table border="0" cellpadding="0" cellspacing="0" width="50%" class="emailButton" style="background-color: #3498DB;">
 <tr>
 <td align="center" valign="middle" class="buttonContent" style="padding-top:15px;padding-bottom:15px;padding-right:15px;padding-left:15px;">
-<a style="color:#FFFFFF;text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:135%;" href="#" target="_blank">Confirmation</a>
+<a style="color:#FFFFFF;text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:135%;" href="{{url}}" target="_blank">View Request</a>
 </td>
 </tr>
 </table>
@@ -594,7 +594,7 @@ http://kb.mailchimp.com/article/template-language-creating-editable-content-area
 <tr>
 <td valign="top" class="textContent">
 <div style="text-align:center;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;margin-top:3px;color:#5F5F5F;line-height:135%;">
-Contenido
+<!-- Contenido -->
 </div>
 </td>
 </tr>
