@@ -21,8 +21,14 @@ $router->addGet('/test', 'Index::test');
 //Requests section
 $router->addGet('/requests', 'Requests::index');
 $router->addGet('/requests/history', 'Requests::history');
-$router->addPost('/requests/history', 'Requests::create');
+$router->addPost('/requests/create', 'Requests::create');
 $router->addPost('/requests/view/{id}', 'Requests::view');
+
+//Reports section
+$router->addGet('/reports', 'Reports::index');
+$router->addGet('/reports/history', 'Reports::history');
+$router->addPost('/reports/create', 'Reports::create');
+$router->addPost('/reports/view/{id}', 'Reports::view');
 
 $router->addGet('/', 'Index::home');
 

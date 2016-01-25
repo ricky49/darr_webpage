@@ -71,6 +71,18 @@ class SDK extends \GuzzleHttp\Client
     {
         return $this->makeRequest("api/request", $data);
     }
+
+    /**
+     * Create report
+     *
+     * @param int $data
+     * @return std object
+     */
+    public function createReport($data)
+    {
+        return $this->makeRequest("api/report", $data);
+    }
+
      /**
      * Update user
      *
@@ -149,6 +161,18 @@ class SDK extends \GuzzleHttp\Client
       
         return $this->getRequest($url);
     }
+    /**
+     * Get user requests
+     *
+     * @param string $user
+     * @return std object
+     */
+    public function getUserReports($user)
+    {   
+         $url = $this->base_url."api/report?token=".$this->ph_session->get('user_session_token')."&user={$user}"; 
+      
+        return $this->getRequest($url);
+    }
 
     /**
      * Get  requests
@@ -159,6 +183,18 @@ class SDK extends \GuzzleHttp\Client
     public function getSolicitud($id)
     {   
          $url = $this->base_url."api/request/{$id}?token=".$this->ph_session->get('user_session_token'); 
+      
+        return $this->getRequest($url);
+    }
+    /**
+     * Get  reportt
+     *
+     * @param string $id
+     * @return std object
+     */
+    public function getReport($id)
+    {   
+         $url = $this->base_url."api/report/{$id}?token=".$this->ph_session->get('user_session_token'); 
       
         return $this->getRequest($url);
     }

@@ -24,7 +24,7 @@
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="number" name="document"  placeholder="Document" class="form-control" readonly="" value="{{req.document}}"/></div>
+                    <div class="col-xs-9"><input type="text" name="document"  placeholder="Document" class="form-control" readonly="" value="{{req.document}}"/></div>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="number" name="pacient_tel"  placeholder="Pacient Tel" class="form-control" readonly="" value="{{req.pacient_tel}}" /></div>
+                    <div class="col-xs-9"><input type="text" name="pacient_tel"  placeholder="Pacient Tel" class="form-control" readonly="" value="{{req.pacient_tel}}" /></div>
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
             <div class="col-sm-9 controls">
                 <div class="row">
                     <div class="col-xs-9">
-                       <input type="number" name="insurance_name"  placeholder="Ars" class="form-control" readonly="" value="{{req.insurance_name}}" />
+                       <input type="text" name="insurance_name"  placeholder="Ars" class="form-control" readonly="" value="{{req.insurance_name}}" />
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="number" placeholder="Authorization" name="authorization"  class="form-control" readonly="" value="{{req.authorization}}"/></div>
+                    <div class="col-xs-9"><input type="text" placeholder="Authorization" name="authorization"  class="form-control" readonly="" value="{{req.authorization}}"/></div>
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@
             <div class="col-sm-9 controls">
                 <div class="row">
                     <div class="col-xs-9">
-                    <input type="date" placeholder="Surgery Date" name="surgery_date" default="now"  value="{{req.surgery_date}}" class="form-control" readonly="" />
+                    <input type="text" placeholder="Surgery Date" name="surgery_date" default="now"  value="{{req.surgery_date}}" class="form-control" readonly="" />
                     </div>
                 </div>
             </div>
@@ -80,7 +80,7 @@
             <div class="col-sm-9 controls">
                 <div class="row">
                     <div class="col-xs-9">
-                   <input type="date" placeholder="Surgery Date" name="center_name" default="now"  value="{{req.center_name}}" class="form-control" readonly="" />
+                   <input type="text" placeholder="Surgery Date" name="center_name" default="now"  value="{{req.center_name}}" class="form-control" readonly="" />
                     </div>
                 </div>
             </div>
