@@ -26,7 +26,7 @@ class RequestsController extends ControllerBase
      * @return view
      */
     public function indexAction()
-    {	
+    {	 
     	//Section title
     	$this->view->section_title = 'Create request';
         $this->view->centers = $this->sdk->getCenters();
@@ -137,6 +137,8 @@ class RequestsController extends ControllerBase
      */
     public function createAction()
     {   
+
+
         $request_data = (array)$this->session->get('request_process');
         $response = $this->sdk->createRequest($request_data);
        
@@ -157,7 +159,7 @@ class RequestsController extends ControllerBase
             $sender = new Email();
             $sender->sendMessage([
                 'subject' => 'Solicitud generada',
-                'to_email' => $this->session->get('user_data')->email,
+                'to_email' => $this->session->get('user_data')->mail,
                 'message' => $this->di->getViewSimple()->render('emails/view_report',['url'=> getenv('DOMAIN_URL').'/requests/view/'.$response->_id])
             ]);
 
