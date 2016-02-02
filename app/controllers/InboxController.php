@@ -15,7 +15,7 @@ class InboxController extends ControllerBase
     public function beforeExecuteRoute($dispatcher)
     {	
     	if (!$this->isLogged()) {
-    		$this->flash->warning('Please login before continue');
+    		$this->flash->warning('Por favor has login antes de continuar');
     		return $this->response->redirect('/login');
     	}
     }

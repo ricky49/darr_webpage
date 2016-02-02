@@ -32,7 +32,7 @@
                 {% for index, req in requests %}
                     {% if req.status == 'enviado' %}
                         {% set status_label = 'label-info'  %}
-                    {% elseif req.status == 'en proceso' %}
+                    {% elseif req.status == 'en progreso' %}
                         {% set status_label = 'label-warning'  %}
                     {% elseif req.status == 'completado' %}
                         {% set status_label = 'label-success'  %}
