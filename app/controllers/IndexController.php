@@ -30,8 +30,9 @@ class IndexController extends ControllerBase
     	return $this->view->pick('index/index');
     }
 
-    	/**
-     * Home section
+
+    /**
+     * Tests
      * 
      * @return view
      */

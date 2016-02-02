@@ -23,6 +23,7 @@
     <link type="text/css" rel="stylesheet" href="/styles/pace.css">
     <link type="text/css" rel="stylesheet" href="/styles/jquery.news-ticker.css">
     <link type="text/css" rel="stylesheet" href="/styles/jplist-custom.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
 </head>
 <body>
     <div>
@@ -83,7 +84,7 @@
             <!--END PAGE WRAPPER-->
         </div>
     </div>
-    <script src="/script/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <!-- // <script src="/script/jquery-1.10.2.min.js" type="text/javascript"></script> -->
 
     <script src="/script/jquery-migrate-1.2.1.min.js"></script>
     <script src="/script/jquery-ui.js"></script>

@@ -126,6 +126,48 @@ class SDK extends \GuzzleHttp\Client
         return $this->makeRequest("api/center");
     }
 
+     /**
+     * Get procedures
+     *
+     * @return std object
+     */
+    public function getProcedures()
+    {
+        return $this->makeRequest("api/procedure");
+    }
+
+    /**
+     * Get procedure
+     *
+     * @return std object
+     */
+    public function getProcedure($id)
+    {
+        return $this->makeRequest("api/procedure/{$id}");
+    }
+
+     /**
+     * Get plates
+     *
+     * @return std object
+     */
+    public function getPlates($id)
+    {
+        $url = $this->base_url."api/plates?token=".$this->ph_session->get('user_session_token')."&procedure_id={$id}"; 
+      
+        return $this->getRequest($url);
+    }
+
+    /**
+     * Get plate
+     *
+     * @return std object
+     */
+    public function getPlate($id)
+    {
+        return $this->makeRequest("api/plates/{$id}");
+    }
+
     /**
      * Get All Roles
      *

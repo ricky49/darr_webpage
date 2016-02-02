@@ -1,9 +1,15 @@
 {% extends "layouts/base.volt" %}
 {% block content %}
+<link rel="stylesheet" href="/extra/choosen/chosen.css">
+<link rel="stylesheet" href="/extra/choosen/prism.css">
+  <style type="text/css" media="all">
+      .chosen-rtl .chosen-drop { left: -9000px; }
+  </style>
+
 {{this.flash.output()}}
 <div class="col-md-9">
 <div id="generalTabContent" class="tab-content">
-    <form action="/requests/create" method="POST" class="form-horizontal">
+    <form action="/requests/preview" method="POST" class="form-horizontal">
       <div>
         <div style="display: inline-block;"></div>
         <div style="display: inline-block; float: right; margin-right: 1%;">
@@ -16,7 +22,9 @@
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="text" name="pacient_name" placeholder="Pacient Name" class="form-control" required/></div>
+                    <div class="col-xs-9">
+                    <input type="text" name="pacient_name" placeholder="Pacient Name" class="form-control" required/>
+                    </div>
                 </div>
             </div>
         </div>
@@ -77,13 +85,35 @@
                 </div>
             </div>
         </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Procedure Name</label>
+        <div class="form-group"><label class="col-sm-3 control-label ">Procedimiento</label>
+
+            <div class="col-sm-9 controls">
+                <div class="row">
+                    <div class="col-xs-9" >
+                    <select name="procedure_name"  class="form-control"
+                     placeholder="Procedimiento"
+                     id="select_a" 
+                     required>
+                    <option value=""></option>
+                        {% for procedure in procedures %}
+                            <option value="{{procedure._id}}">{{procedure.procedure_desc}}</option>
+                        {% endfor %}
+                    </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group"><label class="col-sm-3 control-label">Products</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
                     <div class="col-xs-9">
-                       
-                    <input type="text" placeholder="Procedure Name" name="procedure_name"  class="form-control" required/>
+            
+                    <select  class="form-control chosen-select-deselect " id="select_b" 
+data-placeholder="Bandejas" multiple name="item_manuales[]"
+                    required>
+                        <option value=""></option>
+                    </select>
                     </div>
                 </div>
             </div>
@@ -123,17 +153,7 @@
                 </div>
             </div>
         </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Products</label>
-
-            <div class="col-sm-9 controls">
-                <div class="row">
-                    <div class="col-xs-9">
-                       
-                    <textarea type="text" placeholder="Products" name="item_manuales"  class="form-control" required></textarea>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
         <hr/>
         
         <button type="submit" class="btn btn-green btn-block">Create</button>
@@ -142,5 +162,51 @@
 </div>
 </div>
 
+<script src="/extra/choosen/chosen.jquery.js" type="text/javascript"></script>
+<script src="/extra/choosen/prism.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    var config = {
+      '.chosen-select'           : {},
+      '.chosen-select-deselect'  : {allow_single_deselect:true},
+      '.chosen-select-no-single' : {disable_search_threshold:10},
+      '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+      '.chosen-select-width'     : {width:"95%"}
+    }
+    for (var selector in config) {
+      $(selector).chosen(config[selector]);
+    }
+
+      $(function(){
+        $("#select_a").change(function(){
+            if ($("#select_a option:selected").val() != '')
+                getInfo($("#select_a option:selected").val());
+            else
+                $("#select_b").empty().append('</option>');
+
+       
+        });
+    });
+    function getInfo(id){
+        $.ajax({
+            type: 'POST',
+            url: "/plates/"+id,
+            crossDomain : true,
+            success: function(data){
+                $("#select_b").empty().append('</option>');
+                $.each(jQuery.parseJSON(data), function (i, item) {
+                    $('#select_b').append($('<option>', { 
+                        value: item.value,
+                        text : item.text 
+                    }));
+                });
+
+                $('#select_b').trigger('chosen:updated');
+           
+
+            }
+        });
+    }       
+
+  </script>
 {% endblock %}
       

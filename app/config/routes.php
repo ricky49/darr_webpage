@@ -13,6 +13,7 @@ $router->addGet('/sign-up', 'Secure::signUp');
 $router->addGet('/remind-password', 'Secure::remindPassword');
 $router->addGet('/logout', 'Secure::logout');
 $router->addPost('/register', 'Secure::register');
+$router->add('/plates/{id}', 'Requests::plates');
 
 //testing porpuses
 $router->addGet('/test', 'Index::test');
@@ -23,6 +24,7 @@ $router->addGet('/requests', 'Requests::index');
 $router->addGet('/requests/history', 'Requests::history');
 $router->addPost('/requests/create', 'Requests::create');
 $router->addPost('/requests/view/{id}', 'Requests::view');
+$router->addPost('/requests/preview', 'Requests::preview');
 
 //Reports section
 $router->addGet('/reports', 'Reports::index');
