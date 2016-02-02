@@ -47,22 +47,22 @@
 				<div class="module module-login span4 offset4">
 					<form class="form-vertical" method="post" action="/register">
 						<div class="module-head">
-							<h3>Sign Up</h3>
+							<h3>Registrarse</h3>
 						</div>
 						<div class="module-body">
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text"  placeholder="First Name" name="name" required>
+									<input class="span12" type="text"  placeholder="Primer nombre" name="name" required>
 								</div>
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text"  placeholder="Last Name" name="lastname" required>
+									<input class="span12" type="text"  placeholder="Apellidos" name="lastname" required>
 								</div>
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text"  placeholder="Username" name="user" required>
+									<input class="span12" type="text"  placeholder="Usuario" name="user" required>
 								</div>
 							</div>
 							<div class="control-group">
@@ -72,14 +72,13 @@
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
-									<input class="span12" type="text"  placeholder="Document" name="document" required>
+									<input class="span12" type="text"  placeholder="Documento" name="document" required>
 								</div>
 							</div>
 							<div class="control-group">
 								<div class="controls row-fluid">
 									<select class="span12"   name="rol" required>
-									<option value="pacient">Pacient</option>
-									option
+									<option value="pacient">Paciente</option>
 									</select>
 								</div>
 							</div>
@@ -97,7 +96,7 @@
 						<div class="module-foot">
 							<div class="control-group">
 								<div class="controls clearfix">
-									<button type="submit" class="btn btn-primary pull-right">Sign Up</button>
+									<button type="submit" class="btn btn-primary pull-right">Registrarse</button>
 									
 								</div>
 							</div>
@@ -112,7 +111,7 @@
 		<div class="container">
 			 
 
-			<b class="copyright">Ars project, from home
+			<b class="copyright">Darr web
 		</div>
 	</div>
 	<script src="/extra/scripts/jquery-1.9.1.min.js" type="text/javascript"></script>

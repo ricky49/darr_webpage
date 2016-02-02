@@ -13,7 +13,7 @@
         </div>
         <div style="display: inline-block; float: right; margin-right: 1%;">
             <a href="/users/create">
-                <button type="button" class="btn btn-warning">Create</button>
+                <button type="button" class="btn btn-warning">Crear</button>
             </a>
         </div>                             
       </div>
@@ -21,9 +21,9 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>User</th>
-                    <th>Role</th>
-                    <th>Action</th>
+                    <th>Usuario</th>
+                    <th>Rol</th>
+                    <th>Accion</th>
                 </tr>
                 </thead>
                 <tbody>

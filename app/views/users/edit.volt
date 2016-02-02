@@ -14,7 +14,7 @@
         </div>                             
       </div>
 
-        <div class="form-group"><label class="col-sm-3 control-label">First Name</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Primer nombre</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
@@ -22,11 +22,11 @@
                 </div>
             </div>
         </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Last Name</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Apellidos</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="text" name="lastname" value="{{user.lastname}}" placeholder="Last Name" class="form-control"/></div>
+                    <div class="col-xs-9"><input type="text" name="apellidos" value="{{user.lastname}}" placeholder="Last Name" class="form-control"/></div>
                 </div>
             </div>
         </div>
@@ -38,23 +38,23 @@
                 </div>
             </div>
         </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Username</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Nombre de usuario</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="text" placeholder="User" name="user" value="{{user.user}}"  class="form-control"/></div>
+                    <div class="col-xs-9"><input type="text" placeholder="Nombre de usuario" name="user" value="{{user.user}}"  class="form-control"/></div>
                 </div>
             </div>
         </div>
-         <div class="form-group"><label class="col-sm-3 control-label">Document</label>
+         <div class="form-group"><label class="col-sm-3 control-label">Documento</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="text" placeholder="Document" name="document"  class="form-control" value="{{user.document}}"required/></div>
+                    <div class="col-xs-9"><input type="text" placeholder="Documento" name="document"  class="form-control" value="{{user.document}}"required/></div>
                 </div>
             </div>
         </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Role</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Rol</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
@@ -81,7 +81,7 @@
         </div>
         <hr/>
         
-        <button type="submit" class="btn btn-green btn-block">Edit</button>
+        <button type="submit" class="btn btn-green btn-block">Editar</button>
     </form>
 </div>
 </div>

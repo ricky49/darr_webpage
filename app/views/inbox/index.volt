@@ -13,7 +13,7 @@
         </div>
         <div style="display: inline-block; float: right; margin-right: 1%;">
             <a href="/requests">
-                <button type="button" class="btn btn-warning">Make Request</button>
+                <button type="button" class="btn btn-warning">Hacer solicitud</button>
             </a>
         </div>                             
       </div>
@@ -21,13 +21,13 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>User</th>
-                    <th>Pacient</th>
-                    <th>Authorization</th>
-                    <th>Surgery Date</th>
-                    <th>Surgeon Name</th>
-                    <th>Status</th>
-                    <th>Action</th>
+                    <th>Usuario</th>
+                    <th>Paciente</th>
+                    <th>Autorizacion</th>
+                    <th>Fecha de cirugia</th>
+                    <th>Cirujano</th>
+                    <th>Estado</th>
+                    <th>Accion</th>
                 </tr>
                 </thead>
                 <tbody>

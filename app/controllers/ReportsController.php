@@ -15,7 +15,7 @@ class ReportsController extends ControllerBase
     public function beforeExecuteRoute($dispatcher)
     {	
     	if (!$this->isLogged()) {
-    		$this->flash->warning('Please login before continue');
+    		$this->flash->warning('Por favor has login antes de continuar');
     		return $this->response->redirect('/login');
     	}
     }
@@ -28,7 +28,7 @@ class ReportsController extends ControllerBase
     public function indexAction()
     {	
     	//Section title
-    	$this->view->section_title = 'Create report';
+    	$this->view->section_title = 'Creacion de reporte';
         $this->view->centers = $this->sdk->getCenters();
     	return $this->view->pick('reports/index');
     }
@@ -54,7 +54,7 @@ class ReportsController extends ControllerBase
                 foreach ($response->body->errors as $key => $value) {
                     $errors[] = $key; 
                 }
-                $str_error = ucfirst($response->body->message). ". Invalid format in: ".Validator::stringFromArray($errors);
+                $str_error = ucfirst($response->body->message). ". Formato invalido: ".Validator::stringFromArray($errors);
             }
             $this->flashSession->error((string)$str_error);
             return $this->response->redirect($_SERVER['HTTP_REFERER']);
@@ -65,7 +65,7 @@ class ReportsController extends ControllerBase
             //     'to_email' => 'rickysotosanchezz@gmail.com',
             //     'message' => $this->di->getViewSimple()->render('emails/view_report',['url'=> getenv('DOMAIN_URL').'/requests/view/'.$response->_id])
             // ]);
-            $this->flashSession->success("Report generated");
+            $this->flashSession->success("Reporte generado");
             return $this->response->redirect($_SERVER['HTTP_REFERER']);
         }
     }
@@ -78,7 +78,7 @@ class ReportsController extends ControllerBase
     public function historyAction()
     {   
 
-        $this->view->section_title = 'Histoy of reports';
+        $this->view->section_title = 'Historial de reportes';
         $response = $this->sdk->getUserReports($this->session->get('user_data')->user);
         $this->view->reports =  $response;
         return $this->view->pick('reports/history');
@@ -92,10 +92,10 @@ class ReportsController extends ControllerBase
      */
     public function viewAction($id)
     {   
-        $this->view->section_title = 'View request';
+        $this->view->section_title = 'Vista de reporte';
         $response = $this->sdk->getReport($id);
         if (isset($response->success) && !$response->success) {
-            $this->flashSession->error("Report not found");
+            $this->flashSession->error("Reporte no encontrado");
             return $this->response->redirect('/reports');
         }
         $this->view->report =  $response;

@@ -42,7 +42,7 @@ right: '350'
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="format-detection" content="telephone=no" /> <!-- disable auto telephone linking in iOS -->
-<title>Respmail is a response HTML email designed to work on all major email platforms and smartphones</title>
+<title></title>
 <style type="text/css">
 /* RESET STYLES */
 html { background-color:#E1E1E1; margin:0; padding:0; }
@@ -384,7 +384,7 @@ http://kb.mailchimp.com/article/template-language-creating-editable-content-area
 
 <!-- MODULE ROW // -->
 <tr>
-<td align="center" valign="top">A new request has been sent!
+<td align="center" valign="top">Una nueva solicitud ha sido enviada!
 <!-- CENTERING TABLE // -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr style="padding-top:0;">
@@ -398,7 +398,7 @@ http://kb.mailchimp.com/article/template-language-creating-editable-content-area
 <table border="0" cellpadding="0" cellspacing="0" width="50%" class="emailButton" style="background-color: #3498DB;">
 <tr>
 <td align="center" valign="middle" class="buttonContent" style="padding-top:15px;padding-bottom:15px;padding-right:15px;padding-left:15px;">
-<a style="color:#FFFFFF;text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:135%;" href="{{url}}" target="_blank">View Request</a>
+<a style="color:#FFFFFF;text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:135%;" href="{{url}}" target="_blank">Ver solicitud</a>
 </td>
 </tr>
 </table>
@@ -649,7 +649,7 @@ MODULE ROW section for each content block.
 
 <div style="font-family:Helvetica:;,Arial,sans-serif;font-size:13px;color:#828282;text-align:center;line-height:120%;">
 
-<div>This is an automatic message! 
+<div>Este es un mensaje automatico! 
 <!-- <a href="#" target="_blank" style="text-decoration:none;color:#828282;"><span style="color:#828282;">unsubscribe</span></a>. -->
 </div>
 </div>

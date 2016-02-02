@@ -15,7 +15,7 @@ class UsersController extends ControllerBase
     public function beforeExecuteRoute($dispatcher)
     {  
         if (!$this->isLogged()) {
-            $this->flash->warning('Please login before continue');
+            $this->flash->warning('Por favor has login antes de continuar');
             return $this->response->redirect('/login');
         } 
     }
@@ -27,7 +27,7 @@ class UsersController extends ControllerBase
     public function indexAction()
     {	
         //Section title
-        $this->view->section_title = 'Users';
+        $this->view->section_title = 'Usuarios';
         $this->view->users = $this->sdk->getUsers();
         return $this->view->pick('users/index');
     }
@@ -39,7 +39,7 @@ class UsersController extends ControllerBase
      */
     public function createAction()
     {	
-        $this->view->section_title = 'Create User';
+        $this->view->section_title = 'Creacion de usuario';
         if ($this->request->isPost()){
             $response = $this->store($this->request->getPost());
             if(isset($response->success) && !$response->success && isset($response->body)) {
@@ -51,12 +51,12 @@ class UsersController extends ControllerBase
                     foreach ($response->body->errors as $key => $value) {
                         $errors[] = $key; 
                     }
-                    $str_error = ucfirst($response->body->message). ". You are missing: ".Validator::stringFromArray($errors);
+                    $str_error = ucfirst($response->body->message). ". Te falta: ".Validator::stringFromArray($errors);
                 }
                 $this->flash->error((string)$str_error);
                 return $this->view->pick('users/create');
             } else {
-                $this->flash->success("User added successfully");
+                $this->flash->success("Usuario creado satisfactoriamente");
                 return $this->response->redirect('users');
             }
         }
@@ -84,10 +84,10 @@ class UsersController extends ControllerBase
      */
     public function editAction($id)
     {	
-        $this->view->section_title = 'Edit User';
+        $this->view->section_title = 'Edicion de usuario';
         $response = $this->sdk->getUser($id);
         if (isset($response->success) && !$response->success) {
-            $this->flash->error('User not found');
+            $this->flash->error('Usuario no encontrado');
             return $this->response->redirect('/users');
         }
         $this->view->user = $response;
@@ -117,12 +117,12 @@ class UsersController extends ControllerBase
                 foreach ($response->body->errors as $key => $value) {
                     $errors[] = $key; 
                 }
-                $str_error = ucfirst($response->body->message). ". You are missing: ".Validator::stringFromArray($errors);
+                $str_error = ucfirst($response->body->message). ". Te falta: ".Validator::stringFromArray($errors);
             }
             $this->flash->error((string)$str_error);
             return $this->response->redirect($_SERVER['HTTP_REFERER']);
         } else {
-            $this->flash->success("User updated successfully");
+            $this->flash->success("Usuario actualizado");
             return $this->response->redirect($_SERVER['HTTP_REFERER']);
         }
        
@@ -137,12 +137,12 @@ class UsersController extends ControllerBase
         $response = $this->sdk->deleteUser($id);
         if(isset($response->success) && !$response->success && isset($response->body)) {
             if (isset($response->body->status) && $response->body->status == "404" ) {
-                $this->flash->error("User not found");
+                $this->flash->error("No se encuentra el usuario");
                 return $this->response->redirect('users');
             } 
         }
             
-        $this->flash->success("User successfully deleted");
+        $this->flash->success("Usuario borrado");
         return $this->response->redirect('users');   
     }
 

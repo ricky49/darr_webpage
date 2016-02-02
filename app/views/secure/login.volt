@@ -27,7 +27,7 @@
 					<ul class="nav pull-right">
 
 						<li><a href="/sign-up">
-							Sign Up
+							Registrarse
 						</a></li>
 
 						
@@ -47,7 +47,7 @@
 				<div class="module module-login span4 offset4">
 					<form class="form-vertical" method="POST" action="/login">
 						<div class="module-head">
-							<h3>Sign In</h3>
+							<h3>Entrar</h3>
 						</div>
 						<div class="module-body">
 							<div class="control-group">

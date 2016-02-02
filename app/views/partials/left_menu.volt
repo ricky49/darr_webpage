@@ -10,7 +10,7 @@
                 <i class="fa fa-tachometer fa-fw">
                     <div class="icon-bg bg-orange"></div>
                 </i>
-                <span class="menu-title">Home</span>
+                <span class="menu-title">Inicio</span>
             </a>
           </li>
           <li class="">
@@ -18,7 +18,7 @@
                 <i class="icon fa fa-group">
                     <div class="icon-bg bg-orange"></div>
                 </i>
-                <span class="menu-title">Users</span>
+                <span class="menu-title">Usuarios</span>
             </a>
           </li>
            <li class="">
@@ -26,7 +26,7 @@
                 <i class="icon fa fa-book">
                     <div class="icon-bg bg-orange"></div>
                 </i>
-                <span class="menu-title">Requests</span>
+                <span class="menu-title">Solicitudes</span>
             </a>
           </li>
           <li class="">
@@ -34,7 +34,7 @@
                 <i class="icon fa fa-file-text-o">
                     <div class="icon-bg bg-orange"></div>
                 </i>
-                <span class="menu-title">Reports</span>
+                <span class="menu-title">Reportes</span>
             </a>
           </li>
           <li class="">
@@ -42,7 +42,7 @@
                 <i class="icon fa fa-file-text-o">
                     <div class="icon-bg bg-orange"></div>
                 </i>
-                <span class="menu-title">Inbox (Admin)</span>
+                <span class="menu-title">Bandeja de entrada</span>
             </a>
           </li>
           

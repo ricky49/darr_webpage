@@ -8,19 +8,19 @@
         <div style="display: inline-block;"></div>
         <div style="display: inline-block; float: right; margin-right: 1%;">
             <a href="/reports/history">
-                <button type="button" class="btn btn-warning">Reports history</button>
+                <button type="button" class="btn btn-warning">Historial de reportes</button>
             </a>
         </div>                             
       </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Pacient Name</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Paciente</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="text" name="pacient_name" placeholder="Pacient Name" class="form-control" required/></div>
+                    <div class="col-xs-9"><input type="text" name="pacient_name" placeholder="Paciente" class="form-control" required/></div>
                 </div>
             </div>
         </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Insurance</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Seguro</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
@@ -57,29 +57,29 @@
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="number" placeholder="Security Social Number" name="nss"  class="form-control" required/></div>
+                    <div class="col-xs-9"><input type="number" placeholder="Numero de seguridad social" name="nss"  class="form-control" required/></div>
                 </div>
             </div>
         </div>
-          <div class="form-group"><label class="col-sm-3 control-label">Plate</label>
+          <div class="form-group"><label class="col-sm-3 control-label">Bandeja</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="number" placeholder="Plate id" name="bandeja_id"  class="form-control" required/></div>
+                    <div class="col-xs-9"><input type="number" placeholder="Id de bandeja" name="bandeja_id"  class="form-control" required/></div>
                 </div>
             </div>
         </div>
-         <div class="form-group"><label class="col-sm-3 control-label">Surgery Date</label>
+         <div class="form-group"><label class="col-sm-3 control-label">Fecha de cirugia</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
                     <div class="col-xs-9">
-                    <input type="date" placeholder="Surgery Date" name="date" default="now"  value="<?php echo date('Y-m-d'); ?>" class="form-control" required/>
+                    <input type="date" placeholder="Fecha de cirugia" name="date" default="now"  value="<?php echo date('Y-m-d'); ?>" class="form-control" required/>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Center Name</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Centro</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
@@ -93,42 +93,42 @@
                 </div>
             </div>
         </div>
-         <div class="form-group"><label class="col-sm-3 control-label">Doctor Name</label>
+         <div class="form-group"><label class="col-sm-3 control-label">Doctor</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
                     <div class="col-xs-9">
                        
-                    <input type="text" placeholder="Doctor Name" name="doctor"  class="form-control" required/>
+                    <input type="text" placeholder="Doctor" name="doctor"  class="form-control" required/>
                     </div>
                 </div>
             </div>
         </div>
-         <div class="form-group"><label class="col-sm-3 control-label">Surgeon Name</label>
+         <div class="form-group"><label class="col-sm-3 control-label">Cirujano</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
                     <div class="col-xs-9">
                        
-                    <input type="text" placeholder="Surgeon Name" name="surgeon_name"  class="form-control" required/>
+                    <input type="text" placeholder="Cirujano" name="surgeon_name"  class="form-control" required/>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Observations</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Observaciones</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
                     <div class="col-xs-9">
                        
-                    <textarea type="text" placeholder="Observations" name="observations"  class="form-control" required></textarea>
+                    <textarea type="text" placeholder="Observaciones" name="observations"  class="form-control" required></textarea>
                     </div>
                 </div>
             </div>
         </div>
         <hr/>
         
-        <button type="submit" class="btn btn-green btn-block">Create</button>
+        <button type="submit" class="btn btn-green btn-block">Crear</button>
     </form>
 </div>
 </div>

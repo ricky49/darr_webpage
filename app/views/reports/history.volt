@@ -13,7 +13,7 @@
         </div>
         <div style="display: inline-block; float: right; margin-right: 1%;">
             <a href="/requests">
-                <button type="button" class="btn btn-warning">Make Report</button>
+                <button type="button" class="btn btn-warning">Hacer reporte</button>
             </a>
         </div>                             
       </div>
@@ -21,12 +21,12 @@
                 <thead>
                 <tr>
                     <th>#</th>
-                    <th>Pacient</th>
-                    <th>Insurance</th>
-                    <th>Surgery Date</th>
-                    <th>Surgeon Name</th>
-                    <th>Status</th>
-                    <th>Action</th>
+                    <th>Paciente</th>
+                    <th>Seguro</th>
+                    <th>Fecha de cirugia</th>
+                    <th>Cirujano</th>
+                    <th>Estado</th>
+                    <th>Accion</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -38,7 +38,7 @@
                         <td>{{report.insurance_name}}</td>
                         <td>{{report.date}}</td>
                         <td>{{(report.surgeon_name is defined)? report.surgeon_name : ""}}</td>
-                        <td><span class="label label-sm label-success">Completed</span></td>
+                        <td><span class="label label-sm label-success">Completado</span></td>
                         <td>
                             <a href="/reports/view/{{report._id}}">
                                 <button class="btn btn-danger btn-xs">

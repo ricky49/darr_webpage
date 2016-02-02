@@ -18,7 +18,7 @@ class SecureController extends ControllerBase
         $validate_input = Validator::requiredKeys($this->request->getPost(), ['username'=>'','password'=>'']);
 
         if (!$validate_input->ok) {
-            $this->flash->error(Validator::stringFromArray($validate_input->errors, 'You are missing: '));
+            $this->flash->error(Validator::stringFromArray($validate_input->errors, 'Te falta: '));
             return $this->response->redirect('/login');
         }
 
@@ -77,13 +77,13 @@ class SecureController extends ControllerBase
         $input = $this->request->getPost();
       
         if ($input['pass'] != $input['pass_confirm']) {
-            $this->flash->error("Passwords doesnt match");
+            $this->flash->error("Las contraseñas no coinciden");
             return $this->response->redirect($_SERVER['HTTP_REFERER']);
         }
         unset($input['pass_confirm']);
         $response = $this->sdk->createUser($input);
         if(isset($response->success) && !$response->success && isset($response->body)) {
-            $this->flash->error("This username or email has been taken");
+            $this->flash->error("El usuario o el email han sido tomados");
             return $this->response->redirect($_SERVER['HTTP_REFERER']);
         } else {
          $response = $this->sdk->authenticate( $response->user, $response->pass);
@@ -97,7 +97,7 @@ class SecureController extends ControllerBase
         if ($this->isLogged()) {
             return $this->response->redirect('/');
         }
-            $this->flash->success("User updated successfully");
+            $this->flash->success("Usuario actualizado");
             return $this->response->redirect($_SERVER['HTTP_REFERER']);
         }
        

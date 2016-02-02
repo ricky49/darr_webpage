@@ -15,7 +15,7 @@ class RequestsController extends ControllerBase
     public function beforeExecuteRoute($dispatcher)
     {	
     	if (!$this->isLogged()) {
-    		$this->flash->warning('Please login before continue');
+    		$this->flash->warning('Por favor has login antes de continuar');
     		return $this->response->redirect('/login');
     	}
     }
@@ -28,7 +28,7 @@ class RequestsController extends ControllerBase
     public function indexAction()
     {	 
     	//Section title
-    	$this->view->section_title = 'Create request';
+    	$this->view->section_title = 'Creacion de solicitud';
         $this->view->centers = $this->sdk->getCenters();
         $this->view->procedures = $this->sdk->getProcedures();
 
@@ -67,10 +67,10 @@ class RequestsController extends ControllerBase
      */
     public function viewAction($id)
     {   
-        $this->view->section_title = 'View request';
+        $this->view->section_title = 'Vista de solicitud';
         $response = $this->sdk->getSolicitud($id);
         if (isset($response->success) && !$response->success) {
-            $this->flashSession->error("Request not found");
+            $this->flashSession->error("Solicitud no encontrada");
             return $this->response->redirect('/requests');
         }
 
@@ -151,7 +151,7 @@ class RequestsController extends ControllerBase
                 foreach ($response->body->errors as $key => $value) {
                     $errors[] = $key; 
                 }
-                $str_error = ucfirst($response->body->message). ". Invalid format in: ".Validator::stringFromArray($errors);
+                $str_error = ucfirst($response->body->message). ". Formato invalido en: ".Validator::stringFromArray($errors);
             }
             $this->flashSession->error((string)$str_error);
             return $this->response->redirect($_SERVER['HTTP_REFERER']);
@@ -168,7 +168,7 @@ class RequestsController extends ControllerBase
                 'to_email' => 'admin_darr@gmail.com',
                 'message' => $this->di->getViewSimple()->render('emails/view_report',['url'=> getenv('DOMAIN_URL').'/requests/view/'.$response->_id])
             ]);
-            $this->flashSession->success("Request sent");
+            $this->flashSession->success("Solicitud enviada");
             $this->session->remove('request_process');
             return $this->response->redirect($_SERVER['HTTP_REFERER']);
         }
@@ -182,7 +182,7 @@ class RequestsController extends ControllerBase
     public function historyAction()
     {   
 
-        $this->view->section_title = 'Histoy of requests';
+        $this->view->section_title = 'Historial de solicitudes';
         $response = $this->sdk->getUserRequests($this->session->get('user_data')->user);
         $this->view->requests =  $response;
         return $this->view->pick('requests/history');

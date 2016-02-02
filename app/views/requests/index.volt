@@ -14,33 +14,33 @@
         <div style="display: inline-block;"></div>
         <div style="display: inline-block; float: right; margin-right: 1%;">
             <a href="/requests/history">
-                <button type="button" class="btn btn-warning">Requests history</button>
+                <button type="button" class="btn btn-warning">Historial de solicitudes</button>
             </a>
         </div>                             
       </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Pacient Name</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Paciente</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
                     <div class="col-xs-9">
-                    <input type="text" name="pacient_name" placeholder="Pacient Name" class="form-control" required/>
+                    <input type="text" name="pacient_name" placeholder="Paciente" class="form-control" required/>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Document</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Documento</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="number" name="document"  placeholder="Document" class="form-control" required/></div>
+                    <div class="col-xs-9"><input type="number" name="document"  placeholder="Documento" class="form-control" required/></div>
                 </div>
             </div>
         </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Pacient Tel.</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Tel. Paciente</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="number" name="pacient_tel"  placeholder="Pacient Tel" class="form-control" required/></div>
+                    <div class="col-xs-9"><input type="number" name="pacient_tel"  placeholder="Tel Paciente" class="form-control" required/></div>
                 </div>
             </div>
         </div>
@@ -77,11 +77,11 @@
                 </div>
             </div>
         </div>
-         <div class="form-group"><label class="col-sm-3 control-label">Authorization</label>
+         <div class="form-group"><label class="col-sm-3 control-label">Autorizacion</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="number" placeholder="Authorization" name="authorization"  class="form-control" required/></div>
+                    <div class="col-xs-9"><input type="number" placeholder="Autorizacion" name="authorization"  class="form-control" required/></div>
                 </div>
             </div>
         </div>
@@ -103,7 +103,7 @@
                 </div>
             </div>
         </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Products</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Bandejas</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
@@ -118,17 +118,17 @@ data-placeholder="Bandejas" multiple name="item_manuales[]"
                 </div>
             </div>
         </div>
-         <div class="form-group"><label class="col-sm-3 control-label">Surgery Date</label>
+         <div class="form-group"><label class="col-sm-3 control-label">Fecha de cirugia</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
                     <div class="col-xs-9">
-                    <input type="date" placeholder="Surgery Date" name="surgery_date" default="now"  value="<?php echo date('Y-m-d'); ?>" class="form-control" required/>
+                    <input type="date" placeholder="Fecha de cirugia" name="surgery_date" default="now"  value="<?php echo date('Y-m-d'); ?>" class="form-control" required/>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Center Name</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Centro</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
@@ -142,13 +142,13 @@ data-placeholder="Bandejas" multiple name="item_manuales[]"
                 </div>
             </div>
         </div>
-         <div class="form-group"><label class="col-sm-3 control-label">Surgeon Name</label>
+         <div class="form-group"><label class="col-sm-3 control-label">Cirujano</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
                     <div class="col-xs-9">
                        
-                    <input type="text" placeholder="Surgeon Name" name="surgeon_name"  class="form-control" required/>
+                    <input type="text" placeholder="Cirujano" name="surgeon_name"  class="form-control" required/>
                     </div>
                 </div>
             </div>
@@ -156,7 +156,7 @@ data-placeholder="Bandejas" multiple name="item_manuales[]"
        
         <hr/>
         
-        <button type="submit" class="btn btn-green btn-block">Create</button>
+        <button type="submit" class="btn btn-green btn-block">Continuar</button>
     </form>
 </div>
 </div>

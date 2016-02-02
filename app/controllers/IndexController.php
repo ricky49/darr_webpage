@@ -13,7 +13,7 @@ class IndexController extends ControllerBase
     public function beforeExecuteRoute($dispatcher)
     {	
     	if (!$this->isLogged()) {
-    		$this->flash->warning('Please login before continue');
+    		$this->flash->warning('Por favor has login antes de continuar');
     		return $this->response->redirect('/login');
     	}
     }
@@ -26,7 +26,7 @@ class IndexController extends ControllerBase
     public function homeAction()
     {	
     	//Section title
-    	$this->view->section_title = 'Home';
+    	$this->view->section_title = 'Inicio';
     	return $this->view->pick('index/index');
     }
 

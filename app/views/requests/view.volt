@@ -8,11 +8,11 @@
         <div style="display: inline-block;"></div>
         <div style="display: inline-block; float: right; margin-right: 1%;">
             <a href="/requests/history">
-                <button type="button" class="btn btn-warning">Requests history</button>
+                <button type="button" class="btn btn-warning">Historial de solicitudes</button>
             </a>
         </div>                             
       </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Pacient Name</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Paciente</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
@@ -20,7 +20,7 @@
                 </div>
             </div>
         </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Document</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Documento</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Pacient Tel.</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Tel. Paciente</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-         <div class="form-group"><label class="col-sm-3 control-label">Authorization</label>
+         <div class="form-group"><label class="col-sm-3 control-label">Autorizacion</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div>
-         <div class="form-group"><label class="col-sm-3 control-label">Surgery Date</label>
+         <div class="form-group"><label class="col-sm-3 control-label">Fecha de cirugia</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
@@ -66,7 +66,7 @@
                 </div>
             </div>
         </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Center Name</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Centro</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
@@ -76,7 +76,7 @@
                 </div>
             </div>
         </div>
-         <div class="form-group"><label class="col-sm-3 control-label">Surgeon Name</label>
+         <div class="form-group"><label class="col-sm-3 control-label">Cirujano</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">

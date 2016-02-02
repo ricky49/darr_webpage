@@ -12,7 +12,7 @@
             <!-- </a> -->
         </div>                             
       </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Nombre de paciente</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Paciente</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
@@ -20,7 +20,7 @@
                 </div>
             </div>
         </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Document</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Documento</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Pacient Tel.</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Tel. Paciente</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-         <div class="form-group"><label class="col-sm-3 control-label">Authorization</label>
+         <div class="form-group"><label class="col-sm-3 control-label">Autorizacion</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
@@ -55,7 +55,7 @@
             </div>
         </div>
       
-         <div class="form-group"><label class="col-sm-3 control-label">Surgery Date</label>
+         <div class="form-group"><label class="col-sm-3 control-label">Fecha de cirugia</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
@@ -65,7 +65,7 @@
                 </div>
             </div>
         </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Center Name</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Centro</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
@@ -75,7 +75,7 @@
                 </div>
             </div>
         </div>
-         <div class="form-group"><label class="col-sm-3 control-label">Surgeon Name</label>
+         <div class="form-group"><label class="col-sm-3 control-label">Cirujano</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
@@ -127,11 +127,11 @@
             </div>
         </div>
         <hr/>
-         <button type="buton" onclick="window.location='/requests'"class="btn btn-orange btn-block">Cancel</button>
+         <button type="buton" onclick="window.location='/requests'"class="btn btn-orange btn-block">Cancelar</button>
          <br>
          <form action="/requests/create" method="POST">
             <input type="hidden">
-            <button type="submit" onclick="return confirm('Esta seguro de que quiere enviar la solicitud?')" class="btn btn-green btn-block">Confirm</button>
+            <button type="submit" onclick="return confirm('Esta seguro de que quiere enviar la solicitud?')" class="btn btn-green btn-block">Confirmar</button>
          </form>
     </div>
 </div>

@@ -8,23 +8,23 @@
         <div style="display: inline-block;"></div>
         <div style="display: inline-block; float: right; margin-right: 1%;">
             <a href="/users">
-                <button type="button" class="btn btn-warning">Users List</button>
+                <button type="button" class="btn btn-warning">Lista de usuarios</button>
             </a>
         </div>                             
       </div>
-        <div class="form-group"><label class="col-sm-3 control-label">First Name</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Primer nombre</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="text" name="name" placeholder="Name" class="form-control" required/></div>
+                    <div class="col-xs-9"><input type="text" name="name" placeholder="Primer nombre" class="form-control" required/></div>
                 </div>
             </div>
         </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Last Name</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Apellidos</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="text" name="lastname"  placeholder="Last Name" class="form-control" required/></div>
+                    <div class="col-xs-9"><input type="text" name="lastname"  placeholder="Apellidos" class="form-control" required/></div>
                 </div>
             </div>
         </div>
@@ -36,23 +36,23 @@
                 </div>
             </div>
         </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Username</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Nombre de usuario</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="text" placeholder="User" name="user"  class="form-control" required/></div>
+                    <div class="col-xs-9"><input type="text" placeholder="Nombre de usuario" name="user"  class="form-control" required/></div>
                 </div>
             </div>
         </div>
-         <div class="form-group"><label class="col-sm-3 control-label">Document</label>
+         <div class="form-group"><label class="col-sm-3 control-label">Documento</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="text" placeholder="Document" name="document"  class="form-control" required/></div>
+                    <div class="col-xs-9"><input type="text" placeholder="Documento" name="document"  class="form-control" required/></div>
                 </div>
             </div>
         </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Role</label>
+        <div class="form-group"><label class="col-sm-3 control-label">Rol</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
@@ -77,7 +77,7 @@
         </div>
         <hr/>
         
-        <button type="submit" class="btn btn-green btn-block">Create</button>
+        <button type="submit" class="btn btn-green btn-block">Crear</button>
     </form>
 </div>
 </div>
