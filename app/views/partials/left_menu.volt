@@ -37,6 +37,14 @@
                 <span class="menu-title">Reports</span>
             </a>
           </li>
+          <li class="">
+            <a href="/inbox">
+                <i class="icon fa fa-file-text-o">
+                    <div class="icon-bg bg-orange"></div>
+                </i>
+                <span class="menu-title">Inbox (Admin)</span>
+            </a>
+          </li>
           
       </ul>
   </div>

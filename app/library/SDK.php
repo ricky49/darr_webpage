@@ -191,6 +191,20 @@ class SDK extends \GuzzleHttp\Client
         return $this->makeRequest("api/users/{$id}");
     }
 
+
+    /**
+     * Get requests
+     *
+     * @param string $user
+     * @return std object
+     */
+    public function getRequests($user)
+    {   
+         $url = $this->base_url."api/request?token=".$this->ph_session->get('user_session_token'); 
+      
+        return $this->getRequest($url);
+    }
+
     /**
      * Get user requests
      *

@@ -156,8 +156,14 @@ class RequestsController extends ControllerBase
         } else {
             $sender = new Email();
             $sender->sendMessage([
-                'subject' => 'New Request',
-                'to_email' => 'rickysotosanchezz@gmail.com',
+                'subject' => 'Solicitud generada',
+                'to_email' => $this->session->get('user_data')->email,
+                'message' => $this->di->getViewSimple()->render('emails/view_report',['url'=> getenv('DOMAIN_URL').'/requests/view/'.$response->_id])
+            ]);
+
+            $sender->sendMessage([
+                'subject' => 'Solicitud generada',
+                'to_email' => 'admin_darr@gmail.com',
                 'message' => $this->di->getViewSimple()->render('emails/view_report',['url'=> getenv('DOMAIN_URL').'/requests/view/'.$response->_id])
             ]);
             $this->flashSession->success("Request sent");

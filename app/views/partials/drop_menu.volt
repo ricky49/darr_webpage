@@ -7,12 +7,12 @@
         <span class="caret"></span>
     </a>
     <ul class="dropdown-menu dropdown-user pull-right">
-        <li>
+    <!--     <li>
             <a href="/account">
                 <i class="fa fa-user"></i>
                 My Profile
             </a>
-        </li>
+        </li> -->
         <li class="divider"></li>
         <li>
             <a href="/logout">
