@@ -17,10 +17,11 @@
             </a>
         </div>                             
       </div>
-            <table class="table table-hover table-striped">
+            <table class="table table-hover table table-hover-color">
                 <thead>
                 <tr>
                     <th>#</th>
+                    <th>User</th>
                     <th>Pacient</th>
                     <th>Authorization</th>
                     <th>Surgery Date</th>
@@ -31,20 +32,45 @@
                 </thead>
                 <tbody>
                 {% for index, req in requests %}
+                    {% if req.status == 'enviado' %}
+                        {% set status_label = 'label-info'  %}
+                    {% elseif req.status == 'en progreso' %}
+                        {% set status_label = 'label-warning'  %}
+                    {% elseif req.status == 'completado' %}
+                        {% set status_label = 'label-success'  %}
+                    {% elseif req.status == 'cancelado' %}
+                        {% set status_label = 'label-danger'  %}
+                    {% endif %}
+
+
                     <tr>
 
                         <td>{{index+1}}</td>
+                        <td>{{ (req.user is defined)?req.user:'--' }}</td>
                         <td>{{ (req.pacient_name is defined)?req.pacient_name:'--' }}</td>
                         <td>{{req.authorization is defined ? req.authorization:'--'}}</td>
                         <td>{{req.surgery_date is defined ? req.surgery_date :'--'}}</td>
                         <td>{{req.surgeon_name is defined ? req.surgeon_name :'--'}}</td>
-                        <td><span class="label label-sm label-warning">Pending</span></td>
+                        <td><span class="label label-sm {{status_label}}">{{req.status is defined ? ucfirst(req.status) :'--'}}</span></td>
                         <td>
-                            <a href="/requests/view/{{req._id}}">
-                                <button class="btn btn-danger btn-xs">
-                                    <i class="fa fa-eye"></i>
-                                </button>
-                            </a>
+                            <div class="btn-group label-sm">
+                                <button type="button" class="btn btn-primary label-sm">Editar</button>
+                                <button type="button" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true" class="btn btn-primary dropdown-toggle"><i class="fa fa-angle-down"></i></button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="/requests/view/{{req._id}}">
+                                            <button class="btn btn-danger btn-xs">
+                                                <i class="fa fa-eye"></i>
+                                            </button> Ver solicitud
+                                        </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li><a href="/requests/status/{{req._id}}/1">   <span class="label label-info">Enviado &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a></li>
+                                    <li><a href="/requests/status/{{req._id}}/2"><span class="label label-warning">En proceso&nbsp;</span></a></li>
+                                    <li><a href="/requests/status/{{req._id}}/3"><span class="label label-success">Completado</span></a></li>
+                                    <li><a href="/requests/status/{{req._id}}/4"> <span class="label label-danger">Cancelado&nbsp;&nbsp;&nbsp;</span></a></li>
+                                </ul>
+                            </div>
                            <!--  <a onclick="return confirm('Are you sure?')" href="/users/delete/{{user._id}}">
                                 <button class="btn btn-danger btn-xs">
                                     <i class="fa fa-trash-o " ></i>

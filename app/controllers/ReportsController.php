@@ -61,7 +61,7 @@ class ReportsController extends ControllerBase
         } else {
             // $sender = new Email();
             // $sender->sendMessage([
-            //     'subject' => 'New Request',
+            //     'subject' => 'Nuevo Reporte',
             //     'to_email' => 'rickysotosanchezz@gmail.com',
             //     'message' => $this->di->getViewSimple()->render('emails/view_report',['url'=> getenv('DOMAIN_URL').'/requests/view/'.$response->_id])
             // ]);

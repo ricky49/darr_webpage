@@ -95,6 +95,20 @@ class SDK extends \GuzzleHttp\Client
         return $this->makeRequest("api/users/{$id}", $data);
     }
 
+
+    /**
+     * Update requests
+     *
+     * @param int $data
+     * @return std object
+     */
+    public function updateRequestStatus($id, $data)
+    {   
+      
+        $data['put'] = 'put';
+        return $this->makeRequest("api/request/{$id}", $data);
+    }
+
     /**
      * Delete user
      *

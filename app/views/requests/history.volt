@@ -17,12 +17,11 @@
             </a>
         </div>                             
       </div>
-            <table class="table table-hover table-striped">
+            <table class="table table-hover table table-hover-color">
                 <thead>
                 <tr>
                     <th>#</th>
                     <th>Pacient</th>
-                    <th>Authorization</th>
                     <th>Surgery Date</th>
                     <th>Surgeon Name</th>
                     <th>Status</th>
@@ -31,14 +30,22 @@
                 </thead>
                 <tbody>
                 {% for index, req in requests %}
+                    {% if req.status == 'enviado' %}
+                        {% set status_label = 'label-info'  %}
+                    {% elseif req.status == 'en proceso' %}
+                        {% set status_label = 'label-warning'  %}
+                    {% elseif req.status == 'completado' %}
+                        {% set status_label = 'label-success'  %}
+                    {% elseif req.status == 'cancelado' %}
+                        {% set status_label = 'label-danger'  %}
+                    {% endif %}
                     <tr>
 
                         <td>{{index+1}}</td>
                         <td>{{req.pacient_name}}</td>
-                        <td>{{req.authorization}}</td>
                         <td>{{req.surgery_date}}</td>
                         <td>{{req.surgeon_name}}</td>
-                        <td><span class="label label-sm label-warning">Pending</span></td>
+                        <td><span class="label label-sm {{status_label}}">{{req.status is defined ? ucfirst(req.status) :'--'}}</span></td>
                         <td>
                             <a href="/requests/view/{{req._id}}">
                                 <button class="btn btn-danger btn-xs">

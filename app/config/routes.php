@@ -24,6 +24,7 @@ $router->addGet('/requests', 'Requests::index');
 $router->addGet('/requests/history', 'Requests::history');
 $router->addPost('/requests/create', 'Requests::create');
 $router->addPost('/requests/view/{id}', 'Requests::view');
+$router->addGet('/requests/status/{id}/{id_status}', 'Requests::changeStatus');
 
 //Inbox section
 $router->addGet('/inbox', 'Inbox::index');

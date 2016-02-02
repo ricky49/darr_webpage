@@ -190,6 +190,36 @@ class RequestsController extends ControllerBase
 
 
 
+    /**
+     * Change status of request
+     * 
+     * @return view
+     */
+    public function changeStatusAction($id_request, $id_status)
+    {   
+        switch ($id_status) {
+            case '1':
+                $status = 'enviado';
+                break;
+            case '2':
+                $status = 'en progreso';
+                break;
+            case '3':
+                $status = 'completado';
+                break;
+            case '4':
+                $status = 'cancelado';
+                break;
+            
+            default:
+                $status = 'enviado';
+                break;
+        }
+
+        $response = $this->sdk->updateRequestStatus($id_request, ['status'=>$status]);
+        $this->flashSession->success("Estatus cambiado satisfactoriamente");
+        return $this->response->redirect($_SERVER['HTTP_REFERER']);
+    }
 
     
 }
