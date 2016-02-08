@@ -1,5 +1,12 @@
 {% extends "layouts/base.volt" %}
 {% block content %}
+
+<link rel="stylesheet" href="/extra/choosen/chosen.css">
+<link rel="stylesheet" href="/extra/choosen/prism.css">
+<style type="text/css" media="all">
+  .chosen-rtl .chosen-drop { left: -9000px; }
+</style>
+
 {{this.flash.output()}}
 <div class="col-md-9">
 <div id="generalTabContent" class="tab-content">
@@ -133,6 +140,53 @@
 </div>
 </div>
 </div>
+
+<script src="/extra/choosen/chosen.jquery.js" type="text/javascript"></script>
+<script src="/extra/choosen/prism.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    var config = {
+      '.chosen-select'           : {},
+      '.chosen-select-deselect'  : {allow_single_deselect:true},
+      '.chosen-select-no-single' : {disable_search_threshold:10},
+      '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+      '.chosen-select-width'     : {width:"95%"}
+    }
+    for (var selector in config) {
+      $(selector).chosen(config[selector]);
+    }
+
+      $(function(){
+        $("#select_a").change(function(){
+            if ($("#select_a option:selected").val() != '')
+                getInfo($("#select_a option:selected").val());
+            else
+                $("#select_b").empty().append('</option>');
+
+       
+        });
+    });
+    function getInfo(id){
+        $.ajax({
+            type: 'POST',
+            url: "/plates/"+id,
+            crossDomain : true,
+            success: function(data){
+                $("#select_b").empty().append('</option>');
+                $.each(jQuery.parseJSON(data), function (i, item) {
+                    $('#select_b').append($('<option>', { 
+                        value: item.value,
+                        text : item.text 
+                    }));
+                });
+
+                $('#select_b').trigger('chosen:updated');
+           
+
+            }
+        });
+    }       
+
+  </script>
 
 {% endblock %}
       

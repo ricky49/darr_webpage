@@ -160,13 +160,13 @@ class RequestsController extends ControllerBase
             $sender->sendMessage([
                 'subject' => 'Solicitud generada',
                 'to_email' => $this->session->get('user_data')->mail,
-                'message' => $this->di->getViewSimple()->render('emails/view_report',['url'=> getenv('DOMAIN_URL').'/requests/view/'.$response->_id])
+                'message' => $this->di->getViewSimple()->render('emails/new_request_user_notification',['url'=> getenv('DOMAIN_URL').'/requests/view/'.$response->_id])
             ]);
 
             $sender->sendMessage([
                 'subject' => 'Solicitud generada',
-                'to_email' => 'admin_darr@gmail.com',
-                'message' => $this->di->getViewSimple()->render('emails/view_report',['url'=> getenv('DOMAIN_URL').'/requests/view/'.$response->_id])
+                'to_email' => 'darrproject@gmail.com',
+                'message' => $this->di->getViewSimple()->render('emails/new_request_admin_notification',['url'=> getenv('DOMAIN_URL').'/requests/view/'.$response->_id])
             ]);
             $this->flashSession->success("Solicitud enviada");
             $this->session->remove('request_process');
@@ -216,7 +216,24 @@ class RequestsController extends ControllerBase
                 break;
         }
 
+        
         $response = $this->sdk->updateRequestStatus($id_request, ['status'=>$status]);
+
+        $request_data = $this->sdk->getSolicitud($id_request);
+        
+        $user_data = $this->sdk->getUserByUsername($request_data->user);
+        //Notify user on change status
+        $sender = new Email();
+        $sender->sendMessage([
+            'subject' => 'Actualizacion de estado de solicitud',
+            'to_email' => $user_data[0]->mail,
+            'message' => $this->di->getViewSimple()->render('emails/status_notification',
+                [
+                    'url'=> getenv('DOMAIN_URL').'/requests/view/'.$id_request,
+                    'request_status'=> $status
+
+                ])
+        ]);
         $this->flashSession->success("Estatus cambiado satisfactoriamente");
         return $this->response->redirect($_SERVER['HTTP_REFERER']);
     }

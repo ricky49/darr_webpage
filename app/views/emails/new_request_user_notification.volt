@@ -384,7 +384,7 @@ http://kb.mailchimp.com/article/template-language-creating-editable-content-area
 
 <!-- MODULE ROW // -->
 <tr>
-<td align="center" valign="top">Una nueva solicitud ha sido enviada!
+<td align="center" valign="top">Solicitud correctamente enviada!
 <!-- CENTERING TABLE // -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr style="padding-top:0;">

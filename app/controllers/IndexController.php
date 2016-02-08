@@ -40,7 +40,8 @@ class IndexController extends ControllerBase
     {	
         $this->view->setRenderLevel(\Phalcon\Mvc\View::LEVEL_ACTION_VIEW);
    
-    	return $this->view->pick('emails/view_report');
+        return $this->view->pick('emails/status_notification');
+    	// return $this->view->pick('emails/view_report');
     }
 
 }
