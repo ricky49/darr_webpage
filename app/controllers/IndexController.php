@@ -1,7 +1,7 @@
 <?php namespace App\Controllers;
 
 
-class IndexController extends ControllerBase
+class IndexController extends CartController
 {
 
 	/**
@@ -26,7 +26,8 @@ class IndexController extends ControllerBase
     public function homeAction()
     {	
     	//Section title
-    	$this->view->section_title = 'Inicio';
+    	$this->view->section_title = 'Inicio | Carrito de productos';
+        $this->view->products = $this->sdk->getProducts();
     	return $this->view->pick('index/index');
     }
 

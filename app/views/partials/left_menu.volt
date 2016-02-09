@@ -39,10 +39,18 @@
           </li>
           <li class="">
             <a href="/inbox">
-                <i class="icon fa fa-file-text-o">
+                <i class="icon fa fa-inbox">
                     <div class="icon-bg bg-orange"></div>
                 </i>
                 <span class="menu-title">Bandeja de entrada</span>
+            </a>
+          </li>
+           <li class="">
+            <a href="/cart">
+                <i class="icon fa fa-shopping-cart">
+                    <div class="icon-bg bg-orange"></div>
+                </i>
+                <span class="menu-title">Carrito</span>
             </a>
           </li>
           

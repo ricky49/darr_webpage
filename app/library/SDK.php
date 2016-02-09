@@ -72,6 +72,82 @@ class SDK extends \GuzzleHttp\Client
         return $this->makeRequest("api/request", $data);
     }
 
+
+    /**
+     * Get cart
+     *
+     * @param int $id
+     * @return std object
+     */
+    public function getCart($id)
+    {
+        return $this->makeRequest("api/cars/{$id}");
+    }
+
+
+    /**
+     * Get user cart
+     *
+     * @return std object
+     */
+    public function userCart($user_id)
+    {
+        $url = $this->base_url."api/cars?token=".$this->ph_session->get('user_session_token')."&user_id={$user_id}"; 
+      
+        return $this->getRequest($url);
+    }
+
+
+
+
+    /**
+     * Get user cart
+     *
+     * @return std object
+     */
+    public function userCartAndSingleProduct($user_id, $product_id)
+    {
+        $url = $this->base_url."api/cars?token=".$this->ph_session->get('user_session_token')."&user_id={$user_id}&product_id={$product_id}"; 
+      
+        return $this->getRequest($url);
+    }
+    /**
+     * Create save cart
+     *
+     * @param int $data
+     * @return std object
+     */
+    public function saveCart($data)
+    {
+        return $this->makeRequest("api/cars", $data);
+    }
+
+    /**
+     * Update cart
+     *
+     * @param string $id
+     * @param int    $data
+     * @return std   object
+     */
+    public function updateCart($id, $data)
+    {   
+        $data['put'] = 'put';
+        return $this->makeRequest("api/cars/{$id}", $data);
+    }
+
+
+    /**
+     * Delete cart
+     *
+     * @param int $data
+     * @return std object
+     */
+    public function deleteCart($id)
+    {
+       return $this->deleteRequest('api/cars/'.$id);
+    }
+
+
     /**
      * Create report
      *
@@ -129,6 +205,29 @@ class SDK extends \GuzzleHttp\Client
     {
         return $this->makeRequest("api/users");
     }
+
+    /**
+     * Get All products
+     *
+     * @return std object
+     */
+    public function getProducts()
+    {
+        return $this->makeRequest("api/products");
+    }
+
+
+    /**
+     * Get  product
+     *
+     * @return std object
+     */
+    public function getProduct($id)
+    {
+        return $this->makeRequest("api/products/{$id}");
+    }
+
+
 
     /**
      * Get All Users

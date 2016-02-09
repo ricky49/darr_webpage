@@ -26,6 +26,15 @@ $router->addPost('/requests/create', 'Requests::create');
 $router->addPost('/requests/view/{id}', 'Requests::view');
 $router->addGet('/requests/status/{id}/{id_status}', 'Requests::changeStatus');
 
+
+//Cart
+$router->addPost('/add-cart-item', 'Cart::add');
+$router->addGet('/add-cart-item', 'Index::home');
+$router->addGet('/cart', 'Cart::view');
+$router->add('/cart-delete/{id}', 'Cart::delete');
+$router->add('/delete-cart', 'Cart::deleteCart');
+
+
 //Inbox section
 $router->addGet('/inbox', 'Inbox::index');
 
