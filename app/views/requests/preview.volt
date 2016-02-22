@@ -86,7 +86,7 @@
                 </div>
             </div>
         </div>
-        <hr>
+        
         <div class="form-group"><label class="col-sm-3 control-label">Procedimiento</label>
             <div class="col-sm-9 controls">
                 <div class="row">
@@ -96,22 +96,23 @@
                 </div>
             </div>
         </div>
+        <hr>
          {% set total =  0 %}
-       <?php foreach ($plates as $plate) {
+       <?php foreach ($items as $key=>$item) {
         ?>
 
-          <div class="form-group"><label class="col-sm-3 control-label">Bandeja: {{plate.plate_id}}</label>
+            <div class="form-group"><label class="col-sm-3 control-label">Producto: {{key+1}}</label>
                 <div class="col-sm-9 controls">
                     <div class="row">
                         <div class="col-xs-9">
-                        <span class="form-control">{{plate.item}}</span>
+                        <span class="form-control">{{item.DETALLE}}</span>
                         </div>
                     </div>
                 </div>
             </div>
 
         <?php
-         $total += (isset($plate->total_amount)) ? $plate->total_amount:0;
+         $total += (isset($item->PRECIO)) ? $item->PRECIO:0;
         
        } ?>
         <hr/>

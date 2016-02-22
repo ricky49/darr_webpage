@@ -31,7 +31,7 @@ class RequestsController extends ControllerBase
     	$this->view->section_title = 'Creacion de solicitud';
         $this->view->centers = $this->sdk->getCenters();
         $this->view->procedures = $this->sdk->getProcedures();
-
+        $this->view->items = $this->sdk->getProducts();
         if ($this->session->has('request_process')) {
             $this->session->remove('request_process');
         }
@@ -79,9 +79,9 @@ class RequestsController extends ControllerBase
         $this->view->req->procedure_name_label = $this->sdk->getProcedure($response->procedure_name)->procedure_desc;
          $plates = [];
         foreach (explode(',', $response->item_manuales) as $value) {
-            $plates[] = $this->sdk->getPlate($value);
+            $items[] = $this->sdk->getProduct($value);
         }
-        $this->view->plates = $plates;
+        $this->view->items = $items;
         return $this->view->pick('requests/view');
     }
 
@@ -124,9 +124,10 @@ class RequestsController extends ControllerBase
         $this->view->req->procedure_name = $this->sdk->getProcedure($request_data->procedure_name)->procedure_desc;
         $plates = [];
         foreach (explode(',', $request_data->item_manuales) as $value) {
-            $plates[] = $this->sdk->getPlate($value);
+            $items[] = $this->sdk->getProduct($value);
         }
-        $this->view->plates = $plates;
+      
+        $this->view->items = $items;
         return $this->view->pick('requests/preview');
     }
 

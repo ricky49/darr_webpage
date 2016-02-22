@@ -92,7 +92,7 @@
                     <div class="col-xs-9" >
                     <select name="procedure_name"  class="form-control"
                      placeholder="Procedimiento"
-                     id="select_a" 
+                     id="select_a_disabled" 
                      required>
                     <option value=""></option>
                         {% for procedure in procedures %}
@@ -103,16 +103,19 @@
                 </div>
             </div>
         </div>
-        <div class="form-group"><label class="col-sm-3 control-label">Bandejas</label>
+        <!-- <input type="hidden" name="procedure_name" value="56aaa0f22a19f70d189d6d31"> -->
+        <div class="form-group"><label class="col-sm-3 control-label">Productos</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
                     <div class="col-xs-9">
             
-                    <select  class="form-control chosen-select-deselect " id="select_b" 
+                    <select  class="form-control chosen-select-deselect " id="select_b_disabled" 
 data-placeholder="Bandejas" multiple name="item_manuales[]"
                     required>
-                        <option value=""></option>
+                        {% for item in items %}
+                            <option value="{{item._id}}">{{item.DETALLE}}</option>
+                        {% endfor %}
                     </select>
                     </div>
                 </div>
