@@ -77,7 +77,7 @@ class RequestsController extends ControllerBase
 
         $this->view->req =  $response;
         $this->view->req->procedure_name_label = $this->sdk->getProcedure($response->procedure_name)->procedure_desc;
-         $plates = [];
+        $plates = [];
         foreach (explode(',', $response->item_manuales) as $value) {
             $items[] = $this->sdk->getProduct($value);
         }
@@ -95,26 +95,19 @@ class RequestsController extends ControllerBase
         if (!$this->request->isPost()) {
             return $this->response->redirect('/requests');
         }
-
         $this->view->section_title = 'Previsualizacion de solicitud';
         
         if (!$this->session->has('request_process')) {
             $data = $this->request->getPost();
 
-
             if (!empty($data)) {
-
                 $data['user'] = $this->session->get('user_data')->user;
                  if (empty( $data['item_manuales'])) {
-                    $this->flashSession->error("Debe seleccionar al menos una bandeja");
+                    $this->flashSession->error("Debe seleccionar al menos un  producto");
                     return $this->response->redirect($_SERVER['HTTP_REFERER']);
                 }
                 $data['item_manuales'] = (implode(',', $data['item_manuales']));
-
                 $request_data = $this->session->set('request_process', $data);
-
-                
-
             }
         }  
 
@@ -122,11 +115,11 @@ class RequestsController extends ControllerBase
          // $this->session->remove('request_process');
         $this->view->req =  $request_data;
         $this->view->req->procedure_name = $this->sdk->getProcedure($request_data->procedure_name)->procedure_desc;
-        $plates = [];
+        $items = [];
         foreach (explode(',', $request_data->item_manuales) as $value) {
             $items[] = $this->sdk->getProduct($value);
         }
-      
+
         $this->view->items = $items;
         return $this->view->pick('requests/preview');
     }
@@ -138,8 +131,6 @@ class RequestsController extends ControllerBase
      */
     public function createAction()
     {   
-
-
         $request_data = (array)$this->session->get('request_process');
         $response = $this->sdk->createRequest($request_data);
        
@@ -182,7 +173,6 @@ class RequestsController extends ControllerBase
      */
     public function historyAction()
     {   
-
         $this->view->section_title = 'Historial de solicitudes';
         $response = $this->sdk->getUserRequests($this->session->get('user_data')->user);
         $this->view->requests =  $response;

@@ -384,7 +384,7 @@ http://kb.mailchimp.com/article/template-language-creating-editable-content-area
 
 <!-- MODULE ROW // -->
 <tr>
-<td align="center" valign="top">Una nueva solicitud ha sido enviada!
+<td align="center" valign="top">Un nuevo reporte ha sido enviado!
 <!-- CENTERING TABLE // -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr style="padding-top:0;">
@@ -398,7 +398,7 @@ http://kb.mailchimp.com/article/template-language-creating-editable-content-area
 <table border="0" cellpadding="0" cellspacing="0" width="50%" class="emailButton" style="background-color: #3498DB;">
 <tr>
 <td align="center" valign="middle" class="buttonContent" style="padding-top:15px;padding-bottom:15px;padding-right:15px;padding-left:15px;">
-<a style="color:#FFFFFF;text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:135%;" href="{{url}}" target="_blank">Ver solicitud</a>
+<a style="color:#FFFFFF;text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:135%;" href="{{url}}" target="_blank">Ver reporte</a>
 </td>
 </tr>
 </table>

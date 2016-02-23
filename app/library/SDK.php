@@ -159,6 +159,46 @@ class SDK extends \GuzzleHttp\Client
         return $this->makeRequest("api/report", $data);
     }
 
+    /**
+     * Update products
+     *
+     * @param string $id
+     * @param int    $data
+     * @return std   object
+     */
+    public function updateReportProduct($id, $data)
+    {   
+        $data['put'] = 'put';
+        return $this->makeRequest("api/reportProducts/{$id}", $data);
+    }
+
+
+    /**
+     * Create report product
+     *
+     * @param int $data
+     * @return std object
+     */
+    public function createReportProduct($data)
+    {
+        return $this->makeRequest("api/reportProducts", $data);
+    }
+
+
+    /**
+     * Get Report products
+     *
+     * @param int $data
+     * @return std object
+     */
+    public function getReportProducts($report_id)
+    {
+        $url = $this->base_url."api/reportProducts?token=".$this->ph_session->get('user_session_token')."&report_id={$report_id}"; 
+      
+        return $this->getRequest($url);
+    }
+
+
      /**
      * Update user
      *
@@ -267,6 +307,18 @@ class SDK extends \GuzzleHttp\Client
     public function getPlates($id)
     {
         $url = $this->base_url."api/plates?token=".$this->ph_session->get('user_session_token')."&procedure_id={$id}"; 
+      
+        return $this->getRequest($url);
+    }
+
+    /**
+     * Get plates
+     *
+     * @return std object
+     */
+    public function getAllPlates()
+    {
+        $url = $this->base_url."api/plates?token=".$this->ph_session->get('user_session_token'); 
       
         return $this->getRequest($url);
     }

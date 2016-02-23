@@ -12,7 +12,7 @@
        
         </div>
         <div style="display: inline-block; float: right; margin-right: 1%;">
-            <a href="/requests">
+            <a href="/reports">
                 <button type="button" class="btn btn-warning">Hacer reporte</button>
             </a>
         </div>                             

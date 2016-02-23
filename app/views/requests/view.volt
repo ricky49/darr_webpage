@@ -88,7 +88,6 @@
                 </div>
             </div>
         </div>
-    
         <div class="form-group"><label class="col-sm-3 control-label">Procedimiento</label>
             <div class="col-sm-9 controls">
                 <div class="row">

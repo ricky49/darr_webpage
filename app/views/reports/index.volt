@@ -68,11 +68,33 @@
                 </div>
             </div>
         </div>
-          <div class="form-group"><label class="col-sm-3 control-label">Bandeja</label>
+         
+         <div class="form-group"><label class="col-sm-3 control-label">Bandeja</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="number" placeholder="Id de bandeja" name="bandeja_id"  class="form-control" required/></div>
+                    <div class="col-xs-9">
+                   <select type="text" name="bandeja_id"  class="form-control chosen-select" required>
+                        {% for plate in plates %}
+                            <option value="{{plate.plate_id}}">{{plate.plate_id}}</option>
+                        {% endfor %}
+                        </select>  
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <div class="form-group"><label class="col-sm-3 control-label">Productos</label>
+
+            <div class="col-sm-9 controls">
+                <div class="row">
+                    <div class="col-xs-9">
+                   <select type="text" name="items[]"  class="form-control chosen-select" multiple required data-placeholder="Seleccione los productos utilizados" required>
+                        {% for item in items %}
+                            <option value="{{item._id}}">{{item.DETALLE}}</option>
+                        {% endfor %}
+                        </select>  
+                    </div>
                 </div>
             </div>
         </div>
@@ -135,7 +157,7 @@
         </div>
         <hr/>
         
-        <button type="submit" class="btn btn-green btn-block">Crear</button>
+        <button type="submit" class="btn btn-green btn-block">Continuar</button>
     </form>
 </div>
 </div>

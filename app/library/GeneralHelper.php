@@ -4,9 +4,9 @@ namespace App\Libraries;
 /**
  * General helper for styles
  * 
- * @Author: Josue
+ * @Author: Darr
  * @Date:   2015-12-23 17:34:55
- * @Last Modified by:   Josue
+ * @Last Modified by:   Darr
  * @Last Modified time: 2015-12-23 17:34:55
  */
 class GeneralHelper

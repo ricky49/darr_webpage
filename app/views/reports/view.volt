@@ -99,9 +99,40 @@
                 </div>
             </div>
         </div>
-        <hr/>
-        
-        <button type="submit" class="btn btn-green btn-block">Crear</button>
+       {% if (products|length > 0 ) %}
+            <div style="margin-left:30px; float:right;">
+                <label for="">Cantidad</label>
+            </div>
+          
+            <hr>
+         
+           <?php foreach ($products as $key=>$item) {
+                $product = $this->sdk->getProduct($item->product_id);
+            ?>
+                <div class="form-group"><label class="col-sm-3 control-label">Producto: {{key+1}}</label>
+                    <div class="col-sm-9 controls">
+                        <div class="row">
+                            <div class="col-xs-19">
+                               <div class="col-xs-9">
+                                <span class="form-control" readonly>{{product.DETALLE}}</span> 
+                                   
+                               </div>
+                               <div style="display: inline; float: right; width: 86px;">
+                                <input type="hidden" name="product[]" value="{{item.product_id}}" >
+                                <input type="hidden" name="repoProduct[]" value="{{item._id}}" >
+                                <input type="number" readonly name="quantity[]"min="1" value="{{item.quantity}}"class="form-control" >
+                                   
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+            <hr/>
+        {% else %}
+        <i>Reporte sin productos</i>
+        {% endif %}
+        <!-- <button type="submit" class="btn btn-green btn-block">Crear</button> -->
     </form>
 </div>
 </div>

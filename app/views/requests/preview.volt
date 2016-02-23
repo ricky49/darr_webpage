@@ -96,7 +96,7 @@
                 </div>
             </div>
         </div>
-        <hr>
+        
          {% set total =  0 %}
        <?php foreach ($items as $key=>$item) {
         ?>
