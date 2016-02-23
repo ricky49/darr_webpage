@@ -122,4 +122,36 @@ class CartController extends ControllerBase
     {   
         die('make checkout');
     }
+
+
+    public function pdfAction()
+    {
+        // userBills
+        // saveBill
+        $user_cart = 
+        
+        // foreach ($user_cart as $key => $value) {
+        //     $value->total = $value->quantity;
+        //     $this->sdk->saveBill((array)$value);
+        // }
+
+        $this->view->disableLevel(\Phalcon\Mvc\View::LEVEL_MAIN_LAYOUT);
+
+        $data = [];
+        $data['user'] = $this->session->user_data;
+        $data['cart'] = $this->sdk->userCart($this->session->user_data->_id);
+        // $data['products'] = $this->sdk->getReportProducts($report_id);;
+// print_r($data);die();
+
+        $html = $this->view->getRender('pdf', 'cart', $data);
+        $pdf = new \mPDF();
+
+        $stylesheet = file_get_contents(__DIR__.'/../../public/pdf_styles/style.css');
+
+        $pdf->WriteHTML($stylesheet,1);
+        $pdf->WriteHTML($html, 2);
+        $ispis = "Cotizacion_".uniqid().'.pdf';
+
+        $pdf->Output($ispis, "I");
+    }
 }

@@ -3,12 +3,13 @@
     "authors": [
         {
             "name": "Darr",
-            "email": "darrproject@gmail"
+            "email": "darrproject@gmail.com"
         }
     ],
     "require": {
         "guzzlehttp/guzzle": "6.0",
         "vlucas/phpdotenv": "1.1.*@dev",
-        "swiftmailer/swiftmailer": "~5.4"
+        "swiftmailer/swiftmailer": "~5.4",
+        "mpdf/mpdf": "^6.0"
     }
 }

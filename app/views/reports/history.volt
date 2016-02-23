@@ -45,6 +45,11 @@
                                     <i class="fa fa-eye"></i>
                                 </button>
                             </a>
+                            <a target="_blank"href="/reports/pdf/{{report._id}}">
+                                <button class="btn btn-violet btn-xs">
+                                    <i class="fa fa-print"></i>
+                                </button>
+                            </a>
                            <!--  <a onclick="return confirm('Are you sure?')" href="/users/delete/{{user._id}}">
                                 <button class="btn btn-danger btn-xs">
                                     <i class="fa fa-trash-o " ></i>

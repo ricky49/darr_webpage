@@ -97,7 +97,28 @@ class SDK extends \GuzzleHttp\Client
         return $this->getRequest($url);
     }
 
+    /**
+     * Get user bills
+     *
+     * @return std object
+     */
+    public function userBills($user_id)
+    {
+        $url = $this->base_url."api/bills?token=".$this->ph_session->get('user_session_token')."&user_id={$user_id}"; 
+      
+        return $this->getRequest($url);
+    }
 
+   /**
+     * Create save bill
+     *
+     * @param int $data
+     * @return std object
+     */
+    public function saveBill($data)
+    {
+        return $this->makeRequest("api/bills", $data);
+    }
 
 
     /**

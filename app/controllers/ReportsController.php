@@ -69,13 +69,6 @@ class ReportsController extends ControllerBase
             $this->flashSession->error((string)$str_error);
             return $this->response->redirect($_SERVER['HTTP_REFERER']);
         } else {
-            // $sender = new Email();
-            // $sender->sendMessage([
-            //     'subject' => 'Nuevo Reporte',
-            //     'to_email' => 'rickysotosanchezz@gmail.com',
-            //     'message' => $this->di->getViewSimple()->render('emails/view_report',['url'=> getenv('DOMAIN_URL').'/requests/view/'.$response->_id])
-            // ]);
-            // $this->flashSession->success("Reporte generado");
             return $this->response->redirect('/reports/products/'.$response->_id);
         }
     }
@@ -165,5 +158,30 @@ class ReportsController extends ControllerBase
         return $this->view->pick('reports/view');
     }
 
+    public function pdfAction($report_id)
+    {
+
+         if ($report_id == null || empty($report_id) ) {
+             $this->flashSession->error("Debe especificar el id del reporte");
+            return $this->response->redirect($_SERVER['HTTP_REFERER']);
+        }
+        $this->view->disableLevel(\Phalcon\Mvc\View::LEVEL_MAIN_LAYOUT);
+
+        $data = [];
+        $data['report'] = $this->sdk->getReport($report_id);
+        $data['products'] = $this->sdk->getReportProducts($report_id);;
+
+
+        $html = $this->view->getRender('pdf', 'report', $data);
+        $pdf = new \mPDF();
+
+        $stylesheet = file_get_contents(__DIR__.'/../../public/pdf_styles/style.css');
+
+        $pdf->WriteHTML($stylesheet,1);
+        $pdf->WriteHTML($html, 2);
+        $ispis = "Report_".uniqid().'.pdf';
+
+        $pdf->Output($ispis, "I");
+    }
     
 }
