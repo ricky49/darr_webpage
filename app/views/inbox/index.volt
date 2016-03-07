@@ -1,5 +1,27 @@
 {% extends "layouts/base.volt" %}
 {% block content %}
+
+
+<div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+    <div class="page-header pull-left">
+        <div class="page-title">
+        {{section_title}}
+        </div>
+    </div>
+    <div class="page-header pull-right">
+        <div class="page-toolbar">
+            <a href="/requests">
+                <button type="button" class="btn btn-warning">Hacer solicitud</button>
+            </a>
+            &nbsp;
+        </div>
+    </div>
+    <div class="clearfix">
+    </div>
+</div>
+
+
+<div class="page-content">
 	{{this.flash.output()}}
 
     <div class="panel panel-blue" style="background:#FFF; border:none;">
@@ -12,9 +34,7 @@
        
         </div>
         <div style="display: inline-block; float: right; margin-right: 1%;">
-            <a href="/requests">
-                <button type="button" class="btn btn-warning">Hacer solicitud</button>
-            </a>
+           
         </div>                             
       </div>
             <table class="table table-hover table table-hover-color">

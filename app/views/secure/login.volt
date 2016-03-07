@@ -19,7 +19,7 @@
 				</a>
 
 			  	<span class="brand" >
-			  		{{ getenv('PAGE_TITLE') }}
+			  		<img src="/images/logo.png" width="100px" style="margin-bottom: -27px; margin-top: -21px;">
 			  	</span>
 
 				<div class="nav-collapse collapse navbar-inverse-collapse">
@@ -27,7 +27,7 @@
 					<ul class="nav pull-right">
 
 						<li><a href="/sign-up">
-							Registrarse
+							<!-- Registrarse -->
 						</a></li>
 
 						
@@ -44,10 +44,13 @@
 		<div class="container">
 			<div class="row">
 			{{this.flash.output()}}
+			<div style=" position: relative;   left: 45%;    margin: 78px 6px -81px;">
+				<img src="/images/logo.png" style="    width: 140px;" alt="">
+			</div>
 				<div class="module module-login span4 offset4">
 					<form class="form-vertical" method="POST" action="/login">
 						<div class="module-head">
-							<h3>Entrar</h3>
+							<h3>Iniciar sesion</h3>
 						</div>
 						<div class="module-body">
 							<div class="control-group">
@@ -65,13 +68,18 @@
 							<div class="control-group">
 								<div class="controls clearfix">
 									<button type="submit" class="btn btn-primary pull-right">Login</button>
-									<!-- <label class="checkbox">
+									<label class="checkbox">
 										<input type="checkbox"> Remember me
-									</label> -->
-								</div>
-							</div>
+									</label>
+	
+								</div> <span style=";"><a href="/sign-up">
+							Registrarse
+						</a> </span><span style="float:right;" ><a href="/sign-up">
+							Olvidaste tu contraseña?
+						</a> </span>
 						</div>
 					</form>
+							</div>
 				</div>
 			</div>
 		</div>

@@ -5,7 +5,7 @@
       <ul id="side-menu" class="nav">
           
           <div class="clearfix"></div>
-          <li class="active">
+          <li class="">
             <a href="/">
                 <i class="fa fa-tachometer fa-fw">
                     <div class="icon-bg bg-orange"></div>

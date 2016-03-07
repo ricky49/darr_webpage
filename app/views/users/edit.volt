@@ -1,5 +1,27 @@
 {% extends "layouts/base.volt" %}
 {% block content %}
+
+
+<div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+    <div class="page-header pull-left">
+        <div class="page-title">
+        {{section_title}}
+        </div>
+    </div>
+    <div class="page-header pull-right">
+        <div class="page-toolbar">
+           <a href="/users">
+                <button type="button" class="btn btn-warning">Users List</button>
+            </a>
+            &nbsp;
+        </div>
+    </div>
+    <div class="clearfix">
+    </div>
+</div>
+
+
+<div class="page-content"
 {{this.flash.output()}}
 <div class="col-md-9">
  <!-- <div class="col-md-12"><h2>Profile: {{user.name}}</h2> -->
@@ -8,9 +30,7 @@
     <form action="/users/edit/{{user._id}}" method="POST" class="form-horizontal"> <div>
         <div style="display: inline-block;"></div>
         <div style="display: inline-block; float: right; margin-right: 1%;">
-            <a href="/users">
-                <button type="button" class="btn btn-warning">Users List</button>
-            </a>
+            
         </div>                             
       </div>
 

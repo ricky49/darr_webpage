@@ -4296,8 +4296,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', end
 }
 .panel.panel-blue > .panel-heading {
   color: #FFFFFF;
-  background: #0a819c;
-  border-color: #0a819c !important;
+  background: #00BCD4;
+  border-color: #00BCD4 !important;
 }
 .panel.panel-blue > .panel-footer {
   color: #FFFFFF;
@@ -4767,8 +4767,8 @@ fieldset[disabled] .btn-orange.active {
 }
 .btn-green {
   color: #ffffff;
-  background-color: #488c6c;
-  border-color: #458567;
+  background-color: #00BCD4;
+  border-color: #00BCD4;
 }
 .btn-green:hover,
 .btn-green:focus,
@@ -4776,8 +4776,8 @@ fieldset[disabled] .btn-orange.active {
 .btn-green.active,
 .open .dropdown-toggle.btn-green {
   color: #ffffff;
-  background-color: #3a7157;
-  border-color: #305d48;
+  background-color: #007D8C;
+  border-color: #007D8C;
 }
 .btn-green:active,
 .btn-green.active,
@@ -4800,7 +4800,7 @@ fieldset[disabled] .btn-green:active,
 .btn-green[disabled].active,
 fieldset[disabled] .btn-green.active {
   background-color: #488c6c;
-  border-color: #458567;
+  border-color: #00BCD4;
 }
 .btn-yellow {
   color: #ffffff;

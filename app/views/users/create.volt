@@ -1,5 +1,27 @@
 {% extends "layouts/base.volt" %}
 {% block content %}
+
+<div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+    <div class="page-header pull-left">
+        <div class="page-title">
+        {{section_title}}
+        </div>
+    </div>
+    <div class="page-header pull-right">
+        <div class="page-toolbar">
+            <a href="/users">
+                <button type="button" class="btn btn-warning">Lista de usuarios</button>
+            </a>
+            &nbsp;
+        </div>
+    </div>
+    <div class="clearfix">
+    </div>
+</div>
+
+
+<div class="page-content">
+
 {{this.flash.output()}}
 <div class="col-md-9">
 <div id="generalTabContent" class="tab-content">
@@ -7,9 +29,7 @@
       <div>
         <div style="display: inline-block;"></div>
         <div style="display: inline-block; float: right; margin-right: 1%;">
-            <a href="/users">
-                <button type="button" class="btn btn-warning">Lista de usuarios</button>
-            </a>
+            
         </div>                             
       </div>
         <div class="form-group"><label class="col-sm-3 control-label">Primer nombre</label>

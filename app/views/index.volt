@@ -37,7 +37,7 @@
             <nav id="topbar" role="navigation" style="margin-bottom: 0;" data-step="3" class="navbar navbar-default navbar-static-top">
             <div class="navbar-header">
                 <button type="button" data-toggle="collapse" data-target=".sidebar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                <a id="logo"  class="navbar-brand"><span class="fa fa-rocket"></span><span class="logo-text">{{ getenv('PAGE_TITLE') }}</span><span style="display: none" class="logo-text-icon">µ</span></a></div>
+                <a id="logo"  class="navbar-brand"><span class="fa fa-rocket"></span><span class="logo-text"><img src="/images/logo.png" width="100px" style="    margin-top: -21px; margin-bottom: -15px;" ></span><span style="display: none" class="logo-text-icon">µ</span></a></div>
             <div class="topbar-main"><a id="menu-toggle" href="#" class="hidden-xs"><i class="fa fa-bars"></i></a>
                 <ul class="nav navbar navbar-top-links navbar-right mbn">
            <!--          <li class="dropdown"><a data-hover="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-bell fa-fw"></i><span class="badge badge-green">3</span></a>
@@ -65,13 +65,13 @@
                 {% include "partials/sub_head.volt" %} 
                 <!--END TITLE & BREADCRUMB PAGE-->
                 <!--BEGIN CONTENT-->
-                <div class="page-content">
+<!-- <div class="page-content"> -->
                     <!-- <div id="tab-general"> -->
                         <!-- <div id="sum_box" class="row mbl"> -->
                         <?=$this->getContent()?>
                         <!-- </div> -->
                     <!-- </div> -->
-                </div>
+     <!-- </div> -->
                 <!--END CONTENT-->
                 <!--BEGIN FOOTER-->
                 <div id="footer">

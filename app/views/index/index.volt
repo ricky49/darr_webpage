@@ -1,5 +1,25 @@
 {% extends "layouts/base.volt" %}
 {% block content %} 
+<div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+    <div class="page-header pull-left">
+        <div class="page-title">
+        {{section_title}}
+        </div>
+    </div>
+    <div class="page-header pull-right">
+        <div class="page-toolbar">
+           <a href="/cart">
+                <button type="button" class="btn btn-info">Ver Carrito</button>
+            </a>
+            &nbsp;
+        </div>
+    </div>
+    <div class="clearfix">
+    </div>
+</div>
+
+
+<div class="page-content">
 <!--BEGIN CONTENT-->
 {{this.flash.output()}}
 <div id="tab-general">
@@ -17,9 +37,7 @@
 						<div class="panel">
 							<div class="panel-body">
 								<div id="grid-layout-table-1" class="box jplist"> <div style="display: inline-block; float: right; margin-right: 1%;">
-            <a href="/cart">
-                <button type="button" class="btn btn-info">Ver Carrito</button>
-            </a>
+            
         </div> 
 									<div class="jplist-ios-button"><i class="fa fa-sort"></i>Acciones</div>
 									<div class="jplist-panel box panel-top">

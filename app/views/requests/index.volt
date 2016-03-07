@@ -6,6 +6,42 @@
       .chosen-rtl .chosen-drop { left: -9000px; }
   </style>
 
+
+<div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+    <div class="page-header pull-left">
+        <div class="page-title">
+        {{section_title}}
+        </div>
+    </div>
+    <div class="page-header pull-right">
+        <div class="page-toolbar">
+            <a href="/requests/history">
+                <button type="button" class="btn btn-warning">Historial de solicitudes</button>
+            </a>
+            &nbsp;
+        </div>
+    </div>
+    <!-- TO DO -->
+   <!--  <ol class="breadcrumb page-breadcrumb pull-right">
+        <li>
+            <i class="fa fa-home"></i>&nbsp;
+            <a href="dashboard.html">Home</a>&nbsp;&nbsp;
+            <i class="fa fa-angle-right"></i>&nbsp;&nbsp;
+        </li>
+        <li class="hidden">
+            <a href="#">Dashboard</a>&nbsp;&nbsp;
+            <i class="fa fa-angle-right"></i>&nbsp;&nbsp;
+        </li>
+        <li class="active">Dashboard
+        <i class="fa fa-angle-right"></i>&nbsp;&nbsp;
+        </li>
+
+    </ol> -->
+    <div class="clearfix">
+    </div>
+</div>
+
+<div class="page-content">
 {{this.flash.output()}}
 <div class="col-md-9">
 <div id="generalTabContent" class="tab-content">
@@ -13,9 +49,9 @@
       <div>
         <div style="display: inline-block;"></div>
         <div style="display: inline-block; float: right; margin-right: 1%;">
-            <a href="/requests/history">
+            <!-- <a href="/requests/history">
                 <button type="button" class="btn btn-warning">Historial de solicitudes</button>
-            </a>
+            </a> -->
         </div>                             
       </div>
         <div class="form-group"><label class="col-sm-3 control-label">Paciente</label>
@@ -161,6 +197,7 @@ data-placeholder="Bandejas" multiple name="item_manuales[]"
         
         <button type="submit" class="btn btn-green btn-block">Continuar</button>
     </form>
+</div>
 </div>
 </div>
 </div>

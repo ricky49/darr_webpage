@@ -1,6 +1,29 @@
 {% extends "layouts/base.volt" %}
 {% block content %}
 {{this.flash.output()}}
+
+
+<div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+    <div class="page-header pull-left">
+        <div class="page-title">
+        {{section_title}}
+        </div>
+    </div>
+    <div class="page-header pull-right">
+        <div class="page-toolbar">
+           <!--  <a href="/requests">
+                <button type="button" class="btn btn-warning">Hacer solicitud</button>
+            </a>
+            &nbsp; -->
+        </div>
+    </div>
+    <div class="clearfix">
+    </div>
+</div>
+
+
+<div class="page-content">
+
 <div class="col-md-9">
 <div id="generalTabContent" class="tab-content">
     <div  class="form-horizontal">
