@@ -19,7 +19,7 @@
 				</a>
 
 			  	<span class="brand" >
-			  		{{ getenv('PAGE_TITLE') }}
+			  		<img src="/images/logo.png" width="100px" style="margin-bottom: -27px; margin-top: -21px;">
 			  	</span>
 
 				<div class="nav-collapse collapse navbar-inverse-collapse">
@@ -44,6 +44,9 @@
 		<div class="container">
 			<div class="row">
 			{{this.flash.output()}}
+			<div style=" position: relative;   left: 45%;    margin: 78px 6px -81px;">
+				<img src="/images/logo.png" style="    width: 140px;" alt="">
+			</div>
 				<div class="module module-login span4 offset4">
 					<form class="form-vertical" method="post" action="/register">
 						<div class="module-head">
@@ -111,7 +114,7 @@
 		<div class="container">
 			 
 
-			<b class="copyright">Darr web
+			<!-- <b class="copyright">Darr web -->
 		</div>
 	</div>
 	<script src="/extra/scripts/jquery-1.9.1.min.js" type="text/javascript"></script>

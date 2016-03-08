@@ -5,6 +5,7 @@
       <ul id="side-menu" class="nav">
           
           <div class="clearfix"></div>
+          {% if (this.session.user_data.rol != 'Instrumentista' ) %}
           <li class="">
             <a href="/">
                 <i class="fa fa-tachometer fa-fw">
@@ -13,6 +14,8 @@
                 <span class="menu-title">Inicio</span>
             </a>
           </li>
+           {% endif %}
+          {% if (this.session.user_data.rol == 'Admin') %}
           <li class="">
             <a href="/users">
                 <i class="icon fa fa-group">
@@ -21,14 +24,18 @@
                 <span class="menu-title">Usuarios</span>
             </a>
           </li>
+           {% endif %}
+          {% if (this.session.user_data.rol != 'Instrumentista' and this.session.user_data.rol != 'Vendedor')%}
            <li class="">
             <a href="/requests">
                 <i class="icon fa fa-book">
                     <div class="icon-bg bg-orange"></div>
                 </i>
                 <span class="menu-title">Solicitudes</span>
-            </a>
+            </a>  
           </li>
+          {% endif %}
+          {% if (this.session.user_data.rol == 'Admin' or this.session.user_data.rol == 'Instrumentista') %}
           <li class="">
             <a href="/reports">
                 <i class="icon fa fa-file-text-o">
@@ -37,6 +44,9 @@
                 <span class="menu-title">Reportes</span>
             </a>
           </li>
+           {% endif %}
+
+           {% if (this.session.user_data.rol == 'Admin') %}
           <li class="">
             <a href="/inbox">
                 <i class="icon fa fa-inbox">
@@ -45,6 +55,8 @@
                 <span class="menu-title">Bandeja de entrada</span>
             </a>
           </li>
+          {% endif %}
+          {% if (this.session.user_data.rol != 'Instrumentista') %}
            <li class="">
             <a href="/cart">
                 <i class="icon fa fa-shopping-cart">
@@ -53,6 +65,7 @@
                 <span class="menu-title">Carrito</span>
             </a>
           </li>
+         {% endif %}
           
       </ul>
   </div>

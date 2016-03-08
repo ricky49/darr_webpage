@@ -15,6 +15,11 @@ class IndexController extends CartController
             $this->flash->warning('Por favor ingrese sus datos para iniciar sesion');
             return $this->response->redirect('/login');
         }
+
+        if ($this->session->user_data->rol == 'Instrumentista') {
+            // $this->flash->warning('No tienes permisos para ver este contenido');
+            return $this->response->redirect('/reports');
+        }
     }
 
     /**

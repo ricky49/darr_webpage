@@ -74,7 +74,7 @@
 	
 								</div> <span style=";"><a href="/sign-up">
 							Registrarse
-						</a> </span><span style="float:right;" ><a href="/sign-up">
+						</a> </span><span style="float:right;" ><a href="/remind-password">
 							Olvidaste tu contraseña?
 						</a> </span>
 						</div>

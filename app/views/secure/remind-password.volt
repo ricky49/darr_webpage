@@ -19,7 +19,7 @@
 				</a>
 
 			  	<span class="brand" >
-			  		{{ getenv('PAGE_TITLE') }}
+			  		<img src="/images/logo.png" width="100px" style="margin-bottom: -27px; margin-top: -21px;">
 			  	</span>
 
 				<div class="nav-collapse collapse navbar-inverse-collapse">
@@ -32,9 +32,9 @@
 
 						
 
-						<li><a href="/remind-password">
+						<!-- <li><a href="/remind-password">
 							Forgot your password?
-						</a></li>
+						</a></li> -->
 					</ul>
 				</div><!-- /.nav-collapse -->
 			</div>
@@ -47,7 +47,7 @@
 				<div class="module module-login span4 offset4">
 					<form class="form-vertical">
 						<div class="module-head">
-							<h3>Please insert your email</h3>
+							<h3>Inserte su email por favor!</h3>
 						</div>
 						<div class="module-body">
 							<div class="control-group">
@@ -60,7 +60,7 @@
 						<div class="module-foot">
 							<div class="control-group">
 								<div class="controls clearfix">
-									<button type="submit" class="btn btn-primary pull-right">Remind Password</button>
+									<button type="submit" class="btn btn-primary pull-right">Enviar Contraseña</button>
 									
 								</div>
 							</div>
