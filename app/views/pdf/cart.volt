@@ -12,8 +12,8 @@
                         <table>
                             <tr>
                                 <td class="title">
-                                    <!-- <img src="pdf_styles/bak.jpg" style="width:100%; max-width:300px;"> -->
-                                    <span style="width:100%; max-width:300px;">DARR PROJECT</span><br>
+                                    <img src="images/logo.png" style="width:90%; max-width:300px;">
+                                    <!-- <span style="width:100%; max-width:300px;">DARR PROJECT</span><br> -->
                                     <span style="font-size: 20px;">Cotizacion</span>
                                 </td>
                                 
@@ -26,7 +26,6 @@
                         </table>
                     </td>
                 </tr>
-
                 <tr class="information">
                     <td colspan="2">
                         <table>
@@ -37,7 +36,7 @@
                                     {{user.rol}}<br>
                                 </td>
                                 
-                             <!--    <td>
+                                <!--    <td>
                                     d<br>
                                     829-917-3445<br>
                                     N/A<br>
@@ -47,9 +46,9 @@
                         </table>
                     </td>
                 </tr>
-                </table>
-                <table cellpadding="0" cellspacing="0">
-               <!--  <tr class="heading">
+            </table>
+            <table cellpadding="0" cellspacing="0">
+                <!--  <tr class="heading">
                     <td>
                         Payment Method
                     </td>
@@ -59,7 +58,7 @@
                     </td>
                 </tr> -->
                 
-               <!--  <tr class="details">
+                <!--  <tr class="details">
                     <td>
                         Check
                     </td>
@@ -73,7 +72,6 @@
                     <td>
                         Codigo
                     </td>
-
                     <td>
                         Cantidad
                     </td>
@@ -85,29 +83,28 @@
                         Precio
                     </td>
                 </tr>
-            
-
-                     {% if (cart|length > 0 ) %}
-        
-                <?php 
+                
+                {% if (cart|length > 0 ) %}
+                    
+                    <?php
                     $total = 0;
                     $total_cant = 0;
                     foreach ($cart as $key=>$item) {
                     $product = $this->sdk->getProduct($item->product_id);
-                    $total += $product->PRECIO;
+                    $total += $product->PRECIO * $item->quantity;
                     $total_cant += $item->quantity;
-                ?>
 
+                    ?>
                     <tr class="item">
                         <td>
-                           {{product.CODIGO}}
+                            {{product.CODIGO}}
                         </td>
                         
                         <td>
-                             {{item.quantity}}
+                            {{item.quantity}}
                         </td>
                         <td></td>
-                         <td>
+                        <td>
                             {{product.DETALLE}}
                         </td>
                         <td>
@@ -115,31 +112,30 @@
                         </td>
                     </tr>
                     
-                <?php } ?>
+                    <?php } ?>
                     <tr class="total">
                         <td><i>Total:</i></td>
                         <td>{{total_cant}}</td>
                         <td></td>
                         <td></td>
                         <td>
-                             <b>RD ${{number_format(total, 2)}}</b>
+                            <b>RD ${{number_format(total, 2)}}</b>
                         </td>
                     </tr>
-                 {% else %}
-                <tr class="item">
+                {% else %}
+                    <tr class="item">
                         <td colspan="3">
-                          <i>No existen productos</i>
+                            <i>No existen productos</i>
                         </td>
                     </tr>
-            {% endif %}
+                {% endif %}
                 
-               
-               
-                </table>
-
+                
+                
+            </table>
             <br>
             <hr>
-           <!--  <table cellpadding="0" cellspacing="0">
+            <!--  <table cellpadding="0" cellspacing="0">
                 <tr class="heading">
                     <td colspan="2">
                         Cirujano
@@ -147,13 +143,13 @@
                 </tr>
                 <tr>
                     <td>
-                       Dr. sd
+                        Dr. sd
                     </td>
                 </tr>
             </table>
             <br>
             <hr>
-             <table cellpadding="0" cellspacing="0">
+            <table cellpadding="0" cellspacing="0">
                 <tr class="heading">
                     <td colspan="2">
                         Asistente
@@ -161,13 +157,12 @@
                 </tr>
                 <tr>
                     <td>
-                       Joan carrasco
+                        Joan carrasco
                     </td>
                 </tr>
-            </table> 
+            </table>
             <br>
             <hr>
-
             <table cellpadding="0" cellspacing="0">
                 <tr class="heading">
                     <td colspan="2">
@@ -176,7 +171,7 @@
                 </tr>
                 <tr>
                     <td>
-                       ds
+                        ds
                     </td>
                 </tr>
             </table>

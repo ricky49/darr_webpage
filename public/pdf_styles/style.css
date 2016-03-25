@@ -1,13 +1,46 @@
 
+@page {
+    margin: 0px;
+    /*padding: 0px;*/
+    /*background-image: url("http://ars.net/pdf_styles/bak.jpg");*/
+      /*background: url("http://ars.net/pdf_styles/bak.jpg") 50% 0 no-repeat;*/
+    /*background-image-resolution:300dpi;*/
+    /*background-image-resize:6;*/
+      /*background: url("bak.jpg") 50% 0 no-repeat;*/
+    /*background-image:url("http://ars.net/pdf_styles/bak.jpg"); background-image-resize:6;*/
+}
+
+@page footer {
+    position:relative;
+    bottom: 0px;
+    vertical-align:bottom;
+}
+.footer {
+     position:relative;
+    bottom: 0px;
+    vertical-align:bottom;
+}
 body {
-        background-color:;
+    font-family:'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        color:#555;
+        font-size: 12px;
+    /*background-image:url("http://ars.net/pdf_styles/bak.jpg"); background-image-resize:6;*/
+
+        /*background-color: #d1d;*/
+    /*background-image: url("http://ars.net/pdf_styles/bak.jpg");*/
+         /*background-image: url("bak.jpg");*/
         /*background-image-resolution:300dpi;*/
         /*background-image-resize:6;*/
 }
 
+.a {
+    display: inline-table;
+    width: 83%;
+    border-bottom: 1px solid #727272;
+}
 .invoice-box{
         max-width:800px;
-        margin:auto;
+        /*margin:auto;*/
         padding:30px;
         /*border:1px solid #00BCD4;*/
         /*box-shadow:0 0 10px rgba(0, 0, 0, .15);*/
@@ -24,16 +57,23 @@ body {
     }
     
     .invoice-box table td{
-        padding:5px;
+        /*padding:5px;*/
+        vertical-align:top;
+    }
+    .invoice-box table tr{
+        padding:0px;
         vertical-align:top;
     }
     
     .invoice-box table tr td:nth-child(2){
-        text-align:right;
+        text-align:left;
     }
     
     .invoice-box table tr.top table td{
-        padding-bottom:20px;
+        /*padding-bottom:20px;*/
+        /*border: solid 1px;*/
+        padding-bottom: 0px;
+        margin-bottom: 0px;
     }
     
     .invoice-box table tr.top table td.title{
@@ -43,7 +83,7 @@ body {
     }
     
     .invoice-box table tr.information table td{
-        padding-bottom:40px;
+        /*padding-bottom:40px;*/
     }
     
     .invoice-box table tr.heading td{

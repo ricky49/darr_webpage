@@ -175,7 +175,8 @@ class ReportsController extends ControllerBase
         $data = [];
         $data['report'] = $this->sdk->getReport($report_id);
         $data['products'] = $this->sdk->getReportProducts($report_id);
-
+        // $this->view->setVars($data);
+        // return $this->view->pick('pdf/report');
         $html = $this->view->getRender('pdf', 'report', $data);
         $pdf = new \mPDF();
 

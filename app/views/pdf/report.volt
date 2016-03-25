@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <!-- <link rel="stylesheet" type="text/css" href="/pdf_styles/style.css"> -->
         <title></title>
     </head>
     <body >
@@ -12,75 +13,90 @@
                         <table>
                             <tr>
                                 <td class="title">
-                                    <!-- <img src="pdf_styles/bak.jpg" style="width:100%; max-width:300px;"> -->
-                                    <span style="width:100%; max-width:300px;">DARR PROJECT</span><br>
-                                    <span style="font-size: 20px;">Reporte quirurjico</span>
+                                    <img src="images/logo.png" style="width:30%; display: inline;max-width:300px; height:auto;">
                                 </td>
-                                
-                                <!-- <td>
-                                    Invoice #: 123<br>
-                                    Created: January 1, 2015<br>
-                                    Due: February 1, 2015
-                                </td> -->
+                                <td valign="bottom">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <div style="font-size: 20px; margin-top:20px; font-weight: bold; color:#6B6B6B;">REPORTE QUIRURJICO</div>
+                                </td>
                             </tr>
                         </table>
                     </td>
                 </tr>
+                
+    <tr class="information" style="" >
+        <td colspan="2" style="">
+            <table>
+                <tr height="1">
+                    <td>
+                        <table style="width:700px; ">
+                                <tr >
+                                    <td height="1" style="width: 10%; white-space: nowrap;">PACIENTE</td>
+                                    <td  colspan="3" height="1" style="border-bottom: 1px solid #B4B5B0; padding-bottom: -1px !important; margin-bottom: 10px;">{{report.pacient_name}}</td>
+                                </tr>                                 
+                        </table>
 
-                <tr class="information">
-                    <td colspan="2">
-                        <table>
-                            <tr>
-                                <td>
-                                    {{report.pacient_name}}<br>
-                                    {{report.insurance_name}}<br>
-                                    {{report.center_name}}<br>
-                                    NSS: {{report.nss}}<br>
-                                </td>
-                                
-                                <td>
-                                    {{report.date}}<br>
-                                    829-917-3445<br>
-                                    N/A<br>
-                                    Dr. {{report.doctor}}<br>
-                                </td>
-                            </tr>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table style="width:700px; ">
+                                <tr >
+                                    <td height="1" style="width: 14%; white-space: nowrap;">ASEGURADORA</td>
+                                    <td  colspan="3" height="1" style="border-bottom: 1px solid #B4B5B0; padding-bottom: -1px !important; margin-bottom: 10px;">{{report.insurance_name}}</td>
+
+                                    <td height="1" style="width: 9%; white-space: nowrap;">CENTRO</td>  <td  colspan="3" height="1" style="border-bottom: 1px solid #B4B5B0; padding-bottom: -1px !important; margin-bottom: 10px;">{{report.center_name}}</td>
+                                </tr>                                 
                         </table>
                     </td>
                 </tr>
-                </table>
-                <table cellpadding="0" cellspacing="0">
-               <!--  <tr class="heading">
+                <tr>
                     <td>
-                        Payment Method
+                        <table style="width:700px; ">
+                                <tr >
+                                    <td height="1" style="width: 5%; white-space: nowrap;">NSS</td>
+                                    <td  colspan="3" height="1" style="width: 110px; border-bottom: 1px solid #B4B5B0; padding-bottom: -1px !important; margin-bottom: 10px;">{{report.nss}}</td>
+
+                                    <td height="1" style="width: 7%; white-space: nowrap;">FECHA</td>  <td  colspan="3" height="1" style="border-bottom: 1px solid #B4B5B0; padding-bottom: -1px !important; margin-bottom: 10px;">{{report.date}}</td>
+                                </tr>                                 
+                        </table>
                     </td>
-                    
+                </tr>
+                <tr>
                     <td>
-                        Check #
+                        <table style="width:700px; ">
+                                <tr >
+                                    <td height="1" style="width: 9%; white-space: nowrap;">DOCTOR</td>
+                                    <td  colspan="3" height="1" style="border-bottom: 1px solid #B4B5B0; padding-bottom: -1px !important; margin-bottom: 10px;">{{report.doctor}}</td>
+                                </tr>                                 
+                        </table>
+
+
                     </td>
-                </tr> -->
-                
-               <!--  <tr class="details">
-                    <td>
-                        Check
-                    </td>
-                    
-                    <td>
-                        1000
-                    </td>
-                </tr> -->
-                
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<br>
+<br>
+
+
+        <table cellpadding="0" cellspacing="0" width="">
                 <tr class="heading">
                     <td>
-                        Codigo
+                        CODIGO
                     </td>
 
                     <td>
-                        Cantidad
+                        CANTIDAD
                     </td>
                     <td></td>
                     <td>
-                        Descripcion
+                        DESCRIPCION
                     </td>
                 </tr>
             {% if (products|length > 0 ) %}
@@ -107,7 +123,7 @@
                  {% else %}
                 <tr class="item">
                         <td colspan="3">
-                          <i>No existen productos</i>
+                          <i>NO EXISTEN PRODUCTOS</i>
                         </td>
                     </tr>
             {% endif %}
@@ -126,21 +142,25 @@
                 </table>
 
             <br>
-            <hr>
-            <table cellpadding="0" cellspacing="0">
+            <br>
+    
+
+
+
+        <!--     <table cellpadding="0" cellspacing="0">
                 <tr class="heading">
                     <td colspan="2">
-                        Cirujano
+                        CIRUJANO
                     </td>
                 </tr>
                 <tr>
                     <td>
-                       Dr. {{report.surgeon_name}}
+                       DR. {#report.surgeon_name#}
                     </td>
                 </tr>
             </table>
             <br>
-            <hr>
+            <hr> -->
             <!-- <table cellpadding="0" cellspacing="0">
                 <tr class="heading">
                     <td colspan="2">
@@ -155,7 +175,7 @@
             </table> 
             <br>
             <hr>-->
-
+<!-- 
             <table cellpadding="0" cellspacing="0">
                 <tr class="heading">
                     <td colspan="2">
@@ -164,12 +184,85 @@
                 </tr>
                 <tr>
                     <td>
-                        {{report.observations}}
+                        {#report.observations#}
                     </td>
                 </tr>
             </table>
             <br>
-            <hr>
+            <hr> -->
+
+            <!-- footer -->
+<table>
+    <tr class="information footer" style="position:relative; bottom:0;" >
+        <td colspan="2" style="">
+            <table>
+                <tr>
+                    <td>
+                        <table style="width:700px; ">
+                                <tr >
+                                    <td height="1" style="width: 9%; white-space: nowrap;">CIRUJANO</td>
+                                    <td  colspan="3" height="1" style="border-bottom: 1px solid #B4B5B0; padding-bottom: -1px !important; margin-bottom: 10px;">{{report.doctor}}</td>
+                                </tr>                                 
+                        </table>
+
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table style="width:700px; ">
+                                <tr >
+                                    <td height="1" style="width: 14%; white-space: nowrap;">OBSERVACIONES</td>
+                                    <td  colspan="3" height="1" style="border-bottom: 1px solid #B4B5B0; padding-bottom: -1px !important; margin-bottom: 10px;">{{report.observations}}</td>
+                                </tr>                                 
+                        </table>
+
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table style="width:700px; ">
+                                <tr >
+                                    <td  colspan="3" height="3" style="border-bottom: 1px solid #B4B5B0; padding-bottom: -1px !important; margin-bottom: 10px;">&nbsp;</td>
+                                </tr>                                 
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table style="width:700px; ">
+                                <tr >
+                                    <td  colspan="3" height="3" style="border-bottom: 1px solid #B4B5B0; padding-bottom: -1px !important; margin-bottom: 10px;">&nbsp;</td>
+                                </tr>                                 
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table style="width:700px; ">
+                                <tr >
+                                    <td  colspan="3" height="3" style="border-bottom: 1px solid #B4B5B0; padding-bottom: -1px !important; margin-bottom: 10px;">&nbsp;</td>
+                                </tr>                                 
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table style="width:700px; ">
+                                <tr >
+                                    <td  colspan="3" height="3" style="border-bottom: 1px solid #B4B5B0; padding-bottom: -1px !important; margin-bottom: 10px;">&nbsp;</td>
+                                </tr>                                 
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+<!-- footer end -->
+
+
         </div>
     </body>
 </html>
