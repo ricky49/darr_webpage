@@ -12,16 +12,14 @@
                         <table>
                             <tr>
                                 <td class="title">
-                                    <img src="images/logo.png" style="width:90%; max-width:300px;">
-                                    <!-- <span style="width:100%; max-width:300px;">DARR PROJECT</span><br> -->
-                                    <span style="font-size: 20px;">Cotizacion</span>
+                                    <img src="images/logo.png" style="width:30%; display: inline;max-width:300px; height:auto;">
                                 </td>
-                                
-                                <!-- <td>
-                                    Invoice #: 123<br>
-                                    Created: January 1, 2015<br>
-                                    Due: February 1, 2015
-                                </td> -->
+                                <td valign="bottom">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <div style="font-size: 20px; margin-top:20px; font-weight: bold; color:#6B6B6B;">COTIZACION</div>
+                                </td>
                             </tr>
                         </table>
                     </td>
@@ -29,24 +27,45 @@
                 <tr class="information">
                     <td colspan="2">
                         <table>
-                            <tr>
-                                <td>
-                                    {{user.name}}<br>
-                                    {{date("Y-m-d",time())}}<br>
-                                    {{user.rol}}<br>
-                                </td>
-                                
-                                <!--    <td>
-                                    d<br>
-                                    829-917-3445<br>
-                                    N/A<br>
-                                    Dr. <br>
-                                </td> -->
-                            </tr>
+                        <tr height="1">
+                            <td>
+                                <table style="width:700px; ">
+                                        <tr >
+                                            <td height="1" style="width: 10%; white-space: nowrap;">USUARIO</td>
+                                            <td  colspan="3" height="1" style="border-bottom: 1px solid #B4B5B0; padding-bottom: -1px !important; margin-bottom: 10px;">{{user.name}}</td>
+                                        </tr>                                 
+                                </table>
+
+
+                            </td>
+                        </tr>
+                          <tr height="1">
+                            <td>
+                                <table style="width:700px; ">
+                                        <tr >
+                                            <td height="1" style="width: 10%; white-space: nowrap;">FECHA</td>
+                                            <td  colspan="3" height="1" style="border-bottom: 1px solid #B4B5B0; padding-bottom: -1px !important; margin-bottom: 10px;">{{date("Y-m-d",time())}}</td>
+                                        </tr>                                 
+                                </table>
+                            </td>
+                        </tr>
+                         <tr height="1">
+                            <td>
+                                <table style="width:700px; ">
+                                        <tr >
+                                            <td height="1" style="width: 10%; white-space: nowrap;">ROL</td>
+                                            <td  colspan="3" height="1" style="border-bottom: 1px solid #B4B5B0; padding-bottom: -1px !important; margin-bottom: 10px;">{{user.rol}}</td>
+                                        </tr>                                 
+                                </table>
+                            </td>
+                        </tr>
+                           
                         </table>
                     </td>
                 </tr>
-            </table>
+            </table>  
+
+            <br>
             <table cellpadding="0" cellspacing="0">
                 <!--  <tr class="heading">
                     <td>
