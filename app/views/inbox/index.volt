@@ -71,19 +71,13 @@
                         <td>{{req.authorization is defined ? req.authorization:'--'}}</td>
                         <td>{{req.surgery_date is defined ? req.surgery_date :'--'}}</td>
                         <td>{{req.surgeon_name is defined ? req.surgeon_name :'--'}}</td>
-                        <td><span class="label label-sm {{status_label}}">{{req.status is defined ? ucfirst(req.status) :'--'}}</span></td>
                         <td>
-                            <div class="btn-group label-sm">
-                                <button type="button" class="btn btn-primary label-sm">Editar</button>
-                                <button type="button" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true" class="btn btn-primary dropdown-toggle"><i class="fa fa-angle-down"></i></button>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="/requests/view/{{req._id}}">
-                                            <button class="btn btn-danger btn-xs">
-                                                <i class="fa fa-eye"></i>
-                                            </button> Ver solicitud
-                                        </a>
-                                    </li>
+                           
+                            <div class="btn-group label-sm {{status_label}}" style="height: 23px; width: 110px;">
+                                <button type="button" class="btn label label-sm {{status_label}}">{{req.status is defined ? ucfirst(req.status) :'--'}}</button>
+                                <button style="height: 5px;     float: right; padding-top: 0px;" type="button" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="true" class="btn btn-label label-sm {{status_label}}"><i class="fa fa-angle-down"></i></button>
+                                <ul class="dropdown-menu" style="background-color: rgb(234, 234, 234);">
+                                  
                                     <li class="divider"></li>
                                     <li><a href="/requests/status/{{req._id}}/1">   <span class="label label-info">Enviado &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></a></li>
                                     <li><a href="/requests/status/{{req._id}}/2"><span class="label label-warning">En proceso&nbsp;</span></a></li>
@@ -91,6 +85,15 @@
                                     <li><a href="/requests/status/{{req._id}}/4"> <span class="label label-danger">Cancelado&nbsp;&nbsp;&nbsp;</span></a></li>
                                 </ul>
                             </div>
+
+                        </td>
+
+                        <td>
+                            <a href="/requests/view/{{req._id}}">
+                                <button class="btn btn-danger btn-xs">
+                                    <i class="fa fa-eye"></i>
+                                </button> 
+                            </a>
                            <!--  <a onclick="return confirm('Are you sure?')" href="/users/delete/{{user._id}}">
                                 <button class="btn btn-danger btn-xs">
                                     <i class="fa fa-trash-o " ></i>
