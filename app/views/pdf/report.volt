@@ -19,7 +19,7 @@
                                     <br>
                                     <br>
                                     <br>
-                                    <div style="font-size: 20px; margin-top:20px; font-weight: bold; color:#6B6B6B;">REPORTE QUIRURJICO</div>
+                                    <div style="font-size: 20px; margin-top:20px; font-weight: bold; color:#6B6B6B;">REPORTE QUIRURGICO</div>
                                 </td>
                             </tr>
                         </table>
