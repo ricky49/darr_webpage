@@ -41,19 +41,19 @@
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Disabled</label>
                               <div class="col-sm-10">
-                                  <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled>
+                                  <input class="form-control" id="disabledInput" type="text" title="Disabled input here..."  placeholder="Disabled input here..." disabled>
                               </div>
                           </div>
                           <div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">Placeholder</label>
+                              <label class="col-sm-2 col-sm-2 control-label"></label>
                               <div class="col-sm-10">
-                                  <input type="text"  class="form-control" placeholder="placeholder">
+                                  <input type="text"  class="form-control">
                               </div>
                           </div>
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">Password</label>
                               <div class="col-sm-10">
-                                  <input type="password"  class="form-control" placeholder="">
+                                  <input type="password"  class="form-control" title="a" title="" placeholder="">
                               </div>
                           </div>
                           <div class="form-group">

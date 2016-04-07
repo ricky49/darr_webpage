@@ -17,7 +17,6 @@ class IndexController extends CartController
         }
 
         if ($this->session->user_data->rol == 'Instrumentista') {
-            // $this->flash->warning('No tienes permisos para ver este contenido');
             return $this->response->redirect('/reports');
         }
     }
@@ -45,7 +44,6 @@ class IndexController extends CartController
         $this->view->setRenderLevel(\Phalcon\Mvc\View::LEVEL_ACTION_VIEW);
 
         return $this->view->pick('emails/status_notification');
-        // return $this->view->pick('emails/view_report');
     }
 
 }

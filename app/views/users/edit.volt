@@ -38,7 +38,7 @@
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="text" name="name" value="{{user.name}}"placeholder="Name" class="form-control"/></div>
+                    <div class="col-xs-9"><input type="text" name="name" value="{{user.name}}"placeholder="Name" title="Nombre" class="form-control"   /></div>
                 </div>
             </div>
         </div>
@@ -46,7 +46,7 @@
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="text" name="apellidos" value="{{user.lastname}}" placeholder="Last Name" class="form-control"/></div>
+                    <div class="col-xs-9"><input type="text" name="apellidos" value="{{user.lastname}}" placeholder="Last Name"title="Apellidos" class="form-control"/></div>
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="email" name="mail" value="{{user.mail}}" placeholder="email@yourcompany.com" class="form-control"/></div>
+                    <div class="col-xs-9"><input type="email" name="mail" value="{{user.mail}}" placeholder="email@yourcompany.com"title="Email" class="form-control"/></div>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="text" placeholder="Nombre de usuario" name="user" value="{{user.user}}"  class="form-control"/></div>
+                    <div class="col-xs-9"><input type="text" placeholder="Nombre de usuario" title="Nombre de usuario" name="user" value="{{user.user}}"  class="form-control"/></div>
                 </div>
             </div>
         </div>
@@ -70,7 +70,7 @@
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="text" placeholder="Documento" name="document"  class="form-control" value="{{user.document}}"required/></div>
+                    <div class="col-xs-9"><input type="text" placeholder="Documento" title="Documento" name="document"  class="form-control" value="{{user.document}}"required/></div>
                 </div>
             </div>
         </div>
@@ -79,7 +79,7 @@
             <div class="col-sm-9 controls">
                 <div class="row">
                     <div class="col-xs-9">
-                        <select type="text" name="rol"  class="form-control" required>
+                        <select type="text" name="rol"  class="form-control" title="Rol" required>
                             <option>{{user.rol}}</option>
                            {% for role in roles %}
                             {% if role.rol_name != user.rol %}
@@ -95,7 +95,7 @@
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="text" placeholder="Password" name="pass"   class="form-control" value="{{user.pass}}" /></div>
+                    <div class="col-xs-9"><input type="text" title="Contraseña" placeholder="Password" name="pass"   class="form-control" value="{{user.pass}}" /></div>
                 </div>
             </div>
         </div>

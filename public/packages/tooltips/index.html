@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/tooltip.css">
+	</head>
+	<body>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div class="col-sm-8">
+			<input type="text" placeholder="Hover me" title="" data-toggle="tooltip" data-trigger="hover" class="tooltips" data-original-title="Tooltip goes here">
+		</div>
+	</body>
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/tooltip.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('.tooltips').tooltip({ container: 'body'});
+		});
+	</script>
+</html>

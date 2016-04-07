@@ -24,6 +24,8 @@
     <link type="text/css" rel="stylesheet" href="/styles/jquery.news-ticker.css">
     <link type="text/css" rel="stylesheet" href="/styles/jplist-custom.css">
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+
+       <link rel="stylesheet" href="/packages/tooltips/css/tooltip.css">
 </head>
 <body>
     <div>
@@ -125,4 +127,14 @@
     <script src="/script/main.js"></script>
     
 </body>
+    <script src="/packages/tooltips/js/tooltip.js"></script>
+<script>
+    $(document).ready(function() {
+
+        $('input[type="text"]').tooltip({ container: 'body'});
+        $('input').tooltip({ container: 'body'});
+        $('select').tooltip({ container: 'body'});
+        $('input[type="number"]').tooltip({ container: 'body'});
+    });
+</script>
 </html>
