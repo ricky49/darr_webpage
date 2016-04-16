@@ -5,6 +5,7 @@
         <title></title>
     </head>
     <body >
+
         <div class="invoice-box">
             <table cellpadding="0" cellspacing="0">
                 <tr class="top">
@@ -53,8 +54,8 @@
                             <td>
                                 <table style="width:700px; ">
                                         <tr >
-                                            <td height="1" style="width: 10%; white-space: nowrap;">ROL</td>
-                                            <td  colspan="3" height="1" style="border-bottom: 1px solid #B4B5B0; padding-bottom: -1px !important; margin-bottom: 10px;">{{user.rol}}</td>
+                                            <td height="1" style="width: 10%; white-space: nowrap;">ENVIAR A:</td>
+                                            <td  colspan="3" height="1" style="border-bottom: 1px solid #B4B5B0; padding-bottom: -1px !important; margin-bottom: 10px;">{{user.mail}}</td>
                                         </tr>                                 
                                 </table>
                             </td>
@@ -66,6 +67,9 @@
             </table>  
 
             <br>
+<table style="border: 0px; height:100% !important;">
+ <tr>
+ <td>
             <table cellpadding="0" cellspacing="0">
                 <!--  <tr class="heading">
                     <td>
@@ -196,6 +200,28 @@
             </table>
             <br>
             <hr> -->
+            </td>
+            </tr>
+            <tr>
+            <td style="  height:600px; width:500px; vertical-align: bottom;"  >
+                <table>
+                        <tr>
+                            <td style=" text-align: center;border-style: solid;  border-top:1px;">Entregado por:</td>
+                            <td >&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td style= " text-align: center;border-style: solid; border-top: 1px;">Recibido por:</td>
+                        </tr>
+                </table>
+            </td>
+            </tr>
+             <tr>
+            <td style=" width:400px; vertical-align: bottom; text-align:center; font-size:10px;"  >
+                   <i>Los precios detallados en esta cotizacion, estan sujeto a cambios a partir de los treinta (30) dias. </i>
+            </td>
+            </tr>
+    </table>
         </div>
     </body>
 </html>

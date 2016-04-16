@@ -114,6 +114,7 @@ class CartController extends ControllerBase
 
         $data = [];
         $data['user'] = $this->session->user_data;
+        // print_r($data['user']);die();
         $data['cart'] = $this->sdk->userCart($this->session->user_data->_id);
         // $data['products'] = $this->sdk->getReportProducts($report_id);;
         // print_r($data);die();
