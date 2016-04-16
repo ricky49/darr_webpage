@@ -19,7 +19,7 @@
 				</a>
 
 			  	<span class="brand" >
-			  		<img src="/images/logo.png" width="100px" style="margin-bottom: -27px; margin-top: -21px;">
+			  		<img src="http://imagizer.imageshack.us/a/img921/2821/G5Ryq4.png" width="100px" style="margin-bottom: -27px; margin-top: -21px;">
 			  	</span>
 
 				<div class="nav-collapse collapse navbar-inverse-collapse">

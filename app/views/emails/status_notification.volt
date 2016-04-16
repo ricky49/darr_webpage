@@ -330,7 +330,7 @@ framework of the email.
 <tr>
 <td align="center" valign="top" class="textContent">
 <h1 style="color:#FFFFFF;line-height:100%;font-family:Helvetica,Arial,sans-serif;font-size:35px;font-weight:normal;margin-bottom:5px;text-align:center;">
-	<img src="{{domain}}/images/logo.png" alt="" width="20%">
+	<img src="http://imagizer.imageshack.us/a/img921/2821/G5Ryq4.png" alt="" width="20%">
 </h1>
 <!-- <h2 style="text-align:center;font-weight:normal;font-family:Helvetica,Arial,sans-serif;font-size:23px;margin-bottom:10px;color:#205478;line-height:135%;">
 Subheader introduction</h2> -->
@@ -385,7 +385,7 @@ http://kb.mailchimp.com/article/template-language-creating-editable-content-area
 
 <!-- MODULE ROW // -->
 <tr>
-<td align="center" valign="top">Su solicitud ha cambiado su estado a <b><i>{{ request_status }} </i></b>
+<td align="center" valign="top">El estatus de la solicitud del cliente <i>{{ user.name }}</i> ha cambiado a <b><i>{{ request_status }} </i></b>
 <!-- CENTERING TABLE // -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr style="padding-top:0;">

@@ -225,6 +225,7 @@ class RequestsController extends ControllerBase
                     'url' => getenv('DOMAIN_URL') . '/requests/view/' . $id_request,
                     'request_status' => ucfirst($status),
                     'user_email' => $user_data[0]->mail,
+                    'user' => $user_data[0],
                     'domain' => getenv('DOMAIN_URL'),
 
                 ]),
