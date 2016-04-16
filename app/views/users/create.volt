@@ -10,7 +10,7 @@
     <div class="page-header pull-right">
         <div class="page-toolbar">
             <a href="/users">
-                <button type="button" class="btn btn-warning">Lista de usuarios</button>
+                <button type="button" class="btn btn-warning">Lista de Usuarios</button>
             </a>
             &nbsp;
         </div>
@@ -24,6 +24,7 @@
 
 {{this.flash.output()}}
 <div class="col-md-9">
+{% include 'partials/blue_head.volt'%}
 <div id="generalTabContent" class="tab-content">
     <form action="/users/create" method="POST" class="form-horizontal">
       <div>

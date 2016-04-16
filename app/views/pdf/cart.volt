@@ -19,7 +19,7 @@
                                     <br>
                                     <br>
                                     <br>
-                                    <div style="font-size: 20px; margin-top:20px; font-weight: bold; color:#6B6B6B;">COTIZACION</div>
+                                    <div style="font-size: 20px; margin-top:20px; font-weight: bold; color:#6B6B6B;">Cotización</div>
                                 </td>
                             </tr>
                         </table>
@@ -93,7 +93,7 @@
                 
                 <tr class="heading">
                     <td>
-                        Codigo
+                        Código
                     </td>
                     <td>
                         Cantidad
@@ -218,7 +218,7 @@
             </tr>
              <tr>
             <td style=" width:400px; vertical-align: bottom; text-align:center; font-size:10px;"  >
-                   <i>Los precios detallados en esta cotizacion, estan sujeto a cambios a partir de los treinta (30) dias. </i>
+                   <i>Los precios detallados en esta Cotización, estan sujeto a cambios a partir de los treinta (30) dias. </i>
             </td>
             </tr>
     </table>

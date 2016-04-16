@@ -10,10 +10,10 @@
         <div class="page-toolbar">
        
             <a href="/delete-cart">
-                <button type="button" class="btn btn-danger" onclick="return confirm('Esta a punto de eliminar su carrito?')" >Limpiar carrito</button>
+                <button type="button" class="btn btn-danger" onclick="return confirm('Esta a punto de eliminar su Carrito?')" >Limpiar Carrito</button>
             </a> &nbsp;
             <a target="_blank" href="/cart/pdf">
-                <button type="button" class="btn btn-warning">Generar cotizacion</button>
+                <button type="button" class="btn btn-warning">Generar Cotización</button>
             </a> &nbsp;
             <a href="/">
                 <button type="button" class="btn btn-info">Productos</button>
@@ -42,11 +42,11 @@
                 <tr>
                     <th>#</th>
                     <th>Producto</th>
-                    <th>Codigo</th>
+                    <th>Código</th>
                     <th>Precio/Producto</th>
                     <th>Cantidad</th>
                     <th>Total</th>
-                    <th>Accion</th>
+                    <th>Acción</th>
                 </tr>
                 </thead>
                 <tbody>

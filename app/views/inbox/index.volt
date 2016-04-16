@@ -11,7 +11,7 @@
     <div class="page-header pull-right">
         <div class="page-toolbar">
             <a href="/requests">
-                <button type="button" class="btn btn-warning">Hacer solicitud</button>
+                <button type="button" class="btn btn-warning">Realizar Solicitud</button>
             </a>
             &nbsp;
         </div>
@@ -43,11 +43,11 @@
                     <th>#</th>
                     <th>Usuario</th>
                     <th>Paciente</th>
-                    <th>Autorizacion</th>
-                    <th>Fecha de cirugia</th>
+                    <th>Autorización</th>
+                    <th>Fecha de cirugía</th>
                     <th>Cirujano</th>
                     <th>Estado</th>
-                    <th>Accion</th>
+                    <th>Acción</th>
                 </tr>
                 </thead>
                 <tbody>

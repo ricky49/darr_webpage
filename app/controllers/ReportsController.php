@@ -37,7 +37,7 @@ class ReportsController extends ControllerBase
     public function indexAction()
     {
         //Section title
-        $this->view->section_title = 'Creacion de reporte';
+        $this->view->section_title = 'Creación de Reporte';
         $this->view->centers = $this->sdk->getCenters();
         $this->view->plates = $this->sdk->getAllPlates();
         $this->view->items = $this->sdk->getProducts();
@@ -90,7 +90,7 @@ class ReportsController extends ControllerBase
      */
     public function productsAction($report_id)
     {
-        $this->view->section_title = 'Modificacion de productos';
+        $this->view->section_title = 'Modificación de Productos';
         $response = $this->sdk->getReportProducts($report_id);
         $this->view->products = $response;
         $this->view->report_id = $report_id;
@@ -138,7 +138,7 @@ class ReportsController extends ControllerBase
      */
     public function historyAction()
     {
-        $this->view->section_title = 'Historial de reportes';
+        $this->view->section_title = 'Historial de Reportes';
         $response = $this->sdk->getUserReports($this->session->get('user_data')->user);
         $this->view->reports = $response;
         return $this->view->pick('reports/history');
@@ -151,7 +151,7 @@ class ReportsController extends ControllerBase
      */
     public function viewAction($id)
     {
-        $this->view->section_title = 'Vista de reporte';
+        $this->view->section_title = 'Vista de Reporte';
         $response = $this->sdk->getReport($id);
 
         if (isset($response->success) && !$response->success) {

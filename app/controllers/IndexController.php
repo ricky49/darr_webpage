@@ -28,10 +28,34 @@ class IndexController extends CartController
      */
     public function homeAction()
     {
-        //Section title
-        $this->view->section_title = 'Inicio | Carrito de productos';
+
+        $rol = $this->session->user_data->rol;
+        switch ($rol) {
+            case 'Instrumentista':
+                return $this->dispatcher->forward(
+                    array(
+                        "controller" => "Reports",
+                        "action" => "index",
+                    )
+                );
+                break;
+            case 'Admin':
+                return $this->dispatcher->forward(
+                    array(
+                        "controller" => "Inbox",
+                        "action" => "index",
+                    )
+                );
+
+            default:
+                continue;
+                break;
+        }
+        // Section title
+        $this->view->section_title = 'Inicio | Carrito de Productos';
         $this->view->products = $this->sdk->getProducts();
         return $this->view->pick('index/index');
+
     }
 
     /**

@@ -42,7 +42,7 @@
                     <th>#</th>
                     <th>Usuario</th>
                     <th>Rol</th>
-                    <th>Accion</th>
+                    <th>Acción</th>
                 </tr>
                 </thead>
                 <tbody>

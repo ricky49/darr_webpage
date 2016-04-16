@@ -15,7 +15,7 @@
     <div class="page-header pull-right">
         <div class="page-toolbar">
             <a href="/reports/history">
-                <button type="button" class="btn btn-warning">Historial de reportes</button>
+                <button type="button" class="btn btn-warning">Historial de Reportes</button>
             </a>
             &nbsp;
         </div>
@@ -28,6 +28,7 @@
 <div class="page-content">
 {{this.flash.output()}}
 <div class="col-md-9">
+{% include 'partials/blue_head.volt'%}
 <div id="generalTabContent" class="tab-content">
     <form action="/reports/create" method="POST" class="form-horizontal">
       <div>     
@@ -38,6 +39,7 @@
             </a> -->
         </div>                             
       </div>
+
         <div class="form-group"><label class="col-sm-3 control-label">Paciente</label>
 
             <div class="col-sm-9 controls">
@@ -117,12 +119,12 @@
                 </div>
             </div>
         </div>
-         <div class="form-group"><label class="col-sm-3 control-label">Fecha de cirugia</label>
+         <div class="form-group"><label class="col-sm-3 control-label">Fecha de cirugía</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
                     <div class="col-xs-9">
-                    <input type="date" placeholder="Fecha de cirugia" name="date" default="now"  value="<?php echo date('Y-m-d'); ?>" class="form-control" required/>
+                    <input type="date" placeholder="Fecha de cirugía" name="date" default="now"  value="<?php echo date('Y-m-d'); ?>" class="form-control" required/>
                     </div>
                 </div>
             </div>

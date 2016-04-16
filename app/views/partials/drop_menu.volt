@@ -17,7 +17,7 @@
         <li>
             <a href="/logout">
                 <i class="fa fa-key"></i>
-                Log Out
+                Cerrar Sesión
             </a>
         </li>
     </ul>

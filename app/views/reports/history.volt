@@ -9,7 +9,7 @@
     <div class="page-header pull-right">
         <div class="page-toolbar">
              <a href="/reports">
-                <button type="button" class="btn btn-warning">Hacer reporte</button>
+                <button type="button" class="btn btn-warning">Realizar Reporte</button>
             </a>
             &nbsp;
         </div>
@@ -43,10 +43,10 @@
                     <th>#</th>
                     <th>Paciente</th>
                     <th>Seguro</th>
-                    <th>Fecha de cirugia</th>
+                    <th>Fecha de cirugía</th>
                     <th>Cirujano</th>
                     <th>Estado</th>
-                    <th>Accion</th>
+                    <th>Acción</th>
                 </tr>
                 </thead>
                 <tbody>

@@ -52,7 +52,7 @@
                 <i class="icon fa fa-inbox">
                     <div class="icon-bg bg-orange"></div>
                 </i>
-                <span class="menu-title">Bandeja de entrada</span>
+                <span class="menu-title">Bandeja de Entrada</span>
             </a>
           </li>
           {% endif %}

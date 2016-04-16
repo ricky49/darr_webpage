@@ -16,7 +16,7 @@
     <div class="page-header pull-right">
         <div class="page-toolbar">
             <a href="/requests/history">
-                <button type="button" class="btn btn-warning">Historial de solicitudes</button>
+                <button type="button" class="btn btn-warning">Historial de Solicitudes</button>
             </a>
             &nbsp;
         </div>
@@ -44,6 +44,7 @@
 <div class="page-content">
 {{this.flash.output()}}
 <div class="col-md-9">
+{% include 'partials/blue_head.volt'%}
 <div id="generalTabContent" class="tab-content">
     <form action="/requests/preview" method="POST" class="form-horizontal">
       <div>
@@ -113,11 +114,11 @@
                 </div>
             </div>
         </div>
-         <div class="form-group"><label class="col-sm-3 control-label">Autorizacion</label>
+         <div class="form-group"><label class="col-sm-3 control-label">Autorización</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
-                    <div class="col-xs-9"><input type="number" placeholder="Autorizacion" name="authorization"  class="form-control" required/></div>
+                    <div class="col-xs-9"><input type="number" placeholder="Autorización" name="authorization"  class="form-control" required/></div>
                 </div>
             </div>
         </div>
@@ -157,12 +158,12 @@ data-placeholder="Bandejas" multiple name="item_manuales[]"
                 </div>
             </div>
         </div>
-         <div class="form-group"><label class="col-sm-3 control-label">Fecha de cirugia</label>
+         <div class="form-group"><label class="col-sm-3 control-label">Fecha de cirugía</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
                     <div class="col-xs-9">
-                    <input type="date" placeholder="Fecha de cirugia" name="surgery_date" default="now"  value="<?php echo date('Y-m-d'); ?>" class="form-control" required/>
+                    <input type="date" placeholder="Fecha de cirugía" name="surgery_date" default="now"  value="<?php echo date('Y-m-d'); ?>" class="form-control" required/>
                     </div>
                 </div>
             </div>

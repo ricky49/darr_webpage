@@ -9,7 +9,7 @@
     <div class="page-header pull-right">
         <div class="page-toolbar">
            <a href="/reports/history">
-                <button type="button" class="btn btn-warning">Historial de reportes</button>
+                <button type="button" class="btn btn-warning">Historial de Reportes</button>
             </a>
             &nbsp;
         </div>

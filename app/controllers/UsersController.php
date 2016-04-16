@@ -43,7 +43,7 @@ class UsersController extends ControllerBase
      */
     public function createAction()
     {
-        $this->view->section_title = 'Creacion de usuario';
+        $this->view->section_title = 'Creación de Usuario';
         if ($this->request->isPost()) {
             $response = $this->store($this->request->getPost());
             if (isset($response->success) && !$response->success && isset($response->body)) {
@@ -88,7 +88,7 @@ class UsersController extends ControllerBase
      */
     public function editAction($id)
     {
-        $this->view->section_title = 'Edicion de usuario';
+        $this->view->section_title = 'Edición de Usuario';
         $response = $this->sdk->getUser($id);
         if (isset($response->success) && !$response->success) {
             $this->flash->error('Usuario no encontrado');

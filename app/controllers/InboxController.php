@@ -29,7 +29,7 @@ class InboxController extends ControllerBase
     public function indexAction()
     {
         //Section title
-        $this->view->section_title = 'Inbox';
+        $this->view->section_title = 'Bandeja de Entrada';
         $response = $this->sdk->getRequests();
         $this->view->requests = $response;
         return $this->view->pick('inbox/index');

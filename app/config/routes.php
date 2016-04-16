@@ -1,6 +1,4 @@
-<?php 
-
-use Phalcon\Mvc\Router\Group as RouterGroup;
+<?php
 
 $router = new Phalcon\Mvc\Router();
 
@@ -18,14 +16,12 @@ $router->add('/plates/{id}', 'Requests::plates');
 //testing porpuses
 $router->addGet('/test', 'Index::test');
 
-
 //Requests section
 $router->addGet('/requests', 'Requests::index');
 $router->addGet('/requests/history', 'Requests::history');
 $router->addPost('/requests/create', 'Requests::create');
 $router->addPost('/requests/view/{id}', 'Requests::view');
 $router->addGet('/requests/status/{id}/{id_status}', 'Requests::changeStatus');
-
 
 //Cart
 $router->addPost('/add-cart-item', 'Cart::add');
@@ -34,18 +30,18 @@ $router->addGet('/cart', 'Cart::view');
 $router->add('/cart-delete/{id}', 'Cart::delete');
 $router->add('/delete-cart', 'Cart::deleteCart');
 
-
 //Inbox section
 $router->addGet('/inbox', 'Inbox::index');
-
-
 
 //Reports section
 $router->addGet('/reports', 'Reports::index');
 $router->addGet('/reports/history', 'Reports::history');
 $router->addPost('/reports/create', 'Reports::create');
 $router->addPost('/reports/view/{id}', 'Reports::view');
-
+// this.session.user_data.rol
+// if ($this->session->has('user_data')) {
+//     die('hay alguien');
+// }
 $router->addGet('/', 'Index::home');
 
 $router->addGet('/users', 'Users::index');

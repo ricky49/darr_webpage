@@ -11,7 +11,7 @@
     <div class="page-header pull-right">
         <div class="page-toolbar">
            <a href="/users">
-                <button type="button" class="btn btn-warning">Users List</button>
+                <button type="button" class="btn btn-warning">Lista de Usuarios</button>
             </a>
             &nbsp;
         </div>
@@ -24,6 +24,7 @@
 <div class="page-content"
 {{this.flash.output()}}
 <div class="col-md-9">
+{% include 'partials/blue_head.volt'%}
  <!-- <div class="col-md-12"><h2>Profile: {{user.name}}</h2> -->
 <div id="generalTabContent" class="tab-content">
 

@@ -25,6 +25,7 @@
 <div class="page-content">
 
 <div class="col-md-9">
+{% include 'partials/blue_head.volt'%}
 <div id="generalTabContent" class="tab-content">
     <div  class="form-horizontal">
       <div>
@@ -69,7 +70,7 @@
                 </div>
             </div>
         </div>
-         <div class="form-group"><label class="col-sm-3 control-label">Autorizacion</label>
+         <div class="form-group"><label class="col-sm-3 control-label">Autorización</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">
@@ -78,7 +79,7 @@
             </div>
         </div>
       
-         <div class="form-group"><label class="col-sm-3 control-label">Fecha de cirugia</label>
+         <div class="form-group"><label class="col-sm-3 control-label">Fecha de cirugía</label>
 
             <div class="col-sm-9 controls">
                 <div class="row">

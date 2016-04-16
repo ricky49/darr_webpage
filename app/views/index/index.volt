@@ -87,7 +87,7 @@
 													<input type="number" name="quantity" placeholder="Cantidad" class="form-control" style="display: inline !important; width: 50% !important;"  min="1" required>
 													<input type="hidden" name="product_id" value="{{product._id}}">
 													<button type="submit" class="btn btn-warning">
-                                                        Agregar al carrito
+                                                        Agregar al Carrito
                                                     </button>
                                                     <!-- <p style="float:right; margin-right:19%; color:#b1b1b1"><i>Actualmente tienes: </i><b>3 </b><i>Items</i></p> -->
                                                 </form>

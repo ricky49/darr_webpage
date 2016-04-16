@@ -1,13 +1,12 @@
 <?php
 namespace App\Libraries;
 
-
 class SDK extends \GuzzleHttp\Client
 {
     private $base_url;
     private $token;
     private $ph_session;
-    
+
     /**
      * Constructor
      */
@@ -30,10 +29,11 @@ class SDK extends \GuzzleHttp\Client
     {
         $this->token = false;
         return $this->makeRequest(
-            "authenticate", 
-            [   
-                'user' => $user, 
-                'pass' => $password
+            "authenticate",
+            [
+                'user' => $user,
+                'pass' => $password,
+                'fingerprint' => 0,
             ]
         );
     }
@@ -48,15 +48,15 @@ class SDK extends \GuzzleHttp\Client
     {
         $this->token = false;
         return $this->makeRequest(
-            "index/register", 
-            [   
+            "index/register",
+            [
                 'user' => $data['user'],
                 'pass' => $data['pass'],
                 'mail' => $data['mail'],
                 'lastname' => $data['lastname'],
                 'name' => $data['name'],
                 'document' => $data['document'],
-                'rol' => $data['rol']
+                'rol' => $data['rol'],
             ]
         );
     }
@@ -72,7 +72,6 @@ class SDK extends \GuzzleHttp\Client
         return $this->makeRequest("api/request", $data);
     }
 
-
     /**
      * Get cart
      *
@@ -84,7 +83,6 @@ class SDK extends \GuzzleHttp\Client
         return $this->makeRequest("api/cars/{$id}");
     }
 
-
     /**
      * Get user cart
      *
@@ -92,8 +90,8 @@ class SDK extends \GuzzleHttp\Client
      */
     public function userCart($user_id)
     {
-        $url = $this->base_url."api/cars?token=".$this->ph_session->get('user_session_token')."&user_id={$user_id}"; 
-      
+        $url = $this->base_url . "api/cars?token=" . $this->ph_session->get('user_session_token') . "&user_id={$user_id}";
+
         return $this->getRequest($url);
     }
 
@@ -104,12 +102,12 @@ class SDK extends \GuzzleHttp\Client
      */
     public function userBills($user_id)
     {
-        $url = $this->base_url."api/bills?token=".$this->ph_session->get('user_session_token')."&user_id={$user_id}"; 
-      
+        $url = $this->base_url . "api/bills?token=" . $this->ph_session->get('user_session_token') . "&user_id={$user_id}";
+
         return $this->getRequest($url);
     }
 
-   /**
+    /**
      * Create save bill
      *
      * @param int $data
@@ -120,7 +118,6 @@ class SDK extends \GuzzleHttp\Client
         return $this->makeRequest("api/bills", $data);
     }
 
-
     /**
      * Get user cart
      *
@@ -128,8 +125,8 @@ class SDK extends \GuzzleHttp\Client
      */
     public function userCartAndSingleProduct($user_id, $product_id)
     {
-        $url = $this->base_url."api/cars?token=".$this->ph_session->get('user_session_token')."&user_id={$user_id}&product_id={$product_id}"; 
-      
+        $url = $this->base_url . "api/cars?token=" . $this->ph_session->get('user_session_token') . "&user_id={$user_id}&product_id={$product_id}";
+
         return $this->getRequest($url);
     }
     /**
@@ -151,11 +148,10 @@ class SDK extends \GuzzleHttp\Client
      * @return std   object
      */
     public function updateCart($id, $data)
-    {   
+    {
         $data['put'] = 'put';
         return $this->makeRequest("api/cars/{$id}", $data);
     }
-
 
     /**
      * Delete cart
@@ -165,9 +161,8 @@ class SDK extends \GuzzleHttp\Client
      */
     public function deleteCart($id)
     {
-       return $this->deleteRequest('api/cars/'.$id);
+        return $this->deleteRequest('api/cars/' . $id);
     }
-
 
     /**
      * Create report
@@ -188,11 +183,10 @@ class SDK extends \GuzzleHttp\Client
      * @return std   object
      */
     public function updateReportProduct($id, $data)
-    {   
+    {
         $data['put'] = 'put';
         return $this->makeRequest("api/reportProducts/{$id}", $data);
     }
-
 
     /**
      * Create report product
@@ -205,7 +199,6 @@ class SDK extends \GuzzleHttp\Client
         return $this->makeRequest("api/reportProducts", $data);
     }
 
-
     /**
      * Get Report products
      *
@@ -214,24 +207,22 @@ class SDK extends \GuzzleHttp\Client
      */
     public function getReportProducts($report_id)
     {
-        $url = $this->base_url."api/reportProducts?token=".$this->ph_session->get('user_session_token')."&report_id={$report_id}"; 
-      
+        $url = $this->base_url . "api/reportProducts?token=" . $this->ph_session->get('user_session_token') . "&report_id={$report_id}";
+
         return $this->getRequest($url);
     }
 
-
-     /**
+    /**
      * Update user
      *
      * @param int $data
      * @return std object
      */
     public function updateUser($id, $data)
-    {   
+    {
         $data['put'] = 'put';
         return $this->makeRequest("api/users/{$id}", $data);
     }
-
 
     /**
      * Update requests
@@ -240,8 +231,8 @@ class SDK extends \GuzzleHttp\Client
      * @return std object
      */
     public function updateRequestStatus($id, $data)
-    {   
-      
+    {
+
         $data['put'] = 'put';
         return $this->makeRequest("api/request/{$id}", $data);
     }
@@ -254,7 +245,7 @@ class SDK extends \GuzzleHttp\Client
      */
     public function deleteUser($id)
     {
-       return $this->deleteRequest('api/users/'.$id);
+        return $this->deleteRequest('api/users/' . $id);
     }
 
     /**
@@ -277,7 +268,6 @@ class SDK extends \GuzzleHttp\Client
         return $this->makeRequest("api/products");
     }
 
-
     /**
      * Get  product
      *
@@ -287,8 +277,6 @@ class SDK extends \GuzzleHttp\Client
     {
         return $this->makeRequest("api/products/{$id}");
     }
-
-
 
     /**
      * Get All Users
@@ -300,7 +288,7 @@ class SDK extends \GuzzleHttp\Client
         return $this->makeRequest("api/center");
     }
 
-     /**
+    /**
      * Get procedures
      *
      * @return std object
@@ -320,15 +308,15 @@ class SDK extends \GuzzleHttp\Client
         return $this->makeRequest("api/procedure/{$id}");
     }
 
-     /**
+    /**
      * Get plates
      *
      * @return std object
      */
     public function getPlates($id)
     {
-        $url = $this->base_url."api/plates?token=".$this->ph_session->get('user_session_token')."&procedure_id={$id}"; 
-      
+        $url = $this->base_url . "api/plates?token=" . $this->ph_session->get('user_session_token') . "&procedure_id={$id}";
+
         return $this->getRequest($url);
     }
 
@@ -339,8 +327,8 @@ class SDK extends \GuzzleHttp\Client
      */
     public function getAllPlates()
     {
-        $url = $this->base_url."api/plates?token=".$this->ph_session->get('user_session_token'); 
-      
+        $url = $this->base_url . "api/plates?token=" . $this->ph_session->get('user_session_token');
+
         return $this->getRequest($url);
     }
 
@@ -364,8 +352,6 @@ class SDK extends \GuzzleHttp\Client
         return $this->makeRequest("api/roles");
     }
 
-    
-
     /**
      * Get user
      *
@@ -376,7 +362,7 @@ class SDK extends \GuzzleHttp\Client
     {
         return $this->makeRequest("api/users/{$id}");
     }
-    
+
     /**
      * Get user by user
      *
@@ -384,9 +370,9 @@ class SDK extends \GuzzleHttp\Client
      * @return std object
      */
     public function getUserByUsername($user)
-    {   
-         $url = $this->base_url."api/users?token=".$this->ph_session->get('user_session_token')."&user={$user}"; 
-      
+    {
+        $url = $this->base_url . "api/users?token=" . $this->ph_session->get('user_session_token') . "&user={$user}";
+
         return $this->getRequest($url);
     }
 
@@ -397,9 +383,9 @@ class SDK extends \GuzzleHttp\Client
      * @return std object
      */
     public function getRequests($user)
-    {   
-         $url = $this->base_url."api/request?token=".$this->ph_session->get('user_session_token'); 
-      
+    {
+        $url = $this->base_url . "api/request?token=" . $this->ph_session->get('user_session_token');
+
         return $this->getRequest($url);
     }
 
@@ -410,9 +396,9 @@ class SDK extends \GuzzleHttp\Client
      * @return std object
      */
     public function getUserRequests($user)
-    {   
-         $url = $this->base_url."api/request?token=".$this->ph_session->get('user_session_token')."&user={$user}"; 
-      
+    {
+        $url = $this->base_url . "api/request?token=" . $this->ph_session->get('user_session_token') . "&user={$user}";
+
         return $this->getRequest($url);
     }
     /**
@@ -422,9 +408,9 @@ class SDK extends \GuzzleHttp\Client
      * @return std object
      */
     public function getUserReports($user)
-    {   
-         $url = $this->base_url."api/report?token=".$this->ph_session->get('user_session_token')."&user={$user}"; 
-      
+    {
+        $url = $this->base_url . "api/report?token=" . $this->ph_session->get('user_session_token') . "&user={$user}";
+
         return $this->getRequest($url);
     }
 
@@ -435,9 +421,9 @@ class SDK extends \GuzzleHttp\Client
      * @return std object
      */
     public function getSolicitud($id)
-    {   
-         $url = $this->base_url."api/request/{$id}?token=".$this->ph_session->get('user_session_token'); 
-      
+    {
+        $url = $this->base_url . "api/request/{$id}?token=" . $this->ph_session->get('user_session_token');
+
         return $this->getRequest($url);
     }
     /**
@@ -447,12 +433,12 @@ class SDK extends \GuzzleHttp\Client
      * @return std object
      */
     public function getReport($id)
-    {   
-         $url = $this->base_url."api/report/{$id}?token=".$this->ph_session->get('user_session_token'); 
-      
+    {
+        $url = $this->base_url . "api/report/{$id}?token=" . $this->ph_session->get('user_session_token');
+
         return $this->getRequest($url);
     }
-    
+
     /**
      *  Make post/get requests
      *
@@ -461,43 +447,45 @@ class SDK extends \GuzzleHttp\Client
      * @return std object
      */
     private function makeRequest($url, $data = null)
-    {   
+    {
         if ($this->token != false) {
             if (!$this->ph_session->has('user_session_token')) {
-                return (object)['success'=>0, 'message'=> "Missing user session"];
+                return (object) ['success' => 0, 'message' => "Missing user session"];
             }
             $this->token = $this->ph_session->get('user_session_token');
         }
 
-        $url = $this->base_url .$url;
+        $url = $this->base_url . $url;
         try {
             if ($data != null && is_array($data)) {
-                if ($this->token != false)
+                if ($this->token != false) {
                     $data['x-token-access'] = $this->token;
+                }
 
-                $url .= "?token=".$this->token; 
+                $url .= "?token=" . $this->token;
                 if (array_key_exists('put', $data)) {
-                    $response =  $this->putRequest($url, $data);
+                    $response = $this->putRequest($url, $data);
                 } else {
-                    $response =  $this->postRequest($url, $data);
+                    $response = $this->postRequest($url, $data);
                 }
             } else {
-                if ($this->token != false)
-                    $url .= "?token=".$this->token; 
-                $response =  $this->getRequest($url);
+                if ($this->token != false) {
+                    $url .= "?token=" . $this->token;
+                }
+
+                $response = $this->getRequest($url);
             }
         } catch (\Guzzle\Http\Exception\BadResponseException $e) {
-            return (object)((['success'=>0, 'type'=> 'BADRESPONSE', 'message'=> "Guzzle: ".$e->getMessage()]));
+            return (object) ((['success' => 0, 'type' => 'BADRESPONSE', 'message' => "Guzzle: " . $e->getMessage()]));
         } catch (\GuzzleHttp\Exception\ClientException $e) {
-            return (object)((['success'=>0, 'type'=> 'CLIENT', 'message'=> "Guzzle: ".$e->getMessage(), 'body'=>  json_decode($e->getResponse()->getBody(true))]));
+            return (object) ((['success' => 0, 'type' => 'CLIENT', 'message' => "Guzzle: " . $e->getMessage(), 'body' => json_decode($e->getResponse()->getBody(true))]));
         } catch (\GuzzleHttp\Exception\ConnectException $e) {
-            return (object)((['success'=>0, 'type'=> 'CONNECT', 'message'=> "Guzzle: ".$e->getMessage()]));
+            return (object) ((['success' => 0, 'type' => 'CONNECT', 'message' => "Guzzle: " . $e->getMessage()]));
         } catch (\GuzzleHttp\Exception\ServerException $e) {
-            return (object)((['success'=>0, 'type'=> 'SERVER', 'message'=> "Guzzle: ".$e->getMessage(), 'body'=>  json_decode($e->getResponse()->getBody(true))]));
+            return (object) ((['success' => 0, 'type' => 'SERVER', 'message' => "Guzzle: " . $e->getMessage(), 'body' => json_decode($e->getResponse()->getBody(true))]));
         }
         return $response;
     }
-
 
     /**
      *  Make post requests
@@ -507,7 +495,7 @@ class SDK extends \GuzzleHttp\Client
      * @return std object
      */
     private function postRequest($url, $data)
-    {   
+    {
         return json_decode((string) $this->post($url, ['form_params' => $data])->getBody());
     }
 
@@ -519,24 +507,23 @@ class SDK extends \GuzzleHttp\Client
      * @return std object
      */
     private function putRequest($url, $data)
-    {          
+    {
 
         try {
 
             $response = $this->put($url, ['form_params' => $data])->getBody();
 
         } catch (\Guzzle\Http\Exception\BadResponseException $e) {
-            return (object)((['success'=>0, 'type'=> 'BADRESPONSE', 'message'=> "Guzzle: ".$e->getMessage()]));
+            return (object) ((['success' => 0, 'type' => 'BADRESPONSE', 'message' => "Guzzle: " . $e->getMessage()]));
         } catch (\GuzzleHttp\Exception\ClientException $e) {
-            return (object)((['success'=>0, 'type'=> 'CLIENT', 'message'=> "Guzzle: ".$e->getMessage(), 'body'=>  json_decode($e->getResponse()->getBody(true))]));
+            return (object) ((['success' => 0, 'type' => 'CLIENT', 'message' => "Guzzle: " . $e->getMessage(), 'body' => json_decode($e->getResponse()->getBody(true))]));
         } catch (\GuzzleHttp\Exception\ConnectException $e) {
-            return (object)((['success'=>0, 'type'=> 'CONNECT', 'message'=> "Guzzle: ".$e->getMessage()]));
+            return (object) ((['success' => 0, 'type' => 'CONNECT', 'message' => "Guzzle: " . $e->getMessage()]));
         } catch (\GuzzleHttp\Exception\ServerException $e) {
-            return (object)((['success'=>0, 'type'=> 'SERVER', 'message'=> "Guzzle: ".$e->getMessage(), 'body'=>  json_decode($e->getResponse()->getBody(true))]));
+            return (object) ((['success' => 0, 'type' => 'SERVER', 'message' => "Guzzle: " . $e->getMessage(), 'body' => json_decode($e->getResponse()->getBody(true))]));
         }
         return json_decode((string) $response);
     }
-    
 
     /**
      *  Make delete requests
@@ -545,30 +532,30 @@ class SDK extends \GuzzleHttp\Client
      * @return std object
      */
     private function deleteRequest($url)
-    {   
+    {
         if ($this->token != false) {
-           if (!$this->ph_session->has('user_session_token')) {
-                return (object)['success'=>0, 'message'=> "Missing user session"];
+            if (!$this->ph_session->has('user_session_token')) {
+                return (object) ['success' => 0, 'message' => "Missing user session"];
             }
             $this->token = $this->ph_session->get('user_session_token');
         }
-        $url = $this->base_url .$url."?token=".$this->token;
+        $url = $this->base_url . $url . "?token=" . $this->token;
 
         try {
             $response = json_decode((string) $this->delete($url)->getBody());
         } catch (\Guzzle\Http\Exception\BadResponseException $e) {
-            return (object)((['success'=>0, 'type'=> 'BADRESPONSE', 'message'=> "Guzzle: ".$e->getMessage()]));
+            return (object) ((['success' => 0, 'type' => 'BADRESPONSE', 'message' => "Guzzle: " . $e->getMessage()]));
         } catch (\GuzzleHttp\Exception\ClientException $e) {
-            return (object)((['success'=>0, 'type'=> 'CLIENT', 'message'=> "Guzzle: ".$e->getMessage(), 'body'=>  json_decode($e->getResponse()->getBody(true))]));
+            return (object) ((['success' => 0, 'type' => 'CLIENT', 'message' => "Guzzle: " . $e->getMessage(), 'body' => json_decode($e->getResponse()->getBody(true))]));
         } catch (\GuzzleHttp\Exception\ConnectException $e) {
-            return (object)((['success'=>0, 'type'=> 'CONNECT', 'message'=> "Guzzle: ".$e->getMessage()]));
+            return (object) ((['success' => 0, 'type' => 'CONNECT', 'message' => "Guzzle: " . $e->getMessage()]));
         } catch (\GuzzleHttp\Exception\ServerException $e) {
-            return (object)((['success'=>0, 'type'=> 'SERVER', 'message'=> "Guzzle: ".$e->getMessage()]));
+            return (object) ((['success' => 0, 'type' => 'SERVER', 'message' => "Guzzle: " . $e->getMessage()]));
         }
         return $response;
-       
+
     }
-     /**
+    /**
      *  Make get requests
      *
      * @param string $url
@@ -581,13 +568,13 @@ class SDK extends \GuzzleHttp\Client
             $response = $this->get($url)->getBody();
 
         } catch (\Guzzle\Http\Exception\BadResponseException $e) {
-            return (object)((['success'=>0, 'type'=> 'BADRESPONSE', 'message'=> "Guzzle: ".$e->getMessage()]));
+            return (object) ((['success' => 0, 'type' => 'BADRESPONSE', 'message' => "Guzzle: " . $e->getMessage()]));
         } catch (\GuzzleHttp\Exception\ClientException $e) {
-            return (object)((['success'=>0, 'type'=> 'CLIENT', 'message'=> "Guzzle: ".$e->getMessage(), 'body'=>  json_decode($e->getResponse()->getBody(true))]));
+            return (object) ((['success' => 0, 'type' => 'CLIENT', 'message' => "Guzzle: " . $e->getMessage(), 'body' => json_decode($e->getResponse()->getBody(true))]));
         } catch (\GuzzleHttp\Exception\ConnectException $e) {
-            return (object)((['success'=>0, 'type'=> 'CONNECT', 'message'=> "Guzzle: ".$e->getMessage()]));
+            return (object) ((['success' => 0, 'type' => 'CONNECT', 'message' => "Guzzle: " . $e->getMessage()]));
         } catch (\GuzzleHttp\Exception\ServerException $e) {
-            return (object)((['success'=>0, 'type'=> 'SERVER', 'message'=> "Guzzle: ".$e->getMessage(), 'body'=>  json_decode($e->getResponse()->getBody(true))]));
+            return (object) ((['success' => 0, 'type' => 'SERVER', 'message' => "Guzzle: " . $e->getMessage(), 'body' => json_decode($e->getResponse()->getBody(true))]));
         }
         return json_decode((string) $response);
     }

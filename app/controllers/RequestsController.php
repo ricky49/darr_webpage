@@ -36,7 +36,7 @@ class RequestsController extends ControllerBase
     public function indexAction()
     {
         //Section title
-        $this->view->section_title = 'Creacion de solicitud';
+        $this->view->section_title = 'Creación de Solicitud';
         $this->view->centers = $this->sdk->getCenters();
         $this->view->procedures = $this->sdk->getProcedures();
         $this->view->items = $this->sdk->getProducts();
@@ -73,7 +73,7 @@ class RequestsController extends ControllerBase
      */
     public function viewAction($id)
     {
-        $this->view->section_title = 'Vista de solicitud';
+        $this->view->section_title = 'Vista de Solicitud';
         $response = $this->sdk->getSolicitud($id);
         if (isset($response->success) && !$response->success) {
             $this->flashSession->error("Solicitud no encontrada");
@@ -100,7 +100,7 @@ class RequestsController extends ControllerBase
         if (!$this->request->isPost()) {
             return $this->response->redirect('/requests');
         }
-        $this->view->section_title = 'Previsualizacion de solicitud';
+        $this->view->section_title = 'Previsualización de Solicitud';
 
         if (!$this->session->has('request_process')) {
             $data = $this->request->getPost();
@@ -178,7 +178,7 @@ class RequestsController extends ControllerBase
      */
     public function historyAction()
     {
-        $this->view->section_title = 'Historial de solicitudes';
+        $this->view->section_title = 'Historial de Solicitudes';
         $response = $this->sdk->getUserRequests($this->session->get('user_data')->user);
         $this->view->requests = $response;
         return $this->view->pick('requests/history');
