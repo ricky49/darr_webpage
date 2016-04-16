@@ -67,7 +67,7 @@ class IndexController extends CartController
     {
         $this->view->setRenderLevel(\Phalcon\Mvc\View::LEVEL_ACTION_VIEW);
 
-        return $this->view->pick('emails/status_notification');
+        return $this->view->pick('emails/new_user');
     }
 
 }

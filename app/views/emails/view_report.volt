@@ -330,7 +330,7 @@ framework of the email.
 <tr>
 <td align="center" valign="top" class="textContent">
 <h1 style="color:#FFFFFF;line-height:100%;font-family:Helvetica,Arial,sans-serif;font-size:35px;font-weight:normal;margin-bottom:5px;text-align:center;">
-DARR WEB</h1>
+<img src="{{domain}}/images/logo.png" alt="" width="20%"></h1>
 <!-- <h2 style="text-align:center;font-weight:normal;font-family:Helvetica,Arial,sans-serif;font-size:23px;margin-bottom:10px;color:#205478;line-height:135%;">
 Subheader introduction</h2> -->
 <!-- <div style="text-align:center;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;color:#FFFFFF;line-height:135%;">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</div> -->
@@ -384,7 +384,7 @@ http://kb.mailchimp.com/article/template-language-creating-editable-content-area
 
 <!-- MODULE ROW // -->
 <tr>
-<td align="center" valign="top">Un nuevo reporte ha sido enviado!
+<td align="center" valign="top">Un nuevo reporte ha sido enviado. <br><br>
 <!-- CENTERING TABLE // -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr style="padding-top:0;">
@@ -398,7 +398,7 @@ http://kb.mailchimp.com/article/template-language-creating-editable-content-area
 <table border="0" cellpadding="0" cellspacing="0" width="50%" class="emailButton" style="background-color: #3498DB;">
 <tr>
 <td align="center" valign="middle" class="buttonContent" style="padding-top:15px;padding-bottom:15px;padding-right:15px;padding-left:15px;">
-<a style="color:#FFFFFF;text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:135%;" href="{{url}}" target="_blank">Ver reporte</a>
+<a style="color:#FFFFFF;text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:135%;" href="{{url}}" target="_blank"><b>Ver Reporte</b></a>
 </td>
 </tr>
 </table>
@@ -475,7 +475,8 @@ http://kb.mailchimp.com/article/template-language-creating-editable-content-area
 <!-- CONTENT TABLE // -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr>
-<td align="center" valign="top" style="border-top:1px solid #C8C8C8;"></td>
+<td align="center" valign="top" style="border-top:1px solid #C8C8C8;"><span >© Copyright 2016 DARR <br>
+<span style="font-size: 13px;">Presione aquí para ingresar al <a href="{{domain}}">sitio.</a></span></span></td>
 </tr>
 </table>
 <!-- // CONTENT TABLE -->
@@ -649,7 +650,12 @@ MODULE ROW section for each content block.
 
 <div style="font-family:Helvetica:;,Arial,sans-serif;font-size:13px;color:#828282;text-align:center;line-height:120%;">
 
-<div>Este es un mensaje automatico! 
+<div>
+<div style="text-align: center;">
+	Este mensaje fue enviado a {{user_email}} por DARR  <br>
+
+<span>© Copyright 2016</span>
+</div>
 <!-- <a href="#" target="_blank" style="text-decoration:none;color:#828282;"><span style="color:#828282;">unsubscribe</span></a>. -->
 </div>
 </div>

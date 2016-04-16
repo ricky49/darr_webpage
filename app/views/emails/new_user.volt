@@ -330,8 +330,7 @@ framework of the email.
 <tr>
 <td align="center" valign="top" class="textContent">
 <h1 style="color:#FFFFFF;line-height:100%;font-family:Helvetica,Arial,sans-serif;font-size:35px;font-weight:normal;margin-bottom:5px;text-align:center;">
-	<img src="{{domain}}/images/logo.png" alt="" width="20%">
-</h1>
+<img src="{{domain}}/images/logo.png" alt="" width="20%"></h1>
 <!-- <h2 style="text-align:center;font-weight:normal;font-family:Helvetica,Arial,sans-serif;font-size:23px;margin-bottom:10px;color:#205478;line-height:135%;">
 Subheader introduction</h2> -->
 <!-- <div style="text-align:center;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;color:#FFFFFF;line-height:135%;">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</div> -->
@@ -385,7 +384,35 @@ http://kb.mailchimp.com/article/template-language-creating-editable-content-area
 
 <!-- MODULE ROW // -->
 <tr>
-<td align="center" valign="top">Su solicitud ha cambiado su estado a <b><i>{{ request_status }} </i></b>
+<td align="center" valign="top">
+<div align="left" style="margin-left: 10px; font-size: 12px;">
+Estimado Cliente {{user.name}}: <br><br>
+
+Gracias por solicitar su acceso a <b>	DARR</b>. <br>
+
+ Por este medio le remitimos, la información confidencial para el acceso inicial a la aplicación:<br><br>
+
+ Usuario  : <i>{{user.user}}</i> <br>
+ Clave    : <i>{{user.pass}}</i>
+<br>
+<br>
+ Realice los siguientes pasos para utilizar <b>	DARR</b>.<br><br>
+
+ 1.     Debe estar dentro de nuestra red privada para poder acceder al sitio. <br>	 Para esto debe solicitar acceso al administrador. <br><br>
+ 2.     Acceda a nuestro sitio en Internet a través del siguiente enlace <a href="http://www.darrporject.xyz">http://www.darrporject.xyz</a>.<br><br>
+ 
+
+
+ En caso de tener algún inconveniente durante este proceso o si tiene dudas con el servicio, por favor contáctenos darrproject@gmail.com <br><br>
+
+ Atentamente,<br><br>
+
+ <b>	DARR</b><br><br>
+
+</div>
+
+
+<br><br>
 <!-- CENTERING TABLE // -->
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr style="padding-top:0;">
@@ -399,7 +426,7 @@ http://kb.mailchimp.com/article/template-language-creating-editable-content-area
 <table border="0" cellpadding="0" cellspacing="0" width="50%" class="emailButton" style="background-color: #3498DB;">
 <tr>
 <td align="center" valign="middle" class="buttonContent" style="padding-top:15px;padding-bottom:15px;padding-right:15px;padding-left:15px;">
-<a style="color:#FFFFFF;text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:135%;" href="{{url}}" target="_blank"><b>Ver Solicitud</b></a>
+<a style="color:#FFFFFF;text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:135%;" href="{{url}}" target="_blank"><b>Inicie Sesión</b></a>
 </td>
 </tr>
 </table>
@@ -653,12 +680,10 @@ MODULE ROW section for each content block.
 
 <div>
 <div style="text-align: center;">
-	Este mensaje fue enviado a {{user_email}} por DARR  <br>
+	Este mensaje fue enviado a {{user.mail}} por DARR  <br>
 
 <span>© Copyright 2016</span>
 </div>
-
-
 <!-- <a href="#" target="_blank" style="text-decoration:none;color:#828282;"><span style="color:#828282;">unsubscribe</span></a>. -->
 </div>
 </div>

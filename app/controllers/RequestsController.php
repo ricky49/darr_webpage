@@ -223,7 +223,9 @@ class RequestsController extends ControllerBase
             'message' => $this->di->getViewSimple()->render('emails/status_notification',
                 [
                     'url' => getenv('DOMAIN_URL') . '/requests/view/' . $id_request,
-                    'request_status' => $status,
+                    'request_status' => ucfirst($status),
+                    'user_email' => $user_data[0]->mail,
+                    'domain' => getenv('DOMAIN_URL'),
 
                 ]),
         ]);
