@@ -43,6 +43,7 @@ $router->addPost('/reports/view/{id}', 'Reports::view');
 //     die('hay alguien');
 // }
 $router->addGet('/', 'Index::home');
+$router->addGet('/products', 'Index::product');
 
 $router->addGet('/users', 'Users::index');
 $router->add('/users/create', 'Users::create');

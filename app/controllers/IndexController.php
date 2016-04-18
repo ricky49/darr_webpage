@@ -58,6 +58,13 @@ class IndexController extends CartController
 
     }
 
+    public function productAction()
+    {
+        $this->view->section_title = 'Inicio | Carrito de Productos';
+        $this->view->products = $this->sdk->getProducts();
+        return $this->view->pick('index/index');
+    }
+
     /**
      * Tests
      *

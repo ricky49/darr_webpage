@@ -15,7 +15,7 @@
             <a target="_blank" href="/cart/pdf">
                 <button type="button" class="btn btn-warning">Generar Cotización</button>
             </a> &nbsp;
-            <a href="/">
+            <a href="/products">
                 <button type="button" class="btn btn-info">Productos</button>
             </a>
                          
